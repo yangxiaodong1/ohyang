@@ -1,0 +1,99 @@
+{% extends '../base.html' %}
+{% block title %}
+添加用户头像
+{% end %}
+
+{% block body_title %}
+添加用户头像
+{% end %}
+
+{% block form_body %}
+<label class="col-md-2">icon0</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+    <input class="form-control" name="icon0" type="file"/>
+</div>
+<br/>
+
+<label class="col-md-2">icon1</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+    <input class="form-control" name="icon1" type="file"/>
+</div>
+<br/>
+
+<label class="col-md-2">icon2</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+    <input class="form-control" name="icon2" type="file"/>
+</div>
+<br/>
+
+<label class="col-md-2">icon3</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+    <input class="form-control" name="icon3" type="file"/>
+</div>
+<br/>
+
+<label class="col-md-2">data</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+    <input class="form-control" name="data" type="type" placeholder="json键值对"/>
+    <label class="col-md-2">具体格式：
+        icons中包含 icon0, icon1, icon2, icon3
+        每个icon 包含id（如果为0表示添加，如果没有发送图片文件但icon中包含这条数据，表示删除图片）
+        is_head_sculpture是不是头像，只能有一个为1，其它为0
+
+        I_am, I_like, I_unlike, I_hope与icons同级，包含四个字段:
+        id,如果已经存在，则是已经存在的数据的ID，如果不存在，则是0
+        first, 第一行
+        second, 第二行
+        third, 第三行
+
+        books, movies, musics, sports与icons同级，
+        id表示当前已经存在的数据，如果为0，则添加本数据（此时只能添加本数据，不能删除）；
+        index,表示当前数据的顺序，如果删除，设置index为-1;
+        其它值为兴趣的各自属性值
+
+        {
+        "icons":
+        {
+        "icon0":
+        {
+        "id": 1,
+        "is_head_sculpture": 0
+        },
+        "icon1":
+        {
+        "id": 0,
+        "is_head_sculpture": 0
+        },
+        "icon2":
+        {
+        "id": 3,
+        "is_head_sculpture": 1
+        },
+        "icon3":
+        {
+        "id": 2,
+        "is_head_sculpture": 0
+        },
+
+        }
+        "I_am":{"first":"", "second":"", "third": "", "id": 1},
+        "I_like":{"first":"", "second":"", "third": "", "id": 3},
+        "I_unlike":{"first":"", "second":"", "third": "", "id":21},
+        "I_hope":{"first":"", "second":"", "third": "", "id": 98},
+
+        "books":[{"id": 3, "index":5, "author":"", "name":"", "icon":"", "isbn":""},],
+        "movies":[{"id": 6, "movie_id": "", "name": ""， "index": -1},],
+        "musics":[{"id": 8, "music_id": "", "name": "", "singer": "", "publisher": "" , "album": "", index=3},],
+
+        "sports":[{"id":-1, "sport_id": "", "name": ""}, ],
+        }
+
+    </label>
+</div>
+<br/>
+{% end %}

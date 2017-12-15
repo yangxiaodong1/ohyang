@@ -1,0 +1,167 @@
+{% extends '../base.html' %}
+{% block title %}
+首页
+{% end %}
+
+{% block body %}
+{% module xsrf_form_html() %}
+
+<div class="page-header text-center">
+    <h1>OHHO后台管理
+    </h1>
+    <a class="pull-right" href="/backstage/logout/">
+        <span>登出</span></a>
+</div>
+
+{% if phone %}
+<div id="myAlert" class="alert alert-info">
+    <marquee action="left"><strong>欢迎{{ phone }},您上次登录的时间是{{ last_login }}</strong></marquee>
+    <!--<a href="#" class="close" data-dismiss="alert">&times;</a>-->
+</div>
+{% end %}
+
+
+<div class="list-group">
+    <a href="#" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">管理</span>
+        </h4>
+        <p class="list-group-item-text">
+            所有信息的管理，包括用户、硬件、手机及它们间的关系
+        </p>
+        <span class="label label-info">增删改查</span>
+        <span class="badge">增</span>
+        <span class="badge">删</span>
+        <span class="badge">改</span>
+        <span class="badge">查</span>
+    </a>
+
+    <a href="{{ permission_home_url }}" class="list-group-item ">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">权限</span>
+        </h4>
+        <p class="list-group-item-text">
+            用户组权限
+        </p>
+        <span class="label label-info">增删改查</span>
+        <span class="badge">增</span>
+        <span class="badge">删</span>
+        <span class="badge">改</span>
+        <span class="badge">查</span>
+    </a>
+
+    <a href="{{ user_url }}" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">用户</span>
+        </h4>
+        <p class="list-group-item-text">
+            增删改查
+        </p>
+        <span class="label label-info">增删改查</span>
+        <span class="badge">增</span>
+        <span class="badge">删</span>
+        <span class="badge">改</span>
+        <span class="badge">查</span>
+    </a>
+
+    <a href="{{ device_url }}" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">硬件</span>
+        </h4>
+        <p class="list-group-item-text">
+            增删改查
+        </p>
+        <span class="label label-info">增删改查</span>
+        <span class="badge">增</span>
+        <span class="badge">删</span>
+        <span class="badge">改</span>
+        <span class="badge">查</span>
+    </a>
+
+    <a href="{{ cellphone_url }}" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">手机</span>
+        </h4>
+        <p class="list-group-item-text">
+            增删改查
+        </p>
+        <span class="label label-info">增删改查</span>
+        <span class="badge">增</span>
+        <span class="badge">删</span>
+        <span class="badge">改</span>
+        <span class="badge">查</span>
+    </a>
+
+    <a href="{{ relation_url }}" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">关系</span>
+        </h4>
+        <p class="list-group-item-text">
+            增删改查
+        </p>
+        <span class="label label-info">增删改查</span>
+        <span class="badge">增</span>
+        <span class="badge">删</span>
+        <span class="badge">改</span>
+        <span class="badge">查</span>
+    </a>
+
+    <a href="{{ base_home_url }}" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">基础数据</span>
+        </h4>
+        <p class="list-group-item-text">
+            增删改查
+        </p>
+        <span class="label label-info">增删改查</span>
+        <span class="badge">增</span>
+        <span class="badge">删</span>
+        <span class="badge">改</span>
+        <span class="badge">查</span>
+    </a>
+
+</div>
+
+<div class="list-group">
+    <a href="#" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">统计</span>
+        </h4>
+        <p class="list-group-item-text">
+            统计信息
+        </p>
+        <span class="label label-info">统计信息</span>
+        <span class="badge">总量</span>
+        <span class="badge">日增</span>
+        <span class="badge">日活</span>
+    </a>
+
+    <a href="{{ statistics_user }}" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">用户</span>
+        </h4>
+        <p class="list-group-item-text">
+            统计信息
+        </p>
+        <span class="label label-info">统计信息</span>
+        <span class="badge">总量</span>
+        <span class="badge">日增</span>
+        <span class="badge">日活</span>
+    </a>
+
+    <a href="{{ statistics_device }}" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">硬件</span>
+        </h4>
+        <p class="list-group-item-text">
+            统计信息
+        </p>
+        <span class="label label-info">统计信息</span>
+        <span class="badge">总量</span>
+        <span class="badge">日增</span>
+        <span class="badge">日活</span>
+    </a>
+
+</div>
+
+{% end %}

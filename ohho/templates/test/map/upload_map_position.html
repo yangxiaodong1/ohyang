@@ -1,0 +1,143 @@
+{% extends '../base.html' %}
+{% block title %}
+上传地图坐标信息
+{% end %}
+
+{% block body_title %}
+上传地图坐标信息
+{% end %}
+
+{% block form_body %}
+    <label class="col-md-2">type</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="type" type="text" placeholder="定位类型(int，选填，默认为0)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">latitude</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="latitude" type="text" placeholder="纬度(float，选填，默认为0)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">longitude</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="longitude" type="text" placeholder="经度(float，选填，默认为0)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">accuracy</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="accuracy" type="text" placeholder="精度(int，选填，默认为0)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">supplier</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="supplier" type="text" placeholder="供应商(string，选填，默认为空)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">altitude</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="altitude" type="text" placeholder="高度(float，选填，默认为0)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">floor</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="floor" type="text" placeholder="楼层(int，选填，默认为0)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">building_id</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="uilding_id" type="text" placeholder="建筑ID(int，选填，默认为0)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">speed</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="speed" type="text" placeholder="速度(float，选填，默认为0)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">angle</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="angle" type="text" placeholder="角度(float，选填，默认为0)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">satellite_number</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="satellite_number" type="text" placeholder="卫星数目(int，选填，默认为0)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">country</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="country" type="text" placeholder="国家(string，选填，默认为空)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">province</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="province" type="text" placeholder="省(string，选填，默认为空)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">city</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="city" type="text" placeholder="城市(string，选填，默认为空)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">city_code</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="city_code" type="text" placeholder="城市编码(string，选填，默认为空)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">area</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="area" type="text" placeholder="地区(string，选填，默认为空)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">area_code</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="area_code" type="text" placeholder="地区编码(string，选填，默认为空)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">address</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="address" type="text" placeholder="地址(string，选填，默认为空)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">interest_point</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="interest_point" type="text" placeholder="兴趣点(string，选填，默认为空)"/>
+    </div>
+    <br/>
+{% end %}

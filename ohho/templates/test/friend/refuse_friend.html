@@ -1,0 +1,17 @@
+{% extends '../base.html' %}
+{% block title %}
+拒绝申请好友
+{% end %}
+
+{% block body_title %}
+拒绝申请好友
+{% end %}
+
+{% block form_body %}
+    <label class="col-md-2">friend_user_id</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="friend_user_id" type="text" placeholder="好友用户ID(int, 必填)"/>
+    </div>
+    <br/>
+{% end %}

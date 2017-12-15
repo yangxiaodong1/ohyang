@@ -1,0 +1,102 @@
+{% extends '../../manage_base.html' %}
+{% block title %}
+配对条件详情
+{% end %}
+
+{% block body_content %}
+
+<form method="POST" action="{{ detail_url }}" role="form">
+    <input type="hidden" value="{{ match_condition_id }}" name="id"/>
+    <table class="table table-striped table-border">
+        <tr>
+            <td><input class="form-control" name="sex" type="text"
+                       placeholder="性别(int, 选填，默认是0)"
+                       value="{{ condition['sex']}}"/>
+            </td>
+            <td><input class="form-control" name="nickname" type="text"
+                       placeholder="昵称(string, 选填，默认是None)"
+                       value="{{ condition['nickname'] }}"/>
+            </td>
+            <td><input class="form-control" name="small_age" type="text"
+                       placeholder="年龄下限(int, 选填，默认是0)"
+                       value="{{ condition['small_age']}}"/>
+            </td>
+            <td><input class="form-control" name="big_age" type="text"
+                       placeholder="年龄上限(int, 选填，默认是0)"
+                       value="{{ condition['big_age'] }}"/>
+            </td>
+
+        </tr>
+        <tr>
+            <td><input class="form-control" name="birthday" type="text"
+                       placeholder="生日(string, 选填，默认是None，日期格式为2001-3-9)"
+                       value="{{ condition['birthday'] }}"/>
+            </td>
+            <td><input class="form-control" name="hometown" type="text"
+                       placeholder="家乡区域(int, 选填，默认是None)"
+                       value="{{ condition['hometown'] }}"/>
+            </td>
+            <td><input class="form-control" name="current" type="text"
+                       placeholder="当前所在区域(int, 选填，默认是None)"
+                       value="{{ condition['current'] }}"/>
+            </td>
+            <td><input class="form-control" name="profession_id" type="text"
+                       placeholder="职业(int, 选填，默认是None)"
+                       value="{{ condition['profession']}}"/>
+            </td>
+        </tr>
+        <tr>
+            <td><input class="form-control" name="big_height" type="text"
+                       placeholder="身高上限(float, 选填，默认是None,单位是m)"
+                       value="{{ condition['big_height'] }}"/></td>
+            <td><input class="form-control" name="small_height" type="text"
+                       placeholder="身高下限(float, 选填，默认是None,单位是m)"
+                       value="{{ condition['small_height'] }}"/>
+            </td>
+            <td><input class="form-control" name="big_weight" type="text"
+                       placeholder="体重上限(float, 选填，默认是None,单位是kg)"
+                       value="{{ condition['big_weight'] }}"/>
+            </td>
+            <td><input class="form-control" name="small_weight" type="text"
+                       placeholder="体重下限(float, 选填，默认是None,单位是kg)"
+                       value="{{ condition['small_weight'] }}"/>
+            </td>
+        </tr>
+        <tr>
+            <td><input class="form-control" name="work_domain_id" type="text"
+                       placeholder="工作领域(int, 选填，默认是None)"
+                       value="{{ condition['work_domain'] }}"/></td>
+            <td><input class="form-control" name="body_type_id" type="text"
+                       placeholder="体型ID(int, 选填，默认是None)"
+                       value="{{ condition['body_type'] }}"/></td>
+            <td><input class="form-control" name="industry_id" type="text"
+                       placeholder="行业ID(int, 选填，默认是None)"
+                       value="{{ condition['industry'] }}"/></td>
+            <td><input class="form-control" name="smoke_id" type="text"
+                       placeholder="抽烟ID(int, 选填，默认是None)"
+                       value="{{ condition['smoke'] }}"/></td>
+        </tr>
+        <tr>
+            <td><input class="form-control" name="drink_id" type="text"
+                       placeholder="喝酒ID(int, 选填，默认是None)"
+                       value="{{ condition['drink'] }}"/></td>
+            <td><input class="form-control" name="email" type="text"
+                       placeholder="邮箱(email, 选填，默认是None)"
+                       value="{{ condition['email'] }}"/>
+            </td>
+            <td><input class="form-control" name="marriage" type="text"
+                       placeholder="婚姻状况(int, 选填，默认是None)"
+                       value="{{ condition['marriage']}}"/>
+            </td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><input class="btn btn-primary pull-right" type="submit" name="submit" value="修改"/></td>
+            <td colspan="2"><a class="btn btn-primary" href="{{ list_url }}">取消</a></td>
+        </tr>
+
+    </table>
+</form>
+
+{% end %}

@@ -1,0 +1,2 @@
+class UserAndDeviceRelation(object):
+    pass

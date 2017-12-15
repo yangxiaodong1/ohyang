@@ -1,0 +1,37 @@
+{% extends '../manage_base.html' %}
+{% block title %}
+用户与设备关系添加
+{% end %}
+
+{% block body_content %}
+<form method="POST" action="{{ detail_url }}" role="form">
+    <table class="table table-striped table-border">
+        <tr>
+            <td><label class="form-control" for="identity_id">设备唯一标识</label></td>
+            <td><input class="form-control" type="text" name="identity_id" id="identity_id"
+                       value="{{identity_id}}" readonly="readonly"/></td>
+            <td><label class="form-control" for="username">用户名</label></td>
+            <td><input class="form-control" type="text" name="username" id="username"
+                       value="{{username}}"/></td>
+        </tr>
+        <tr>
+            <td colspan="1">
+                <!--<input class="btn btn-primary pull-right" type="submit" name="submit" value="修改"/>-->
+            </td>
+            <td colspan="1">
+                <!--{% if state %}-->
+                <!--<input class="btn btn-primary pull-right" type="submit" name="delete_or_restore"-->
+                       <!--value="删除"/>-->
+                <!--{% else %}-->
+                <!--<input class="btn btn-primary pull-right" type="submit" name="delete_or_restore"-->
+                       <!--value="恢复"/>-->
+                <!--{% end %}-->
+                <input class="btn btn-primary pull-right" type="submit" name="submit" value="修改"/>
+
+            </td>
+            <td colspan="2"><a class="btn btn-primary" href="{{ list_url}}">取消</a></td>
+        </tr>
+    </table>
+</form>
+
+{% end %}

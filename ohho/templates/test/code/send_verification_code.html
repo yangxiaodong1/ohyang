@@ -1,0 +1,33 @@
+{% extends '../base.html' %}
+{% block title %}
+发送验证码
+{% end %}
+
+{% block body_title %}
+发送验证码
+{% end %}
+
+{% block form_header %}
+
+{% end %}
+
+{% block form_body %}
+<label class="col-md-2">country_code</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-user">国际区号</span></span>
+    <select name="country_code" id="country_code" class="form-control">
+        {% for country_code in country_codes %}
+        <option value="{{ country_code.country_code }}">{{ country_code.country_name }}</option>
+        {% end %}
+    </select>
+</div>
+<br/>
+
+<label class="col-md-2">cellphone_number</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+    <input class="form-control" name="cellphone_number" type="text" placeholder="手机号(string，必填)"/>
+</div>
+<br/>
+
+{% end %}

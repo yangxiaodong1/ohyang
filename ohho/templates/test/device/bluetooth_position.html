@@ -1,0 +1,70 @@
+{% extends '../../base.html' %}
+{% block title %}
+蓝牙设备上传信息
+{% end %}
+
+{% block body %}
+{% module xsrf_form_html() %}
+<form method="POST" action="{{ action_url }}" role="form">
+    <input type="hidden" name="format" value="api"/>
+
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-info-sign"></span></span>
+        <input class="form-control" name="url" type="text"
+               value="{{ action_url }}" readonly="readonly"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-info-sign"></span></span>
+        <input class="form-control" name="method" type="text"
+               value="POST" readonly="readonly"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">user_id</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="user_id" type="text" placeholder="用户ID(int, 必填)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">token</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="token" type="text" placeholder="登录Token(string, 必填)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">identity_id</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="identity_id" type="text" placeholder="设备唯一标识(string, 必填)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">rssi</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="rssi" type="text" placeholder="rssi(int, 必填)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">distance</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="distance" type="text" placeholder="距离, 必填"/>
+    </div>
+    <br/>
+
+
+    <label class="col-md-4"></label>
+    <div class="input-group col-md-6">
+        <input class="btn btn-primary" name="upload" type="submit" value="上传数据"/>
+        <a class="btn btn-primary pull-right" href="{{ home_url }}">
+            <span class="glyphicon glyphicon-backward">返回</span></a>
+    </div>
+</form>
+{% end %}

@@ -1,0 +1,51 @@
+{% extends 'manage_base.html' %}
+{% block title %}
+手机详情
+{% end %}
+
+{% block body_content %}
+
+<form method="POST" action="/backstage/management/cellphone/detail/" role="form">
+    <table class="table table-striped table-border">
+        <tr>
+            <td><label class="form-control" for="cellphone_id">手机ID</label></td>
+            <td><input class="form-control" type="text" name="cellphone_id" id="cellphone_id" value="{{ cellphone.id }}"
+                       readonly="readonly"/>
+            </td>
+            <td><label class="form-control" for="cellphone_key">手机唯一标识</label></td>
+            <td><input class="form-control" type="text" name="cellphone_key" id="cellphone_key"
+                       value="{{ cellphone.key}}"
+                       readonly="readonly"/></td>
+        </tr>
+
+        <tr>
+            <td><label class="form-control" for="cellphone_operation">操作系统</label></td>
+            <td><input class="form-control" type="text" name="cellphone_operation" id="cellphone_operation"
+                       value="{{ cellphone.operation }}"/>
+            </td>
+            <td><label class="form-control" for="cellphone_operation_version">系统版本</label></td>
+            <td><input class="form-control" type="text" name="cellphone_operation_version"
+                       id="cellphone_operation_version"
+                       value="{{ cellphone.operation_version}}"/></td>
+        </tr>
+
+        <tr>
+            <td><label class="form-control" for="cellphone_manufacturer">手机厂商</label></td>
+            <td><input class="form-control" type="text" name="cellphone_manufacturer" id="cellphone_manufacturer"
+                       value="{{ cellphone.manufacturer }}"/>
+            </td>
+            <td><label class="form-control" for="platform_type">手机平台</label></td>
+            <td><input class="form-control" type="text" name="platform_type" id="platform_type"
+                       value="{{ cellphone.platform_type}}"/></td>
+        </tr>
+
+        <tr>
+            <td colspan="1"></td>
+            <td colspan="1"><input class="btn btn-primary pull-right" type="submit" name="submit" value="修改"/></td>
+            <td colspan="2"><a class="btn btn-primary" href="/backstage/management/cellphone/list/">取消</a></td>
+        </tr>
+
+    </table>
+</form>
+
+{% end %}

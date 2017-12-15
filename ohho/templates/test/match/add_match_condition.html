@@ -1,0 +1,190 @@
+{% extends '../../base.html' %}
+{% block title %}
+添加配对条件
+{% end %}
+
+{% block body %}
+{% module xsrf_form_html() %}
+<form method="POST" action="{{ action_url }}" role="form">
+    <input type="hidden" name="format" value="api"/>
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-info-sign"></span></span>
+        <input class="form-control" name="url" type="text"
+               value="{{ action_url }}" readonly="readonly"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-info-sign"></span></span>
+        <input class="form-control" name="method" type="text"
+               value="POST" readonly="readonly"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">user_id</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="user_id" type="text" placeholder="用户ID（int, 必填)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">token</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="token" type="text" placeholder="登录Token(string, 必填)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">name</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="name" type="text" placeholder="配对条件名称(string, 必填)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">sex</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="sex" type="text" placeholder="性别(int, 选填，默认是0)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">small_age</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="small_age" type="text" placeholder="年龄下限(int, 选填，默认是0)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">big_age</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="big_age" type="text" placeholder="年龄上限(int, 选填，默认是150)"/>
+    </div>
+    <br/>
+
+
+    <label class="col-md-2">nickname</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="nickname" type="text" placeholder="称(int, 选填，默认是0)"/>
+    </div>
+    <br/>
+
+
+    <label class="col-md-2">email</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="email" type="text" placeholder="邮箱(email, 选填，默认是空)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">marriage</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="marriage" type="text" placeholder="婚姻状况(int, 选填，默认是0)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">birthday</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="birthday" type="text" placeholder="生日(string, 选填，默认是当天，日期格式为2001-3-9)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">big_height</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="big_height" type="text" placeholder="身高上限(float, 选填，默认是0,单位是m)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">small_height</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="small_height" type="text" placeholder="身高下限(float, 选填，默认是0,单位是m)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">big_weight</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="big_weight" type="text" placeholder="体重上限(float, 选填，默认是0,单位是kg)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">small_weight</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="small_weight" type="text" placeholder="体重下限(float, 选填，默认是0,单位是kg)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">hometown</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="hometown" type="text" placeholder="家乡区域(int, 选填，默认是1)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">current</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="current" type="text" placeholder="当前所在区域(int, 选填，默认是1)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">industry_id</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="industry_id" type="text" placeholder="行业ID(int, 选填，默认是1)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">profession_id</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="profession_id" type="text" placeholder="职业(int, 选填，默认是1)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">work_domain_id</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="work_domain_id" type="text" placeholder="工作领域(int, 选填，默认是1)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">body_type_id</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="body_type_id" type="text" placeholder="体型ID(int, 选填，默认是1)"/>
+    </div>
+    <br/>
+
+
+    <label class="col-md-2">smoke_id</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="smoke_id" type="text" placeholder="抽烟ID(int, 选填，默认是1)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">drink_id</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="drink_id" type="text" placeholder="喝酒ID(int, 选填，默认是1)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-4"></label>
+    <div class="input-group col-md-6">
+        <input class="btn btn-primary" name="bind" type="submit" value="添加"/>
+        <a class="btn btn-primary pull-right" href="{{ home_url }}">
+            <span class="glyphicon glyphicon-backward">返回</span></a>
+    </div>
+</form>
+{% end %}

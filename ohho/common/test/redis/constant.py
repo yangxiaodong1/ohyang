@@ -1,0 +1,6 @@
+TEST_REDIS_GET_HASH_HTML = "test/redis/get_redis_hash.html"
+TEST_REDIS_GET_HASH_URL = "/rest/api/ohho/test/redis/get/hash/"
+TEST_REDIS_SET_HASH_HTML = "test/redis/set_redis_hash.html"
+TEST_REDIS_SET_HASH_URL = "/rest/api/ohho/test/redis/set/hash/"
+TEST_HOME_URL = "/rest/api/ohho/test/home/"
+TEST_ADD_TIMESTAMP_HTML = "test/test/test_add_timestamp.html"

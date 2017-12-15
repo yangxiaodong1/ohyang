@@ -1,0 +1,40 @@
+{% extends '../../base.html' %}
+{% block title %}
+添加喝酒
+{% end %}
+
+{% block body %}
+{% module xsrf_form_html() %}
+<form method="POST" action="{{ action_url }}" role="form">
+    <input type="hidden" name="format" value="api"/>
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-info-sign"></span></span>
+        <input class="form-control" name="url" type="text"
+               value="{{ action_url }}" readonly="readonly"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-info-sign"></span></span>
+        <input class="form-control" name="method" type="text"
+               value="POST" readonly="readonly"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">name</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="name" type="text" placeholder="名称（string, 必填)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-4"></label>
+    <div class="input-group col-md-6">
+        <input class="btn btn-primary" name="bind" type="submit" value="添加"/>
+        <a class="btn btn-primary pull-right" href="{{ home_url }}">
+            <span class="glyphicon glyphicon-backward">返回</span></a>
+    </div>
+</form>
+{% end %}

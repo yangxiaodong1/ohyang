@@ -1,0 +1,801 @@
+{% extends '../../base.html' %}
+{% block title %}
+目录
+{% end %}
+
+{% block body %}
+<div class="page-header">
+    <h1>目录
+        <small>APP接口</small>
+    </h1>
+</div>
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/send/verification/code/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-send">发送验证码</span>
+        </h4>
+        <p class="list-group-item-text">
+            通过阿里云之大于发送验证码
+            验证码第一位不能是0
+        </p>
+        <span class="label label-info">（第一周）2017/8/21</span>
+        <span class="label label-info">（第一周）2017/8/21</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">1/2</span>
+    </a>
+    <a href="/rest/api/ohho/test/check/verification/code/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-check">检查验证码</span>
+        </h4>
+        <p class="list-group-item-text">
+            查看从手机上获取的验证码是否与服务端的验证码一致
+        </p>
+        <span class="label label-info">（第一周）2017/8/21</span>
+        <span class="label label-info">（第一周）2017/8/21</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">2/2</span>
+    </a>
+</div>
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/register/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-registration-mark">注册</span>
+        </h4>
+        <p class="list-group-item-text">
+            注册新的用户
+            1. 验证码检查
+            2. 注册用户
+            3. 绑定硬件设备
+            4. 录入手机信息
+            5. 绑定手机设备
+        </p>
+        <span class="label label-info">（第一周）2017/8/21</span>
+        <span class="label label-info">（第一周）2017/8/21</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">1/4</span>
+    </a>
+    <a href="/rest/api/ohho/test/bind/device/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-save">绑定蓝牙设备</span>
+        </h4>
+        <p class="list-group-item-text">
+            通过设备序列号从数据库中获取设备信息，
+            1. 比对mac地址是否一致
+            2. 设备是否已经被本用户绑定（如果已经绑定，返回成功）
+            3. 设备是否已经被其他人绑定（如果已经绑定，返回失败）
+            4. 绑定设备到本用户
+        </p>
+        <span class="label label-info">（第一周）2017/8/22</span>
+        <span class="label label-info">（第一周）2017/8/21</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">2/4</span>
+    </a>
+
+    <a href="/rest/api/ohho/test/cellphone/unbind/device/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-open">通过手机验证码解绑蓝牙设备</span>
+        </h4>
+        <p class="list-group-item-text">
+            解除用户与蓝牙设备的绑定，以便其它用户可以绑定本设备
+            1. 检查验证码
+            2. 本用户与设备是否已经绑定（未绑定，返回成功）
+            3. 别的用户与设备是否已经绑定（如果绑定了，返回失败）
+            4. 解绑设备
+        </p>
+        <span class="label label-info">（第三周）2017/9/6</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+    <a href="/rest/api/ohho/test/is/device/valid/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-adjust">设备是否有效</span>
+        </h4>
+        <p class="list-group-item-text">
+            根据设备的ID，判断它是否已经在数据库中，如果不存在，认为不是有效设备
+            1. mac地址是否一致
+            2. 是否被其他人绑定
+
+        </p>
+        <span class="label label-info">（第一周）2017/8/23</span>
+        <span class="label label-info">（第一周）2017/8/22</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">4/4</span>
+    </a>
+</div>
+
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/login/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-log-in">登录</span>
+        </h4>
+        <p class="list-group-item-text">
+            通过用户号和密码登录到系统中
+            1. 密码验证
+            2. 检查用户与手机的关系
+        </p>
+        <span class="label label-info">（第一周）2017/8/24</span>
+        <span class="label label-info">（第一周）2017/8/22</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">1/4</span>
+    </a>
+    <a href="/rest/api/ohho/test/logout/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-log-out">登出</span>
+        </h4>
+        <p class="list-group-item-text">
+            用户登出系统
+            删除用户token
+        </p>
+        <span class="label label-info">（第一周）2017/8/24</span>
+        <span class="label label-info">（第一周）2017/8/22</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">2/4</span>
+    </a>
+
+    <a href="/rest/api/ohho/test/rebind/cellphone/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-save">重新绑定手机</span>
+        </h4>
+        <p class="list-group-item-text">
+            更换手机时通过手机验证码更换手机与用户的绑定
+            1. 检查验证码
+            2. 查看是否有本用户与手机的绑定（有，返回成功）
+            3. 添加本用户与手机的绑定
+        </p>
+        <span class="label label-info">（第一周）2017/8/25</span>
+        <span class="label label-info">（第一周）2017/8/22</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">3/4</span>
+    </a>
+
+    <a href="/rest/api/ohho/test/reset/password/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-cog">重设密码</span></h4>
+        <p class="list-group-item-text">
+            重设密码
+            1. 检查验证码
+            2. 更改密码
+        </p>
+        <span class="label label-info">（第一周）2017/8/25</span>
+        <span class="label label-info">（第一周）2017/8/22</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">4/4</span>
+    </a>
+</div>
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/add/user/accuracy/extension/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-user">个人信息</span>
+        </h4>
+        <p class="list-group-item-text">
+            上传用户基本信息
+        </p>
+        <span class="label label-info">（第二周）2017/8/28</span>
+        <span class="label label-info">（第二周）2017/8/29</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">1/2</span>
+    </a>
+
+    <a href="/rest/api/ohho/test/add/user/icon/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-user">用户头像</span>
+        </h4>
+        <p class="list-group-item-text">
+            上传用户头像
+        </p>
+        <span class="label label-info">（第二周）2017/8/28</span>
+        <span class="label label-info">（第一周）2017/8/22</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">2/2</span>
+    </a>
+</div>
+
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/match/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">配对</span>
+        </h4>
+        <p class="list-group-item-text">
+            根据搜索到的蓝牙设备和个人的配对条件，进行配对
+            1. 根据用户与搜索名称获取配对条件
+            2. 根据配对条件获取用户
+            3. 如果用户与本人没有见过，返回用户信息
+        </p>
+        <span class="label label-info">（第二周）2017/8/29</span>
+        <span class="label label-info">（第二周）2017/8/31</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">1/6</span>
+    </a>
+
+    <a href="/rest/api/ohho/test/version2/match/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">配对（版本2）</span>
+        </h4>
+        <p class="list-group-item-text">
+            根据搜索到的蓝牙设备和个人的配对条件，进行配对<br/>
+            # 查看本人是否打开了配对开关<br/>
+            # 查看本人的最新请求，并查看它的状态是否是已经完成的<br/>
+            # 根据用户ID获取配对条件<br/>
+            # 根据device_list得到用户id_list<br/>
+            # 过滤掉今天匹配并不中意的人和已经见过的人<br/>
+            # 根据性别和年龄区间筛选用户列表，根据条件找出符合条件的用户列表<br/>
+            # 从符合条件的用户列表中依次根据用户ID获取配对条件， 根据配对条件看当前用户是否符合条件<br/>
+            # 将第一个符合条件的用户添加到申请表中，并向两个人发送推送（推送对方的个人信息和推送的类型，这里是申请见面）<br/>
+        </p>
+        <span class="label label-info">2017/10/20</span>
+        <span class="badge">POST</span>
+    </a>
+
+    <a href="/rest/api/ohho/test/set/match/switch/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-exclamation-sign">设置配对开关</span>
+        </h4>
+        <p class="list-group-item-text">
+            打开/关闭配对
+        </p>
+        <span class="label label-info">（第二周）2017/8/29</span>
+        <span class="label label-info">（第一周）2017/8/23</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">2/6</span>
+    </a>
+
+    <a href="/rest/api/ohho/test/get/match/condition/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">配对条件</span>
+        </h4>
+        <p class="list-group-item-text">
+            获取某人的配对条件
+        </p>
+        <span class="label label-info">（第二周）2017/8/30</span>
+        <span class="label label-info">（第二周）2017/8/30</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">3/6</span>
+    </a>
+
+    <a href="/rest/api/ohho/test/meet/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-user">见过的人</span>
+        </h4>
+        <p class="list-group-item-text">
+            当前用户见过的所有人的信息列表
+        </p>
+        <span class="label label-info">（第二周）2017/8/30</span>
+        <span class="label label-info">（第一周）2017/8/24</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">4/6</span>
+    </a>
+
+    <a href="/rest/api/ohho/test/apply/meet/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-user">请求见面</span>
+        </h4>
+        <p class="list-group-item-text">
+            发起见面请求[添加3个新的见面接口]
+            1. 两人是否有有效的见面请求（未超时的，未拒绝的[拒绝和取消]，未见面的）
+            2. 两人是否见过面
+            3. 根据条件添加请求见面申请
+            4. 向对方发送推送
+        </p>
+        <span class="label label-info">（第二周）2017/8/31</span>
+        <span class="label label-info">（第一周）2017/8/23</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">5/6</span>
+    </a>
+
+    <a href="/rest/api/ohho/test/apply/friend/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-user">请求添加好友</span>
+        </h4>
+        <p class="list-group-item-text">
+            请求添加好友 [添加3个好友接口]
+        </p>
+        <span class="label label-info">（第二周）2017/8/31</span>
+        <span class="label label-info">（第一周）2017/8/24</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">6/6</span>
+    </a>
+</div>
+
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/im/list/friends/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-user">好友列表</span>
+        </h4>
+        <p class="list-group-item-text">
+            获取本人的好友列表
+        </p>
+        <span class="label label-info">（第二周）2017/9/1</span>
+        <span class="label label-info">（第二周）2017/8/25</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">1/3</span>
+    </a>
+    <a href="/rest/api/ohho/test/set/online/switch/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-exclamation-sign">在线开关</span>
+        </h4>
+        <p class="list-group-item-text">
+            打开/关闭在线开关
+        </p>
+        <span class="label label-info">（第二周）2017/9/1</span>
+        <span class="label label-info">（第一周）2017/8/23</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">2/3</span>
+    </a>
+    <a href="/rest/api/ohho/test/im/list/blacks/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-trash">黑名单列表</span>
+        </h4>
+        <p class="list-group-item-text">
+            获取本人的黑名单列表
+        </p>
+        <span class="label label-info">（第三周）2017/9/4</span>
+        <span class="label label-info">（第一周）2017/8/25</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">3/3</span>
+    </a>
+    <a href="/rest/api/ohho/test/im/add/black/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-trash">添加黑名单</span>
+        </h4>
+        <p class="list-group-item-text">
+            添加好友到黑名单
+        </p>
+        <span class="label label-info">（第三周）2017/9/4</span>
+        <span class="label label-info">（第一周）2017/8/25</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+    <a href="/rest/api/ohho/test/im/remove/black/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-trash">移出黑名单</span>
+        </h4>
+        <p class="list-group-item-text">
+            移出黑名单好友
+        </p>
+        <span class="label label-info">（第三周）2017/9/4</span>
+        <span class="label label-info">（第一周）2017/8/25</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+</div>
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/add/report/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-thumbs-down">举报</span>
+        </h4>
+        <p class="list-group-item-text">
+            举报用户
+        </p>
+        <span class="label label-info">（第三周）2017/9/4</span>
+        <span class="label label-info">（第二周）2017/8/28</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">1/1</span>
+    </a>
+</div>
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/add/feedback/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-info-sign">反馈</span>
+        </h4>
+        <p class="list-group-item-text">
+            信息反馈
+        </p>
+        <span class="label label-info">（第三周）2017/9/5</span>
+        <span class="label label-info">（第二周）2017/8/28</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">1/1</span>
+    </a>
+</div>
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/upload/map/position/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-map-marker">上传本人坐标信息</span>
+        </h4>
+        <p class="list-group-item-text">
+            从高德地图获取本人坐标信息，上传到服务器
+        </p>
+        <span class="label label-info">（第三周）2017/9/5</span>
+        <span class="label label-info">（第二周）2017/8/28</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">1/2</span>
+    </a>
+    <a href="/rest/api/ohho/test/get/friend/map/position/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-map-marker">获取朋友坐标信息</span>
+        </h4>
+        <p class="list-group-item-text">
+            根据本人和朋友的ID获取需要的坐标信息
+        </p>
+        <span class="label label-info">（第三周）2017/9/6</span>
+        <span class="label label-info">（第二周）2017/8/28</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">2/2</span>
+    </a>
+</div>
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/bluetooth/position/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-map-marker">上传蓝牙定位</span>
+        </h4>
+        <p class="list-group-item-text">
+            上传从蓝牙获取的信息
+        </p>
+        <span class="label label-info">（第三周）2017/9/6</span>
+        <span class="label label-info">（第一周）2017/8/24</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">1/3</span>
+    </a>
+
+    <a href="/rest/api/ohho/test/find/device/position/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-map-marker">获取蓝牙坐标信息</span>
+        </h4>
+        <p class="list-group-item-text">
+            根据蓝牙ID，获取最近搜索到它的用户坐标及用户与它的距离
+        </p>
+        <span class="label label-info">（第三周）2017/9/7</span>
+        <span class="label label-info">（第二周）2017/8/28</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">2/3</span>
+    </a>
+    <a href="/rest/api/ohho/test/get/device/setting/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-info-sign">获取蓝牙硬件配置信息</span>
+        </h4>
+        <p class="list-group-item-text">
+            获取蓝牙硬件的配置信息， 如密码，名称和发射功率
+        </p>
+        <span class="label label-info">（第三周）2017/9/7</span>
+        <span class="label label-info">（第一周）2017/8/25</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">3/3</span>
+    </a>
+    <a href="/rest/api/ohho/test/add/device/setting/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-info-sign">添加蓝牙硬件配置信息</span>
+        </h4>
+        <p class="list-group-item-text">
+            添加蓝牙硬件的配置信息， 如密码，名称和发射功率
+        </p>
+        <span class="label label-info">（第一周）2017/8/25</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+    <a href="/rest/api/ohho/test/update/device/setting/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-info-sign">更新蓝牙硬件配置信息</span>
+        </h4>
+        <p class="list-group-item-text">
+            更新蓝牙硬件的配置信息， 如密码，名称和发射功率
+        </p>
+        <span class="label label-info">（第一周）2017/8/25</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+</div>
+
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/agree/meet/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-user">同意见面</span>
+        </h4>
+        <p class="list-group-item-text">
+            同意见面
+            1. 你或者对方是否有已经有同意的有效见面申请（有，则不能同意）
+            2. 你们是否有有效的见面申请
+            3. 添加同意申请
+            4. 向对方发送推送
+        </p>
+        <span class="label label-info">（第一周）2017/8/23</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+    <a href="/rest/api/ohho/test/refuse/meet/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-user">拒绝见面</span>
+        </h4>
+        <p class="list-group-item-text">
+            拒绝见面
+            1. 你们是否有有效的见面申请
+            2. 添加拒绝见面
+            3. 向对方发送拒绝见面的推送
+        </p>
+        <span class="label label-info">（第一周）2017/8/23</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+
+    <a href="/rest/api/ohho/test/cancel/meet/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-user">取消见面</span>
+        </h4>
+        <p class="list-group-item-text">
+            取消见面
+            1. 你们之间有有效的申请
+            2. 你们之间的申请已经同意了并且没有拒绝
+            3. 添加取消见面
+            4. 向对方推送取消见面
+        </p>
+        <span class="label label-info">（第一周）2017/8/23</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+
+    <a href="/rest/api/ohho/test/add/meet/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-user">见面</span>
+        </h4>
+        <p class="list-group-item-text">
+            见面
+        </p>
+        <span class="label label-info">（第一周）2017/8/23</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+</div>
+
+<div class="list-group">
+
+    <a href="/rest/api/ohho/test/agree/friend/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-user">同意添加好友</span>
+        </h4>
+        <p class="list-group-item-text">
+            同意添加好友
+        </p>
+        <span class="label label-info">（第一周）2017/8/24</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+    <a href="/rest/api/ohho/test/refuse/friend/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-user">拒绝添加好友</span>
+        </h4>
+        <p class="list-group-item-text">
+            拒绝添加好友
+        </p>
+        <span class="label label-info">（第一周）2017/8/24</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+
+    <a href="/rest/api/ohho/test/list/apply/friend/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-user">申请你为好友的列表</span>
+        </h4>
+        <p class="list-group-item-text">
+            申请你为好友的列表
+        </p>
+        <span class="label label-info">（第一周）2017/8/24</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+</div>
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/get/device/version/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">获取硬件最新的版本信息</span>
+        </h4>
+        <p class="list-group-item-text">
+            获取硬件最新的版本信息
+        </p>
+        <span class="label label-info">（第三周）2017/9/5</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+</div>
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/polling/get/apply/state/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">轮询 - 获取本人的请求信息</span>
+        </h4>
+        <p class="list-group-item-text">
+            获取本人的请求信息
+        </p>
+        <span class="label label-info">（第四周）2017/9/11</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+
+    <a href="/rest/api/ohho/test/polling/get/apply/apply/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">轮询 - 获取他人的请求信息</span>
+        </h4>
+        <p class="list-group-item-text">
+            获取他人的请求信息
+        </p>
+        <span class="label label-info">（第四周）2017/9/11</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+</div>
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/get/map/positions/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">获取自己之外的所有的用户地址信息[测试]</span>
+        </h4>
+        <p class="list-group-item-text">
+            获取自己之外的所有的用户地址信息[测试]
+        </p>
+        <span class="label label-info">（第五周）2017/9/18</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+</div>
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/get/user/information/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">获取用户的信息</span>
+        </h4>
+        <p class="list-group-item-text">
+            获取用户的信息
+        </p>
+        <span class="label label-info">（第六周）2017/9/25</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+</div>
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/add/exclude/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">添加不中意用户</span>
+        </h4>
+        <p class="list-group-item-text">
+            添加不中意用户
+        </p>
+        <span class="label label-info">（第七周）2017/9/28</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+</div>
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/get/user/and/device/imei/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">获取唯一IMEI值</span>
+        </h4>
+        <p class="list-group-item-text">
+            获取唯一IMEI值
+        </p>
+        <span class="label label-info">（第七周）2017/9/29</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+</div>
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/set/lost/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">设备报失</span>
+        </h4>
+        <p class="list-group-item-text">
+            设备报失
+        </p>
+        <span class="label label-info">（第七周）2017/9/29</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+</div>
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/cancel/lost/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">取消设备报失</span>
+        </h4>
+        <p class="list-group-item-text">
+            取消设备报失
+        </p>
+        <span class="label label-info">（第七周）2017/9/29</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+</div>
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/set/device/use/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">设置设备用途</span>
+        </h4>
+        <p class="list-group-item-text">
+            设置设备用途
+        </p>
+        <span class="label label-info">（第七周）2017/9/29</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+</div>
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/get/bound/devices/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">用户绑定的设备列表</span>
+        </h4>
+        <p class="list-group-item-text">
+            用户绑定的设备列表
+        </p>
+        <span class="label label-info">（第七周）2017/9/30</span>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+        <span class="badge">new</span>
+    </a>
+</div>
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/complete/user/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">完善个人信息</span>
+        </h4>
+        <p class="list-group-item-text">
+            完善个人信息
+        </p>
+        <span class="badge">done</span>
+        <span class="badge">POST</span>
+    </a>
+</div>
+
+{% end %}

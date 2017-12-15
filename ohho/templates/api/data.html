@@ -1,0 +1,65 @@
+{% extends '../base.html' %}
+{% block title %}
+API接口返回值
+{% end %}
+
+{% block body %}
+<p class="text-info">
+
+    {% if dict_data %}
+    {<br/>
+        {% for key, value in dict_data.items() %}
+
+            {% if isinstance(value, list) %}
+                <p class="text-info">
+                <strong>{{ key }}</strong>:
+        &nbsp;&nbsp;&nbsp;&nbsp;[<br/>
+                {% for d in value %}
+        &nbsp;&nbsp;&nbsp;&nbsp;    {<br/>
+                        {% for key, value in d.items() %}
+                            <p class="text-info">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <strong>{{ key }}</strong>:
+                            {% if key=="icon" %}
+                                <a href="{{value}}"><small>{{ value }}</small></a>
+                            {% else %}
+                                <small>{{ value }}</small>
+                            {% end %}
+                            </p>
+                            <br/>
+                        {% end %}
+        &nbsp;&nbsp;&nbsp;&nbsp;    }<br/>
+                {% end %}
+    &nbsp;&nbsp;&nbsp;&nbsp;    ]<br/>
+                </p>
+            {% elif isinstance(value, dict) %}
+                <p class="text-info">
+        &nbsp;&nbsp;&nbsp;&nbsp;<strong>{{ key }}</strong>: <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+                    {% for k, v in value.items() %}
+                        <p class="text-info">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{ k }}</strong>:
+                        {% if k=="icon" %}
+                            <a href="{{v}}"><small>{{ v }}</small></a>
+                        {% else %}
+                            <small>{{ v }}</small>
+                        {% end %}
+                        </p>
+                    {% end %}
+                }<br/>
+                </p>
+            {% else %}
+                <p class="text-info">
+        &nbsp;&nbsp;&nbsp;&nbsp;<strong>{{ key }}</strong>:
+                {% if key=="icon" %}
+                    <a href="{{value}}"><small>{{ value }}</small></a>
+                {% else %}
+                    <small>{{ value }}</small>
+                {% end %}
+                <br/>
+                </p>
+            {% end %}
+        {% end %}
+    }<br/>
+{% end %}
+</p>
+{% end %}

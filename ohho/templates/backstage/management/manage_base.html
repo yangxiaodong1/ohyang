@@ -1,0 +1,28 @@
+{% extends '../../base.html' %}
+
+{% block body %}
+{% module xsrf_form_html() %}
+
+{% block body_head %}
+<label class="col-md-2"></label>
+<div class="input-group col-md-8">
+    <label class="col-md-1"></label>
+    <a class="btn btn-primary" href="/backstage/home/">
+        <span>返回</span></a>
+    <a class="btn btn-primary pull-right" href="/backstage/logout/">
+        <span>登出</span></a>
+</div>
+<br/>
+<br/>
+<br/>
+{% end %}
+{% block body_message %}
+{% end %}
+
+{% block body_search %}
+{% end %}
+
+{% block body_content %}
+{% end %}
+
+{% end %}

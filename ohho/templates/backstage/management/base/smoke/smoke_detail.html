@@ -1,0 +1,31 @@
+{% extends '../../manage_base.html' %}
+{% block title %}
+吸烟详情
+{% end %}
+
+{% block body_content %}
+
+<form method="POST" action="{{ detail_url }}" role="form">
+    <input type="hidden" value="{{ smoke_id }}" name="id"/>
+    <table class="table table-striped table-border">
+        <tr>
+            <td><label class="form-control" for="name">名称</label></td>
+            <td><input class="form-control" type="text" name="name" id="name"
+                       value="{{name}}"/></td>
+        </tr>
+        <tr>
+            <td><input class="btn btn-primary pull-right" type="submit" name="submit" value="修改"/>
+                {% if state %}
+                <input class="btn btn-primary" type="submit" name="delete_or_restore"
+                       value="删除"/>
+                {% else %}
+                <input class="btn btn-primary" type="submit" name="delete_or_restore"
+                       value="恢复"/>
+                {% end %}
+            </td>
+            <td colspan="1"><a class="btn btn-primary" href="{{ list_url}}">取消</a></td>
+        </tr>
+    </table>
+</form>
+
+{% end %}

@@ -1,0 +1,136 @@
+{% extends 'manage_base.html' %}
+{% block title %}
+用户删除
+{% end %}
+
+{% block body_content %}
+<form method="POST" action="/backstage/management/user/delete/" role="form">
+    <table class="table table-striped table-border">
+        <tr>
+            <td><label class="form-control" for="user_id">用户ID</label></td>
+            <td><input class="form-control" type="text" name="user_id" id="user_id" value="{{ user.id }}"
+                       readonly="readonly"/>
+            </td>
+            <td><label class="form-control" for="username">用户名</label></td>
+            <td><input class="form-control" type="text" name="username" id="username" value="{{ user.username}}"
+                       readonly="readonly"/></td>
+        </tr>
+
+        <tr>
+            <td><label class="form-control" for="country_code">区号</label></td>
+            <td><select class="form-control" name="country_code" id="country_code">
+                {% for c in country_code_list %}
+                {% if c.id==user.country_code_id %}
+                <option value="{{ c.id }}" selected="selected">{{ c.country_name }}</option>
+                {% else %}
+                <option value="{{ c.id }}">{{ c.country_name }}</option>
+                {% end %}
+                {% end %}
+            </select>
+            </td>
+            <td><label class="form-control" for="cellphone">手机号</label></td>
+            <td><input class="form-control" type="text" name="cellphone" id="cellphone" value="
+            {% if user and user.cellphone %}
+            {{ user.cellphone}}
+            {% end %}
+            "
+            /></td>
+        </tr>
+        {% if user_extension %}
+        <tr>
+            <td><label class="form-control" for="sex">性别</label></td>
+            <td>
+                {% if user_extension.sex is None %}
+                <input class="form-control" type="text" name="sex" id="sex"/>
+                {% else %}
+                <input class="form-control" type="text" name="sex" id="sex" value="{{ user_extension.sex }}"/>
+                {% end %}
+            </td>
+
+            <td><label class="form-control" for="nickname">昵称</label></td>
+            <td>
+                {% if user_extension.nickname is None %}
+                <input class="form-control" type="text" name="nickname" id="nickname"/>
+                {% else %}
+                <input class="form-control" type="text" name="nickname" id="nickname"
+                       value="{{ user_extension.nickname}}"/>
+                {% end %}
+
+            </td>
+        </tr>
+
+        <tr>
+            <td><label class="form-control" for="hometown">家乡</label></td>
+            <td>
+                {% if user_extension.hometown is None %}
+                <input class="form-control" type="text" name="hometown" id="hometown"/>
+                {% else %}
+                <input class="form-control" type="text" name="hometown" id="hometown"
+                       value="{{ user_extension.hometown}}"/>
+                {% end %}
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="certification">实名认证</label></td>
+            <td>
+                {% if user_extension.certification %}
+                <input class="form-control" type="hidden" name="certification" id="certification_hidden" value="0"/>
+                <input class="form-control" type="checkbox" name="certification" value="1" id="certification"
+                       checked="checked"/>
+                {% else %}
+                <input class="form-control" type="hidden" name="certification" value="0" id="certification_hidden"/>
+                <input class="form-control" type="checkbox" name="certification" value="1" id="certification"/>
+                {% end %}
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        {% else %}
+        <tr>
+            <td><label class="form-control" for="sex">性别</label></td>
+            <td><input class="form-control" type="text" name="sex" id="sex"/></td>
+
+            <td><label class="form-control" for="nickname">昵称</label></td>
+            <td><input class="form-control" type="text" name="nickname" id="nickname"/></td>
+        </tr>
+
+        <tr>
+            <td><label class="form-control" for="hometown">家乡</label></td>
+            <td><input class="form-control" type="text" name="hometown" id="hometown"/></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td><label class="form-control" for="certification">实名认证</label></td>
+            <td>
+                <input class="form-control" type="hidden" name="certification" id="certification_hidden" value="0"/>
+                <input class="form-control" type="checkbox" name="certification" id="certification" value="1"/>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        {% end %}
+        <tr>
+            <td colspan="1"></td>
+            <td colspan="1">
+                {% if user.state %}
+                <input class="btn btn-primary pull-right" type="submit" name="delete_or_restore"
+                       value="删除"/>
+                {% else %}
+                <input class="btn btn-primary pull-right" type="submit" name="delete_or_restore"
+                       value="恢复"/>
+                {% end %}
+
+            </td>
+            <td colspan="2"><a class="btn btn-primary" href="/backstage/management/user/list/">取消</a></td>
+        </tr>
+
+    </table>
+</form>
+
+{% end %}

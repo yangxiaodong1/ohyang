@@ -1,0 +1,27 @@
+{% extends '../base.html' %}
+{% block title %}
+见过的人
+{% end %}
+
+{% block body_title %}
+见过的人
+{% end %}
+
+{% block form_body %}
+<label class="col-md-2">last_id</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+    <input class="form-control" name="last_id" type="text"
+           placeholder="上一页最后一项的last_id(int, 选填,默认为0,如果为0，从头开始显示)"/>
+</div>
+<br/>
+
+<label class="col-md-2">limit</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+    <input class="form-control" name="limit" type="text"
+           placeholder="查找的用户数量(int, 选填,默认为10, 如果是0显示从last_id向后的全部项)"/>
+</div>
+<br/>
+
+{% end %}

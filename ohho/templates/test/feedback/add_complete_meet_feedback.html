@@ -1,0 +1,54 @@
+{% extends '../base.html' %}
+{% block title %}
+添加完成见面时的反馈
+{% end %}
+
+{% block body_title %}
+添加完成见面时的反馈
+{% end %}
+
+{% block form_body %}
+
+    <label class="col-md-2">friend_user_id</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input class="form-control" name="friend_user_id" type="text" placeholder="对方的ID（int, 必填)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">apply_id</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input class="form-control" name="apply_id" type="text" placeholder="配对请求的ID（int, 必填)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">score</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input class="form-control" name="score" type="text" placeholder="评分（float)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">content</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input class="form-control" name="content" type="text" placeholder="留言（string)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">category</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input class="form-control" name="category" type="text" placeholder="分类ID（string，以逗号分开)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">impression</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input class="form-control" name="impression" type="text" placeholder="分类信息（string，以逗号分开，选填)"/>
+    </div>
+    <br/>
+
+{% end %}

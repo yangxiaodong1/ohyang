@@ -1,0 +1,15 @@
+{% extends '../base.html' %}
+{% block title %}
+首页
+{% end %}
+
+{% block body %}
+<div id="no_permission_code" class="alert alert-info">
+    返回码： {{ code }}
+</div>
+
+<div id="no_permission_message" class="alert alert-info">
+    信息： {{ message }}
+</div>
+
+{% end %}

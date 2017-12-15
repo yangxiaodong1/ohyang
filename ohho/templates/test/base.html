@@ -1,0 +1,76 @@
+{% extends '../base.html' %}
+
+
+{% block body %}
+<div class="page-header text-center">
+    <h1>
+        {% block body_title %}
+        {% end %}
+        <small>
+            {% block body_sub_title %}
+            {% end %}
+        </small>
+    </h1>
+</div>
+{% module xsrf_form_html() %}
+
+
+<form method="{{ action_method }}" action="{{ action_url }}" role="form" enctype="{{ enctype }}">
+    {% block form_head %}
+    <label class="col-md-2">显示格式</label>
+    <div class="input-group col-md-6">
+        <select class="form-control" name="format">
+            <option value="api">API格式</option>
+            <option value="json">JSON格式</option>
+        </select>
+    </div>
+    <br/>
+
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-info-sign"></span></span>
+        <input class="form-control" name="url" type="text"
+               value="{{ action_url }}" readonly="readonly"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-info-sign"></span></span>
+        <input class="form-control" name="method" type="text"
+               value="{{ action_method }}" readonly="readonly"/>
+    </div>
+    <br/>
+    {% end %}
+
+    {% block form_header %}
+    <label class="col-md-2">user_id</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="user_id" type="text" placeholder="用户ID（int, 必填)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">token</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="token" type="text" placeholder="登录Token(string, 必填)"/>
+    </div>
+    <br/>
+    {% end %}
+
+    {% block form_body %}
+    {% end %}
+
+    {% block form_foot %}
+    <label class="col-md-4"></label>
+    <div class="input-group col-md-6">
+        <input class="btn btn-primary" name="submit" type="submit" value="提交"/>
+        <a class="btn btn-primary pull-right" href="{{ home_url }}">
+            <span class="glyphicon glyphicon-backward">返回</span></a>
+    </div>
+    {% end %}
+</form>
+{% block form_script %}
+{% end %}
+{% end %}

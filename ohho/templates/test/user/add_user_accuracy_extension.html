@@ -1,0 +1,138 @@
+{% extends '../base.html' %}
+{% block title %}
+添加用户精确扩展
+{% end %}
+
+{% block body_title %}
+添加用户精确扩展
+{% end %}
+
+{% block form_body %}
+<label class="col-md-2">data</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="data" type="text" placeholder="个人信息的所有数据(string, 必填)"/>
+</div>
+<br/>
+
+<label class="col-md-2">sex</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="sex" type="text" placeholder="性别(int, 选填，默认是0)"/>
+</div>
+<br/>
+
+<label class="col-md-2">real_name</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="real_name" type="text" placeholder="真实姓名(string, 选填，默认是空)"/>
+</div>
+<br/>
+
+<label class="col-md-2">identity_card</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="identity_card" type="text" placeholder="身份证(string, 选填，默认是空)"/>
+</div>
+<br/>
+
+<label class="col-md-2">nickname</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="nickname" type="text" placeholder="昵称(string, 选填，默认是空)"/>
+</div>
+<br/>
+
+
+<label class="col-md-2">email</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="email" type="text" placeholder="邮箱(email, 选填，默认是空)"/>
+</div>
+<br/>
+
+<label class="col-md-2">marriage</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="marriage" type="text" placeholder="婚姻状况(int, 选填，默认是0)"/>
+</div>
+<br/>
+
+<label class="col-md-2">birthday</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="birthday" type="text" placeholder="生日(string, 选填，默认是当天，日期格式为2001-3-9)"/>
+</div>
+<br/>
+
+<label class="col-md-2">height</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="height" type="text" placeholder="身高(float, 选填，默认是0,单位是m)"/>
+</div>
+<br/>
+
+<label class="col-md-2">weight</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="weight" type="text" placeholder="体重(float, 选填，默认是0,单位是kg)"/>
+</div>
+<br/>
+
+<label class="col-md-2">hometown</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="hometown" type="text" placeholder="家乡区域(int, 选填，默认是1)"/>
+</div>
+<br/>
+
+<label class="col-md-2">current</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="current" type="text" placeholder="当前所在区域(int, 选填，默认是1)"/>
+</div>
+<br/>
+
+<label class="col-md-2">industry_id</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="industry_id" type="text" placeholder="行业ID(int, 选填，默认是1)"/>
+</div>
+<br/>
+
+<label class="col-md-2">profession_id</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="profession_id" type="text" placeholder="职业(int, 选填，默认是1)"/>
+</div>
+<br/>
+
+<label class="col-md-2">work_domain_id</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="work_domain_id" type="text" placeholder="工作领域(int, 选填，默认是1)"/>
+</div>
+<br/>
+
+<label class="col-md-2">body_type_id</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="body_type_id" type="text" placeholder="体型ID(int, 选填，默认是1)"/>
+</div>
+<br/>
+
+
+<label class="col-md-2">smoke_id</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="smoke_id" type="text" placeholder="抽烟ID(int, 选填，默认是1)"/>
+</div>
+<br/>
+
+<label class="col-md-2">drink_id</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="drink_id" type="text" placeholder="喝酒ID(int, 选填，默认是1)"/>
+</div>
+<br/>
+{% end %}

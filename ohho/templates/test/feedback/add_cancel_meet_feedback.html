@@ -1,0 +1,46 @@
+{% extends '../base.html' %}
+{% block title %}
+添加取消见面时的反馈
+{% end %}
+
+{% block body_title %}
+添加取消见面时的反馈
+{% end %}
+
+{% block form_body %}
+    <label class="col-md-2">friend_user_id</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input class="form-control" name="friend_user_id" type="text" placeholder="对方的ID（int, 必填)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">apply_id</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input class="form-control" name="apply_id" type="text" placeholder="配对请求ID（int, 必填)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">category</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input class="form-control" name="category" type="text" placeholder="类型（字符串，以逗号分开）"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">content</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input class="form-control" name="content" type="text" placeholder="取消见面的留言"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">reason</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input class="form-control" name="reason" type="text" placeholder="取消见面的原因"/>
+    </div>
+    <br/>
+
+{% end %}

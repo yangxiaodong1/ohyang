@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}
+首页
+{% end %}
+
+{% block body %}
+
+
+<div class="list-group">
+    <a href="/rest/api/ohho/test/home/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">接口测试</span>
+        </h4>
+        <p class="list-group-item-text">
+            接口测试
+        </p>
+        <span class="label label-info">全部接口</span>
+        <span class="badge">入口</span>
+    </a>
+
+    <!--<a href="/rest/api/ohho/test/home/app/" class="list-group-item">-->
+        <!--<h4 class="list-group-item-heading">-->
+            <!--<span class="glyphicon glyphicon-search">APP接口测试</span>-->
+        <!--</h4>-->
+        <!--<p class="list-group-item-text">-->
+            <!--APP接口测试-->
+        <!--</p>-->
+        <!--<span class="label label-info">APP接口</span>-->
+        <!--<span class="badge">入口</span>-->
+    <!--</a>-->
+
+    <a href="/rest/api/ohho/test/home/app/quick/find/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">APP接口测试(快速查找)</span>
+        </h4>
+        <p class="list-group-item-text">
+            APP接口测试(快速查找)
+        </p>
+        <span class="label label-info">APP接口</span>
+        <span class="badge">入口</span>
+    </a>
+
+    <a href="/rest/api/ohho/test/home/backstage/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">后台接口测试</span>
+        </h4>
+        <p class="list-group-item-text">
+            后台接口测试
+        </p>
+        <span class="label label-info">后台接口</span>
+        <span class="badge">入口</span>
+    </a>
+
+    <a href="/rest/api/ohho/test/home/test/" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">测试接口测试</span>
+        </h4>
+        <p class="list-group-item-text">
+            测试接口测试
+        </p>
+        <span class="label label-info">测试接口</span>
+        <span class="badge">入口</span>
+    </a>
+
+    <a href="/backstage/home/" class="list-group-item active">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">后台</span>
+        </h4>
+        <p class="list-group-item-text">
+            后台
+        </p>
+        <span class="label label-info">后台</span>
+        <span class="badge">入口</span>
+    </a>
+</div>
+{% end %}

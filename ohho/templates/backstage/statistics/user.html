@@ -1,0 +1,23 @@
+{% extends 'statistics_base.html' %}
+{% block title %}
+用户统计信息
+{% end %}
+{% block body_content %}
+<div class="list-group">
+    <a href="#" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-user">{{ total_count }}</span>
+        </h4>
+        <p class="list-group-item-text">
+            {{ today_count }}
+        </p>
+        <span class="label label-info">全部用户：{{ total_count }}今天新增用户：{{ today_count }}</span>
+        <span class="badge">
+            用户统计
+        </span>
+    </a>
+
+</div>
+<br/>
+
+{% end %}

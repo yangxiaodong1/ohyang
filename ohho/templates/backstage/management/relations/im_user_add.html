@@ -1,0 +1,31 @@
+{% extends '../manage_base.html' %}
+{% block title %}
+添加用户与IM的关系
+{% end %}
+
+{% block body_content %}
+<form method="POST" action="{{ add_url }}" role="form">
+    <table class="table table-striped table-border">
+        <tr>
+            <td><label class="form-control" for="username">用户名</label></td>
+            <td>
+                <!--<input class="form-control" type="text" name="username" id="username"/>-->
+             <select id="username" name="username" style="height: 10px;overflow:scroll;"
+                        class="selectpicker show-tick form-control" data-live-search="true">
+                    <option value=""></option>
+                    {% for user in users_query %}
+                    <option value="{{ user.username }}">{{ user.country_code.country_code}}{{ user.cellphone}}</option>
+                    {% end %}
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td><input class="btn btn-primary pull-right" type="submit" name="submit" value="添加"/></td>
+            <td><a class="btn btn-primary" href="{{ list_url }}">取消</a></td>
+        </tr>
+
+    </table>
+</form>
+
+{% end %}

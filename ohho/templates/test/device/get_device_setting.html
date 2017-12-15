@@ -1,0 +1,17 @@
+{% extends '../base.html' %}
+{% block title %}
+获取蓝牙设备配置信息
+{% end %}
+
+{% block body_title %}
+获取蓝牙设备配置信息
+{% end %}
+
+{% block form_body %}
+<label class="col-md-2">identity_id</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="identity_id" type="text" placeholder="蓝牙设备唯一标识(string, 必填)"/>
+</div>
+<br/>
+{% end %}

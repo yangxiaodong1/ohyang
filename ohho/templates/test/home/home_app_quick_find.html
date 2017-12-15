@@ -1,0 +1,352 @@
+{% extends '../../base.html' %}
+{% block title %}
+目录
+{% end %}
+
+{% block body %}
+<div class="page-header text-center">
+    <h1>目录
+        <small>接口测试(快速查找)</small>
+    </h1>
+    <a class="btn btn-link pull-right" href="/">返回</a>
+</div>
+
+
+<table class="table table-bordered table-striped text-center">
+    <tr>
+        <td colspan="4">
+            <span class="label label-info">手机与验证码</span>
+        </td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/send/verification/code/">发送验证码</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/check/verification/code/">检查验证码</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/rebind/cellphone/">重新绑定手机</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/update/cellphone/number/">更新手机号码</a></td>
+    </tr>
+
+    <tr>
+        <td colspan="4"><span class="label label-info">蓝牙设备</span></td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/bind/device/">绑定蓝牙设备</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/unbind/device/">解绑蓝牙设备</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/cellphone/unbind/device/">手机验证码解绑蓝牙设备</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/is/device/valid/">设备是否有效</a></td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/get/device/setting/">获取配置信息</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/add/device/setting/">添加配置信息</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/update/device/setting/">更新配置信息</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/get/device/version/">获取最新的版本信息</a></td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/get/user/and/device/imei/">获取唯一IMEI值</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/set/lost/">设备报失</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/cancel/lost/">取消设备报失</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/set/device/use/">设置设备用途</a></td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/get/bound/devices/">用户绑定的设备列表</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td colspan="4"><span class="label label-info">注册与登录</span></td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/register/">注册</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/login/">密码登录</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/login/by/code/">手机验证码登录</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/logout/">登出</a></td>
+    </tr>
+
+    <tr>
+        <td colspan="4"><span class="label label-info">用户信息</span></td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/reset/password/">重置密码</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/add/user/accuracy/extension/">添加个人信息</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/get/user/personal/information/">获取个人信息（yangxd）</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/add/user/icon/">添加用户头像</a></td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/complete/user/">完善个人信息</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/get/user/personal/page/">获取个人主页信息（yangxd）</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td colspan="4"><span class="label label-info">配对</span></td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/open/match/switch/">打开配对开关</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/close/match/switch/">关闭配对开关</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/get/match/condition/">获取配对条件</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/version2/match/">配对（VERSION 2)</a></td>
+    </tr>
+
+    <tr>
+        <td colspan="4"><span class="label label-info">见面</span></td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/agree/meet/">同意见面</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/refuse/meet/">拒绝见面</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/cancel/meet/">取消见面</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/meet/end/">结束见面</a></td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/meet/by/hand/">手动见面</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/get/meet/topic/">见面话题</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/get/meet/state/">见面状态</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/meet/">见过的人</a></td>
+    </tr>
+
+    <tr>
+        <td colspan="4"><span class="label label-info">好友</span></td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/apply/friend/">好友申请</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/agree/friend/">同意申请</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/refuse/friend/">拒绝申请</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/remove/friend/">移除好友</a></td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/list/apply/friend/">被申请列表</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/im/list/friends/">好友列表</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/open/online/switch/">打开在线</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/close/online/switch/">关闭在线</a></td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/im/list/blacks/">黑名单列表</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/im/add/black/">添加黑名单</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/im/remove/black/">移出黑名单</a></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="4"><span class="label label-info">举报与反馈</span></td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/add/feedback/">反馈</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/add/cancel/meet/feedback/">取消见面的反馈</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/add/complete/meet/feedback/">完成见面的反馈</a></td>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/add/report/">举报</a></td>
+    </tr>
+
+    <tr>
+        <td colspan="4"><span class="label label-info">地图</span></td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/upload/map/position/">上传本人坐标信息</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td colspan="4"><span class="label label-info">基础数据</span></td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-link" href="/rest/api/ohho/test/get/basic/data/">基础数据 -- 兴趣</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<!--<table class="table table-bordered">-->
+<!--<tbody style='vertical-align: middle;text-align: center;'>-->
+<!--<tr class="success">-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/send/verification/code/">发送验证码</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/check/verification/code/">检查验证码</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/register/">注册</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/bind/device/">绑定蓝牙设备</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/unbind/device/">解绑蓝牙设备</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/cellphone/unbind/device/">通过手机验证码解绑蓝牙设备</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/is/device/valid/">设备是否有效</a>-->
+<!--</td>-->
+<!--</tr>-->
+
+<!--<tr class="success">-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/login/">登录</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/login/by/code/">手机验证码登录</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/logout/">登出</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/rebind/cellphone/">重新绑定手机</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/reset/password/">重设密码</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/add/user/accuracy/extension/">个人信息</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/get/user/personal/information/">获取个人信息（yangxd）</a>-->
+<!--</td>-->
+<!--</tr>-->
+<!--<tr class="success">-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/update/cellphone/number/">更新手机号码</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/add/user/icon/">用户头像</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/version2/match/">配对（版本2）</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/open/match/switch/">打开配对开关</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/close/match/switch/">关闭配对开关</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/get/match/condition/">配对条件</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/agree/meet/">同意见面</a>-->
+<!--</td>-->
+<!--</tr>-->
+<!--<tr class="success">-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/refuse/meet/">拒绝见面</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/cancel/meet/">取消见面</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/meet/end/">结束见面</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/meet/by/hand/">手工见面</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/get/meet/topic/">见面时的话题</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/get/meet/state/">见面的状态</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/meet/">见过的人</a>-->
+<!--</td>-->
+<!--</tr>-->
+<!--<tr class="success">-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/apply/friend/">请求添加好友</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/agree/friend/">同意添加好友</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/remove/friend/">删除好友</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/refuse/friend/">拒绝添加好友</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/list/apply/friend/">申请你为好友的列表</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/im/list/friends/">好友列表</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/open/online/switch/">打开在线开关</a>-->
+<!--</td>-->
+<!--</tr>-->
+<!--<tr class="success">-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/close/online/switch/">关闭在线开关</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/im/list/blacks/">黑名单列表</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/im/add/black/">添加黑名单</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/im/remove/black/">移出黑名单</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/add/report/">举报</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/add/feedback/">反馈</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/upload/map/position/">上传本人坐标信息</a>-->
+<!--</td>-->
+<!--</tr>-->
+<!--<tr class="success">-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/get/device/setting/">获取蓝牙硬件配置信息</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/add/device/setting/">添加蓝牙硬件配置信息</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/update/device/setting/">更新蓝牙硬件配置信息</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/get/device/version/">获取硬件最新的版本信息</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/get/user/information/">获取用户的信息</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/send/verification/code/">获取唯一IMEI值</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/set/lost/">设备报失</a>-->
+<!--</td>-->
+<!--</tr>-->
+<!--<tr class="success">-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/cancel/lost/">取消设备报失</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/set/device/use/">设置设备用途</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/get/bound/devices/">用户绑定的设备列表</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/get/basic/data/">基础数据 &#45;&#45; 兴趣</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="/rest/api/ohho/test/complete/user/">完善个人信息</a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="#"></a>-->
+<!--</td>-->
+<!--<td>-->
+<!--<a href="#"></a>-->
+<!--</td>-->
+<!--</tr>-->
+
+<!--</tbody>-->
+<!--</table>-->
+
+
+{% end %}

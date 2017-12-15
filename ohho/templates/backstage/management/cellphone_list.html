@@ -1,0 +1,78 @@
+{% extends 'manage_base.html' %}
+{% block title %}
+手机列表
+{% end %}
+
+{% block body_search %}
+<form role="form" method="get" action="/backstage/management/cellphone/list/">
+    <table class="table table-striped table-border">
+        <tr>
+            <td><input class="form-control" type="text" placeholder="生产厂商" name="cellphone_manufacturer"
+                       value="{{ cellphone_manufacturer }}"/></td>
+            <td><input class="form-control" type="text" placeholder="平台类型" name="platform_type"
+                       value="{{ platform_type }}"/></td>
+            <td><input class="btn btn-primary glyphicon glyphicon-search" type="submit" value="查询"/>
+            </td>
+            <td><a class="btn btn-primary glyphicon glyphicon-plus" href="/backstage/management/cellphone/add/">添加</a>
+            </td>
+        </tr>
+
+    </table>
+
+</form>
+{% end %}
+
+{% block body_content %}
+<div class="list-group">
+    {% for cellphone in cellphones %}
+
+    <table class="table table-striped table-border">
+        <tr>
+            <td>
+                <h4 class="list-group-item-heading">
+                    <span class="glyphicon glyphicon-user">{{ cellphone.key }}</span>
+                    <span>-----id-----</span>
+                    <span class="glyphicon ">{{ cellphone.id}}</span>
+                </h4>
+                <br>
+                 <span class="label label-info">{{ cellphone.manufacturer }}</span>
+                <span class="badge">查</span>
+            </td>
+            <td align="right" style="text-align: right; vertical-align: middle;">
+                <a class="btn btn-default" href="{{ detail_url }}?cellphone_key={{cellphone.key}}" role="button">修改</a>
+                <a class="btn btn-default" href="{{ delete_url }}?cellphone_key={{cellphone.key}}" role="button">删除</a>
+            </td>
+        </tr>
+
+    </table>
+
+
+    {% end %}
+
+</div>
+<br/>
+<ul class="pagination">
+    {% if previous==0 %}
+    <li class="disabled"><a href="#">&laquo;</a></li>
+
+    {% else %}
+    <li><a href="/backstage/management/cellphone/list/?page={{previous}}">&laquo;</a></li>
+    {% end %}
+
+    {% for p in pages %}
+    {% if p == page %}
+    <li class="active"><a href="/backstage/management/cellphone/list/?page={{p}}">{{p}}</a></li>
+    {% else %}
+    <li><a href="/backstage/management/cellphone/list/?page={{p}}">{{p}}</a></li>
+    {% end %}
+    {% end %}
+
+    {% if next==0 %}
+    <li class="disabled"><a href="#">&raquo;</a></li>
+    {% else %}
+    <li><a href="/backstage/management/cellphone/list/?page={{next}}">&raquo;</a></li>
+    {% end %}
+</ul>
+<br/>
+
+{% end %}

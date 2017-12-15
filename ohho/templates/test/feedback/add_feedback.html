@@ -1,0 +1,24 @@
+{% extends '../base.html' %}
+{% block title %}
+添加反馈
+{% end %}
+
+{% block body_title %}
+添加反馈
+{% end %}
+
+{% block form_body %}
+    <label class="col-md-2">feedback_type</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input class="form-control" name="feedback_type" type="text" placeholder="反馈类型（int, 必填)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">content</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-info-sign"></span></span>
+        <input class="form-control" name="content" type="text" placeholder="内容（string 1024, 必填)"/>
+    </div>
+    <br/>
+{% end %}

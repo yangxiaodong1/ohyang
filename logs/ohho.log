@@ -1,0 +1,13 @@
+[I 171215 15:49:41 ohho_log:25] 2017-12-15 15:49:41	D:/develop/ServerTest/SDevelop/main.py	<module>	79	None
+[I 171215 15:49:41 ohho_log:25] 2017-12-15 15:49:41	D:/develop/ServerTest/SDevelop/main.py	<module>	82	test end
+[I 171215 16:19:53 ohho_log:25] 2017-12-15 16:19:53	D:\develop\ServerTest\SDevelop\Tools\decorator.py	_execute_time	132	1513325993616
+[I 171215 16:19:53 ohho_log:25] 2017-12-15 16:19:53	D:\develop\ServerTest\SDevelop\Tools\decorator.py	_execute_time	133	1513324189253
+[I 171215 16:19:53 ohho_log:25] 2017-12-15 16:19:53	D:\develop\ServerTest\SDevelop\Tools\decorator.py	_execute_time	134	1804363
+[I 171215 16:19:53 web:2063] 200 POST /rest/api/view/ohho/stress/testint/add/user/ (::1) 1804365.67ms
+[I 171215 16:38:19 ohho_log:25] 2017-12-15 16:38:19	D:/develop/ServerTest/SDevelop/main.py	<module>	79	None
+[I 171215 16:38:19 ohho_log:25] 2017-12-15 16:38:19	D:/develop/ServerTest/SDevelop/main.py	<module>	82	test end
+[I 171215 16:38:26 web:2063] 200 GET /rest/api/ohho/stress/test/add/user/ (::1) 72.19ms
+[I 171215 17:52:51 ohho_log:25] 2017-12-15 17:52:51	D:\develop\ServerTest\SDevelop\Tools\decorator.py	_execute_time	132	1513331571362
+[I 171215 17:52:51 ohho_log:25] 2017-12-15 17:52:51	D:\develop\ServerTest\SDevelop\Tools\decorator.py	_execute_time	133	1513327116682
+[I 171215 17:52:51 ohho_log:25] 2017-12-15 17:52:51	D:\develop\ServerTest\SDevelop\Tools\decorator.py	_execute_time	134	4454680
+[I 171215 17:52:51 web:2063] 200 POST /rest/api/view/ohho/stress/testint/add/user/ (::1) 4454683.08ms

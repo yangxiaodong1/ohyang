@@ -1,0 +1,161 @@
+{% extends '../base.html' %}
+{% block title %}
+注册
+{% end %}
+{% block cssnew %}
+<style>
+    span.error {
+        color: #C00;
+        padding: 0 6px;
+    }
+</style>
+{% end %}
+{% block body %}
+{% module xsrf_form_html() %}
+<form class="form" method="POST" action="/backstage/register/" role="form" id="jsForm">
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    {% if msg %}
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user">错误信息</span></span>
+        <input class="form-control" name="" type="text" id="" value="{{ msg }}"/>
+    </div>
+    <br/>
+    {% end %}
+
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user">区号</span></span>
+        <input class="form-control" name="country_code" type="text" id="country_code" placeholder="+86（中国）"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user">用户名</span></span>
+        <input class="form-control" name="username" type="text" id="username" placeholder="用户名（手机号码）" required
+               data-rule-username="true" data-msg-required="请输入手机号" data-msg-username="请输入有效手机号"/>
+    </div>
+    <br/>
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock">密 码</span></span>
+        <input class="form-control" name="password" type="password" id="password" placeholder="密码"/>
+    </div>
+    <br/>
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock">再次确认</span></span>
+        <input class="form-control" name="confirm_password" id="confirm_password" type="password" placeholder="再次确认密码"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-check"></span></span>
+        <input class="form-control" style="width:auto" name="code" type="text" placeholder="验证码(string，必填)"/>
+        <a class="btn btn-primary inline" href="javascript:void(0);" onclick="test();">
+            <span class="glyphicon glyphicon-send">获取验证码</span>
+        </a>
+    </div>
+    <br/>
+
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <label class="col-md-2"></label>
+        <input class="btn btn-primary" type="submit" value="确定"/>
+        <label class="col-md-6"></label>
+        <a class="btn btn-default" href="/backstage/login/">登录</a>
+    </div>
+
+</form>
+<script src="{{ static_url('js/backstage/jquery.validate.js') }}"></script>
+<script>
+    $(function () {
+        $("#jsForm").validate({
+//            submitHandler:function () {
+//
+//            },
+
+            rules: {
+                username: {
+                    required: true,
+                    remote: {
+                        type: "get",
+                        url: "/backstage/register/",
+                        data: {
+                            username: function () {
+                                return $("#username").val();
+                            }
+                        },
+                        dataFilter: function (data, type) {
+                            if (data == "true")
+                            //alert(data);
+                                return true;
+                            else
+                                return false;
+                        }
+                    },
+                },
+                password: {
+                    required: true,
+                    rangelength: [3, 10]
+                },
+                confirm_password: {
+                    equalTo: "#password"
+                },
+
+            },
+            messages: {
+                username: {
+                    required: "用户名已经存在",
+                    remote: "用户名已经注册"
+                },
+                password: {
+                    required: "不能为空",
+                    rangelength: $.format("密码最小长度:{0}, 最大长度:{1}。")
+                },
+                confirm_password: {
+                    equalTo: "两次密码输入不一致"
+                }
+            }
+
+
+        })
+    })
+    $.validator.setDefaults({
+        errorElement: 'span'
+    });
+
+    //配置通用的默认提示语
+    $.extend($.validator.messages, {
+        required: '必填',
+        equalTo: "请再次输入相同的值"
+    });
+    //用户名
+    jQuery.validator.addMethod("username", function (value, element) {
+//        var distance = /^[a-z0-9._%-]+@([a-z0-9-]+\.)+[a-z]{2,4}$/;
+        var username = /^1[3|4|5|8][0-9]\d{4,8}$/;
+        return this.optional(element) || (username.test(value));
+    }, "填写手机号");
+
+
+</script>
+<script>
+    function test() {
+        cellphone_number = $("#username").val();
+        $.ajax({
+            type: 'post',
+            url: '/rest/api/ohho/send/verification/code/',
+            data: {'cellphone_number': cellphone_number},
+            success: function (data) {
+                console.log("success");
+                console.log(data);
+            }
+        });
+    }
+</script>
+{% end %}

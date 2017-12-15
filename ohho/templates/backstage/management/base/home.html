@@ -1,0 +1,166 @@
+{% extends '../manage_base.html' %}
+{% block title %}
+基础数据列表
+{% end %}
+
+{% block body_content %}
+
+<div class="list-group">
+    <!--<a href="{{ base_drink_list_url }}" class="list-group-item active">-->
+    <!--<h4 class="list-group-item-heading">-->
+    <!--<span class="glyphicon glyphicon-search">喝酒</span>-->
+    <!--</h4>-->
+    <!--<p class="list-group-item-text">-->
+    <!--喝酒-->
+    <!--</p>-->
+    <!--<span class="label label-info">喝酒</span>-->
+    <!--<span class="badge">列表</span>-->
+    <!--<span class="badge">详情</span>-->
+    <!--<span class="badge">添加</span>-->
+    <!--</a>-->
+
+    <!--<a href="{{ base_smoke_list_url }}" class="list-group-item">-->
+    <!--<h4 class="list-group-item-heading">-->
+    <!--<span class="glyphicon glyphicon-search">抽烟</span>-->
+    <!--</h4>-->
+    <!--<p class="list-group-item-text">-->
+    <!--抽烟-->
+    <!--</p>-->
+    <!--<span class="label label-info">抽烟</span>-->
+    <!--<span class="badge">列表</span>-->
+    <!--<span class="badge">详情</span>-->
+    <!--<span class="badge">添加</span>-->
+    <!--</a>-->
+
+    <!--<a href="{{ base_industry_list_url }}" class="list-group-item">-->
+    <!--<h4 class="list-group-item-heading">-->
+    <!--<span class="glyphicon glyphicon-search">行业</span>-->
+    <!--</h4>-->
+    <!--<p class="list-group-item-text">-->
+    <!--行业-->
+    <!--</p>-->
+    <!--<span class="label label-info">行业</span>-->
+    <!--<span class="badge">列表</span>-->
+    <!--<span class="badge">详情</span>-->
+    <!--<span class="badge">添加</span>-->
+    <!--</a>-->
+
+    <!--<a href="{{ base_profession_list_url }}" class="list-group-item">-->
+    <!--<h4 class="list-group-item-heading">-->
+    <!--<span class="glyphicon glyphicon-search">职业</span>-->
+    <!--</h4>-->
+    <!--<p class="list-group-item-text">-->
+    <!--职业-->
+    <!--</p>-->
+    <!--<span class="label label-info">职业</span>-->
+    <!--<span class="badge">列表</span>-->
+    <!--<span class="badge">详情</span>-->
+    <!--<span class="badge">添加</span>-->
+    <!--</a>-->
+
+    <!--<a href="{{ base_body_type_list_url }}" class="list-group-item">-->
+    <!--<h4 class="list-group-item-heading">-->
+    <!--<span class="glyphicon glyphicon-search">体型</span>-->
+    <!--</h4>-->
+    <!--<p class="list-group-item-text">-->
+    <!--体型-->
+    <!--</p>-->
+    <!--<span class="label label-info">体型</span>-->
+    <!--<span class="badge">列表</span>-->
+    <!--<span class="badge">详情</span>-->
+    <!--<span class="badge">添加</span>-->
+    <!--</a>-->
+
+    <!--<a href="{{ base_work_domain_list_url }}" class="list-group-item">-->
+    <!--<h4 class="list-group-item-heading">-->
+    <!--<span class="glyphicon glyphicon-search">工作领域</span>-->
+    <!--</h4>-->
+    <!--<p class="list-group-item-text">-->
+    <!--工作领域-->
+    <!--</p>-->
+    <!--<span class="label label-info">工作领域</span>-->
+    <!--<span class="badge">列表</span>-->
+    <!--<span class="badge">详情</span>-->
+    <!--<span class="badge">添加</span>-->
+    <!--</a>-->
+
+    <!--<a href="{{ base_match_condition_list_url }}" class="list-group-item">-->
+    <!--<h4 class="list-group-item-heading">-->
+    <!--<span class="glyphicon glyphicon-search">配对条件</span>-->
+    <!--</h4>-->
+    <!--<p class="list-group-item-text">-->
+    <!--配对条件-->
+    <!--</p>-->
+    <!--<span class="label label-info">配对条件</span>-->
+    <!--<span class="badge">列表</span>-->
+    <!--<span class="badge">详情</span>-->
+    <!--<span class="badge">添加</span>-->
+    <!--</a>-->
+
+    <!--<a href="{{ base_watchword_list_url }}" class="list-group-item">-->
+    <!--<h4 class="list-group-item-heading">-->
+    <!--<span class="glyphicon glyphicon-search">暗语</span>-->
+    <!--</h4>-->
+    <!--<p class="list-group-item-text">-->
+    <!--配对条件-->
+    <!--</p>-->
+    <!--<span class="label label-info">暗语</span>-->
+    <!--<span class="badge">列表</span>-->
+    <!--<span class="badge">详情</span>-->
+    <!--<span class="badge">添加</span>-->
+    <!--</a>-->
+
+    <!--<a href="{{ base_userdisplayconfig_list_url }}" class="list-group-item">-->
+    <!--<h4 class="list-group-item-heading">-->
+    <!--<span class="glyphicon glyphicon-search">用户展示配置</span>-->
+    <!--</h4>-->
+    <!--<p class="list-group-item-text">-->
+    <!--配对条件-->
+    <!--</p>-->
+    <!--<span class="label label-info">暗语</span>-->
+    <!--<span class="badge">列表</span>-->
+    <!--<span class="badge">详情</span>-->
+    <!--<span class="badge">添加</span>-->
+    <!--</a>-->
+
+    <a href="{{ base_interest_backstage_list_url }}" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">兴趣展示添加</span>
+        </h4>
+        <p class="list-group-item-text">
+            兴趣
+        </p>
+        <span class="label label-info">兴趣</span>
+        <span class="badge">列表</span>
+        <span class="badge">详情</span>
+        <span class="badge">添加</span>
+    </a>
+    <a href="{{ base_country_code_backstage_list_url }}" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">国家区号添加</span>
+        </h4>
+        <p class="list-group-item-text">
+            国家区号
+        </p>
+        <span class="label label-info">国家区号</span>
+        <span class="badge">列表</span>
+        <span class="badge">详情</span>
+        <span class="badge">添加</span>
+    </a>
+
+    <a href="{{ base_sensitive_backstage_list_url }}" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-search">敏感字</span>
+        </h4>
+        <p class="list-group-item-text">
+            敏感字
+        </p>
+        <span class="label label-info">敏感字</span>
+        <span class="badge">列表</span>
+        <span class="badge">详情</span>
+        <span class="badge">添加</span>
+    </a>
+
+</div>
+
+{% end %}

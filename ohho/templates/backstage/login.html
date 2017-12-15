@@ -1,0 +1,59 @@
+{% extends '../base.html' %}
+{% block title %}
+登录
+{% end %}
+
+{% block body %}
+{% if message %}
+<div id="myAlert" class="alert alert-success">
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+    <strong>{{ message }}</strong>
+</div>
+{% end %}
+
+<!--<script>-->
+    <!--$(function () {-->
+        <!--$("#myAlert").bind('closed.bs.alert', function () {-->
+            <!--alert("消息框被关闭。");-->
+        <!--});-->
+    <!--});-->
+<!--</script>-->
+
+{% module xsrf_form_html() %}
+<form class="form" method="post" action="" role="form">
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input class="form-control" name="country_code" type="text" placeholder="区号"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input class="form-control" name="username" type="text" placeholder="用户名"/>
+    </div>
+    <br/>
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="password" type="password" placeholder="密码"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2"></label>
+    <div class="input-group col-md-6">
+        <a href="/backstage/reset_password/" class="pull-left"><span>忘记密码?</span></a>
+        <label class="col-md-2"></label>
+        <input class="btn btn-primary" name="login" type="submit" value="登录"/>
+
+        <label class="col-md-1"></label>
+        <a class="btn btn-default " href="/backstage/register/">
+            <span>注册</span></a>
+    </div>
+</form>
+{% end %}

@@ -1,0 +1,91 @@
+{% extends '../manage_base.html' %}
+{% block title %}
+用户与IM的关系列表
+{% end %}
+
+{% block body_search %}
+<form role="form" method="get" action="{{ list_url }}">
+    <table class="table table-striped table-border">
+        <tr>
+            <td><input class="form-control" type="text" placeholder="用户名" name="username"
+                       value="{{ username }}"/></td>
+            <td><input class="form-control" type="text" placeholder="名称" name="name"
+                       value="{{ name }}"/></td>
+            <td><input class="form-control" type="text" placeholder="配对条件ID列表（以逗号分开）" name="id"
+                       value="{{ match_condition_ids }}"/></td>
+            <td>
+                <input class="btn btn-primary glyphicon glyphicon-search" type="submit" value="查询"/>
+                <a class="btn btn-primary glyphicon glyphicon-plus" href="{{ add_url }}">添加</a>
+            </td>
+        </tr>
+
+    </table>
+
+</form>
+{% end %}
+
+{% block body_content %}
+<div class="list-group">
+    {% for relation in relations %}
+    <a href="{{ detail_url }}?id={{ relation['id'] }}" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-user">{{ relation["username"]}}</span>
+        </h4>
+        <p class="list-group-item-text">
+            {{ relation["name"] }}
+        </p>
+        <span class="label label-info">用户ID：{{ relation["user_id"] }}配对条件ID：{{ relation["match_condition_id"] }}</span>
+        <span class="badge">
+            {{relation["id"]}}
+        </span>
+    </a>
+    <!--<table class="table table-striped table-border">-->
+        <!--<tr>-->
+            <!--<td>-->
+                <!--<h4 class="list-group-item-heading">-->
+                    <!--<span class="glyphicon glyphicon-user">{{ relation["username"]}}</span>-->
+                    <!--<span>-&#45;&#45;&#45;&#45;name-&#45;&#45;&#45;&#45;</span>-->
+                    <!--<span class="glyphicon ">{{ relation["name"] }}</span>-->
+                <!--</h4>-->
+                <!--<br>-->
+                <!--<span class="label label-info">用户ID：{{ relation["user_id"] }}配对条件ID：{{ relation["match_condition_id"] }}</span>-->
+                <!--<span class="badge">-->
+                    <!--{{relation["id"]}}-->
+                <!--</span>-->
+            <!--</td>-->
+            <!--<td align="right" style="text-align: right; vertical-align: middle;">-->
+                <!--<a class="btn btn-default" href="{{ detail_url }}?id={{ relation['id'] }}" role="button">修改</a>-->
+                <!--<a class="btn btn-default" href="{{ delete_url }}?id={{ relation['id'] }}" role="button">删除</a>-->
+            <!--</td>-->
+        <!--</tr>-->
+
+    <!--</table>-->
+    {% end %}
+
+</div>
+<br/>
+<ul class="pagination">
+    {% if previous==0 %}
+    <li class="disabled"><a href="#">&laquo;</a></li>
+
+    {% else %}
+    <li><a href="{{ list_url }}?page={{previous}}">&laquo;</a></li>
+    {% end %}
+
+    {% for p in pages %}
+    {% if p == page %}
+    <li class="active"><a href="{{ list_url }}?page={{p}}">{{p}}</a></li>
+    {% else %}
+    <li><a href="{{ list_url }}?page={{p}}">{{p}}</a></li>
+    {% end %}
+    {% end %}
+
+    {% if next==0 %}
+    <li class="disabled"><a href="#">&raquo;</a></li>
+    {% else %}
+    <li><a href="{{ list_url }}?page={{next}}">&raquo;</a></li>
+    {% end %}
+</ul>
+<br/>
+
+{% end %}

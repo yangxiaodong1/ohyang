@@ -1,0 +1,412 @@
+{% extends '../../manage_base.html' %}
+{% block title %}
+用户展示详情
+{% end %}
+{% block cssnew %}
+    <style>
+    span.error{color:#C00; padding:0 6px;}
+    </style>
+{% end %}
+{% block body_content %}
+
+<form method="POST" action="{{ detail_url }}" role="form" id="jsForm">
+    <input type="hidden" value="{{ query_obj.id }}" name="id"/>
+    <table class="table table-striped table-border">
+        <tr>
+            <td><label class="form-control" for="distance">距离</label></td>
+            <td><input class="form-control" type="text" name="distance" id="distance"
+                       value="{{query_obj.distance}}" required data-rule-distance="true" data-msg-required="请输入数字" data-msg-distance="请输入数字"/>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_sex">性别</label></td>
+            <td>
+                 <select class="form-control" style="width: 100px;" name="has_sex" id="has_sex">
+                     {% if query_obj.has_sex == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_identity_card">身份证</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_identity_card" id="has_identity_card">
+                     {% if query_obj.has_identity_card == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_real_name">真实姓名</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_real_name" id="has_real_name">
+                     {% if query_obj.has_real_name == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_email">邮箱</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_email" id="has_email">
+                     {% if query_obj.has_email == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_icon">头像</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_icon" id="has_icon">
+                     {% if query_obj.has_icon == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_source_icon">原头像</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_source_icon" id="has_source_icon">
+                     {% if query_obj.has_source_icon == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_nickname">昵称</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_nickname" id="has_nickname">
+                     {% if query_obj.has_nickname == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_birthday">生日</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_birthday" id="has_birthday">
+                     {% if query_obj.has_birthday == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_height">身高</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_height" id="has_height">
+                     {% if query_obj.has_height == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_weight">体重</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_weight" id="has_weight">
+                     {% if query_obj.has_weight == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_marriage">结婚</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_marriage" id="has_marriage">
+                     {% if query_obj.has_marriage == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_resume">简历</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_resume" id="has_resume">
+                     {% if query_obj.has_resume == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_blood">血型</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_blood" id="has_blood">
+                     {% if query_obj.has_blood == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_hometown">家乡</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_hometown" id="has_hometown">
+                     {% if query_obj.has_hometown == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_current">当前城市</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_current" id="has_current">
+                     {% if query_obj.has_current == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_industry_id">行业</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_industry_id" id="has_industry_id">
+                     {% if query_obj.has_industry_id == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_body_type_id">体型</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_body_type_id" id="has_body_type_id">
+                     {% if query_obj.has_body_type_id == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_smoke_id">抽烟</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_smoke_id" id="has_smoke_id">
+                     {% if query_obj.has_smoke_id == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_drink_id">喝酒</label></td>
+            <td>
+                 <select class="form-control" style="width: 100px;" name="has_drink_id" id="has_drink_id">
+                     {% if query_obj.has_drink_id == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_work_domain_id">工作领域</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_work_domain_id" id="has_work_domain_id">
+                     {% if query_obj.has_work_domain_id == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_profession_id">专业</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_profession_id" id="has_profession_id">
+                     {% if query_obj.has_profession_id == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_school">学校</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_school" id="has_school">
+                     {% if query_obj.has_school == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_company">公司</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_company" id="has_company">
+                     {% if query_obj.has_company == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_education">所受教育</label></td>
+            <td>
+                 <select class="form-control" style="width: 100px;" name="has_education" id="has_education">
+                     {% if query_obj.has_education == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label class="form-control" for="has_interest">兴趣</label></td>
+            <td>
+                <select class="form-control" style="width: 100px;" name="has_interest" id="has_interest">
+                     {% if query_obj.has_interest == 0 %}
+                          <option value="0" selected>False</option>
+                          <option value="1">True</option>
+                     {% else %}
+                         <option value="0" >False</option>
+                          <option value="1" selected>True</option>
+                     {% end %}
+                 </select>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td><input class="btn btn-primary pull-right" type="submit" name="submit" value="修改"/>
+                {% if query_obj.id %}
+                <input class="btn btn-primary" type="submit" name="delete_or_restore"
+                       value="删除"/>
+                {% end %}
+            </td>
+            <td colspan="1"><a class="btn btn-primary" href="{{ list_url}}">取消</a></td>
+        </tr>
+    </table>
+</form>
+<script  src="{{ static_url('js/backstage/jquery.validate.js') }}"></script>
+<script>
+
+    $(function(){
+        $("#jsForm").validate({
+            submitHandler:function () {
+
+            }
+        })
+    })
+    $.validator.setDefaults({
+        errorElement:'span'
+        });
+
+    //配置通用的默认提示语
+    $.extend($.validator.messages, {
+        required: '必填',
+        equalTo: "请再次输入相同的值"
+    });
+    //距离
+    jQuery.validator.addMethod("distance", function (value, element) {
+//        var distance = /^[a-z0-9._%-]+@([a-z0-9-]+\.)+[a-z]{2,4}$/;
+        var distance = /^[+|-]?\d*\.?\d*$/;
+        return this.optional(element) || (distance.test(value));
+    }, "填写数字");
+
+
+</script>
+{% end %}

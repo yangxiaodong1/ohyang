@@ -1,0 +1,31 @@
+{% extends '../base.html' %}
+{% block title %}
+绑定蓝牙设备
+{% end %}
+
+{% block body_title %}
+绑定蓝牙设备
+{% end %}
+
+{% block form_body %}
+<label class="col-md-2">identity_id</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="identity_id" type="text" placeholder="设备身份ID(string, 必填)"/>
+</div>
+<br/>
+
+<label class="col-md-2">mac_address</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="mac_address" type="text" placeholder="MAC地址(string, 必填)"/>
+</div>
+<br/>
+
+<label class="col-md-2">imei</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+    <input class="form-control" name="imei" type="text" placeholder="设备连接时的IMEI值(string, 必填，这个值是被加密过的)"/>
+</div>
+<br/>
+{% end %}

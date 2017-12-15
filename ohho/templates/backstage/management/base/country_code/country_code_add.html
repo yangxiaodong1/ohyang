@@ -1,0 +1,27 @@
+{% extends '../../manage_base.html' %}
+{% block title %}
+添加国家区号
+{% end %}
+
+{% block body_content %}
+<form method="POST" action="{{ add_url }}" role="form">
+    <table class="table table-striped table-border">
+        <tr>
+            <td><label class="form-control" for="name">名称</label></td>
+            <td><input class="form-control" type="text" name="name" id="name" placeholder="名称"/></td>
+        </tr>
+
+        <tr>
+            <td><label class="form-control" for="country_code">区域代号</label></td>
+            <td><input class="form-control" type="text" name="country_code" id="country_code" placeholder="名称"/></td>
+        </tr>
+
+        <tr>
+            <td colspan="1"><input class="btn btn-primary pull-right" type="submit" name="submit" value="添加"/></td>
+            <td colspan="1"><a class="btn btn-primary" href="{{ list_url }}">取消</a></td>
+        </tr>
+
+    </table>
+</form>
+
+{% end %}

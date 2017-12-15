@@ -1,0 +1,31 @@
+{% extends '../base.html' %}
+{% block title %}
+添加举报
+{% end %}
+
+{% block body_title %}
+添加举报
+{% end %}
+
+{% block form_body %}
+    <label class="col-md-2">reported_user_id</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input class="form-control" name="reported_user_id" type="text" placeholder="被举报用户ID（int, 必填)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">report_type</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+        <input class="form-control" name="report_type" type="text" placeholder="举报类型（int, 必填)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">content</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-info-sign"></span></span>
+        <input class="form-control" name="content" type="text" placeholder="内容（string 1024, 必填)"/>
+    </div>
+    <br/>
+{% end %}

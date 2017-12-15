@@ -1,0 +1,31 @@
+{% extends '../base.html' %}
+{% block title %}
+设置设备用途
+{% end %}
+
+{% block body_title %}
+设置设备用途
+{% end %}
+
+{% block form_body %}
+   <label class="col-md-2">identity_id</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="identity_id" type="text" placeholder="设备序列号(string, 必填)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">type</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="type" type="text" placeholder="设备使用类型(int, 选填)"/>
+    </div>
+    <br/>
+
+    <label class="col-md-2">name</label>
+    <div class="input-group col-md-6">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+        <input class="form-control" name="name" type="text" placeholder="设备使用名称(string（16）, 选填)"/>
+    </div>
+    <br />
+{% end %}
