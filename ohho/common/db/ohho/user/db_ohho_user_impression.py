@@ -7,6 +7,7 @@ from Tools.ohho_datetime import OHHODatetime
 from sqlalchemy import func
 from sqlalchemy import desc, asc
 
+
 class DBOHHOUserImpression(DBBase):
     def __init__(self, index=0):
         super(DBOHHOUserImpression, self).__init__(OHHOUserImpression, index)
@@ -25,10 +26,11 @@ class DBOHHOUserImpression(DBBase):
                                  func.count(self.model.content_id).label("count_content"))
         return None
 
-    def get_user_impression(self, user_id):
+    def get_user_impression(self, user_id, type):
         query = self.get_query_new()
         query = Operation.filter(query, self.model.another_user_id, user_id).group_by(self.model.content_id)
-        query = query.order_by(desc("count_content")).limit(5)
+        query = self.get_by_type(query, type)
+        query = query.order_by(desc("count_content"), desc(self.model.changed_at)).limit(5)
         query = self.get_all(query)
 
         return query

@@ -46,6 +46,10 @@ class LogicLogin(object):
                 if is_bind:
                     cellphone_relation_result = Result.result_success()
                 else:
+                    OHHOLog.print_log("user id:")
+                    OHHOLog.print_log(user.id)
+                    OHHOLog.print_log("cellphone id:")
+                    OHHOLog.print_log(cellphone.id)
                     OHHOLog.print_log("unsafe cellphone!")
                     cellphone_relation_result = Result.result_failed()
         else:

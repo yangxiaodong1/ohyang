@@ -15,8 +15,9 @@ class BackageResetPasswordHandler(ViewOHHOBase):
         cellphone_number = the_post.get_cellphone_number(self)
         password = the_post.get_password(self)
         code = the_post.get_code(self)
+        country_code = the_post.get_country_code(self)
         instance = LogicResetPassword()
-        result = instance.reset_password(cellphone_number, password, code)
+        result = instance.reset_password(cellphone_number, password, code, country_code)
         if result.get("code") == 1:
             return self.redirect("/backstage/home/")
         return self.redirect("/backstage/login/")

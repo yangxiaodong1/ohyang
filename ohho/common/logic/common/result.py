@@ -19,6 +19,10 @@ class Result(object):
         return result
 
     @staticmethod
+    def result_published(detail=PUBLISHED):
+        return Result.result(CODE_PUBLISHED, detail)
+
+    @staticmethod
     def result_success(detail=SUCCESS):
         return Result.result(CODE_SUCCESS, detail)
 

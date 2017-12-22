@@ -8,63 +8,58 @@ from Tools.decorator import permission
 from Tools.decorator import backstage_authenticate
 
 class BackstageInterestDeleteHandler(BaseHandler):
+
     @backstage_authenticate
     def post(self):
         the_post = Post()
-        interest_id = the_post.get_id(self)
-        parent_id = the_post.get_parent_id(self)
-        name = the_post.get_name(self)
+        key = the_post.get_key(self)
+        parent_id = the_post.get_id(self)
+        if parent_id:
+            parent_id = int(parent_id)
+        else:
+            parent_id = 1
         instance = InterestBackstage()
-        interest_obj = instance.get(interest_id)
+        obj = instance.get_by_key(key)
         submit = the_post.get_submit(self)
-        delete_or_restore = the_post.get_delete_or_restore(self)
         success = False
         if submit:
-            data = dict()
-            if name:
-                data["name"] = name
-            success = instance.update(interest_obj, data)
-        if delete_or_restore:
-            if interest_obj.name:
-                success = instance.delete(interest_obj)
+            if obj:
+                success = instance.delete(obj)
+                if success:
+                    message = "删除数据成功！"
+                else:
+                    message = "删除数据失败！"
             else:
-                success = instance.restore(interest_obj)
+                message = "本数据已经被删除！"
+        if parent_id:
+            return self.redirect(BASE_INTEREST_BACKSTAGE_LIST_URL + "?id=" + str(parent_id))
+        else:
+            return self.redirect(BASE_INTEREST_BACKSTAGE_LIST_URL)
 
-        if success:
-            back_interest_id = instance.get(interest_id).parent_id
-            if back_interest_id != 1:
-                back_parent_id = instance.get(back_interest_id).parent_id
-                return self.redirect(
-                    BASE_INTEREST_BACKSTAGE_DELETE_URL + "?id=" + str(back_interest_id) + "&parent_id=" + str(
-                        back_parent_id))
-            else:
-                return self.redirect(BASE_INTEREST_BACKSTAGE_LIST_URL)
-        return self.redirect(BASE_INTEREST_BACKSTAGE_DELETE_HTML + "?id=" + str(interest_id))
 
     @permission
     @backstage_authenticate
     def get(self):
         the_get = Get()
-        interest_id = the_get.get_id(self)
-        parent_id = the_get.get_parent_id(self)
-        name = ""
+        the_id = the_get.get_id(self)
         instance = InterestBackstage()
-        if interest_id:
-            interest_obj = instance.get(interest_id)
-            children_query = instance.get_by_parent_id(interest_id)
-            state = True
-            has_state = True
-            children_query = instance.get_by_state(children_query,state,has_state)
-            name = interest_obj.name
+        obj = instance.get_by_id(the_id)
+        name = obj.name if obj else ""
+        key = obj.key if obj else ""
+        parent = instance.get_by_id(obj.parent_id) if obj else None
+        parent_id = parent.id if parent else 0
+        parent_name = parent.name if parent else ""
+        parent_key = parent.key if parent else ""
+        message = ""
 
         return self.render(BASE_INTEREST_BACKSTAGE_DELETE_HTML,
                            name=name,
+                           key=key,
                            parent_id=parent_id,
-                           interest_id=interest_id,
-                           detail_url=BASE_INTEREST_BACKSTAGE_DETAIL_URL,
+                           parent_name=parent_name,
+                           parent_key=parent_key,
+                           delete_url=BASE_INTEREST_BACKSTAGE_DELETE_URL,
                            list_url=BASE_INTEREST_BACKSTAGE_LIST_URL,
-                           interest_obj =interest_obj,
-                           children_query = children_query,
-                           add_url=BASE_INTEREST_BACKSTAGE_ADD_URL,
-                           delete_url=BASE_INTEREST_BACKSTAGE_DELETE_URL
+                           message=message
                            )
+

@@ -9,67 +9,67 @@ from Tools.decorator import backstage_authenticate
 
 
 class BackstageInterestDetailHandler(BaseHandler):
+
     @backstage_authenticate
     def post(self):
         the_post = Post()
-        interest_id = the_post.get_id(self)
-        parent_id = the_post.get_parent_id(self)
-        name = the_post.get_name(self)
-        instance = InterestBackstage()
-        interest_obj = instance.get(interest_id)
+        parent_id = the_post.get_id(self)
         submit = the_post.get_submit(self)
-        delete_or_restore = the_post.get_delete_or_restore(self)
-        success = False
-        if submit:
-            data = dict()
-            if name:
-                data["name"] = name
-            success = instance.update(interest_obj, data)
-        if delete_or_restore:
-            if interest_obj.name:
-                success = instance.delete(interest_obj)
-            else:
-                success = instance.restore(interest_obj)
+        key = the_post.get_key(self)
+        name = the_post.get_name(self)
 
-        if success:
-            # return self.redirect(BASE_INTEREST_BACKSTAGE_LIST_URL)
-            # id = interest_id
-            # back_interest_id = parent_id
-            back_interest_id = instance.get(interest_id).parent_id
-            # print(back_parent_id)
-            if back_interest_id != 1:
-                back_parent_id = instance.get(back_interest_id).parent_id
-                return self.redirect(
-                    BASE_INTEREST_BACKSTAGE_DETAIL_URL + "?id=" + str(back_interest_id) + "&parent_id=" + str(
-                        back_parent_id))
+        instance = InterestBackstage()
+        obj = instance.get_by_id(parent_id)
+        parent_name = obj.name if obj else ""
+        parent_key = obj.key if obj else ""
+        message = ""
+
+        if submit:
+            obj = instance.get_by_key(key)
+            data = dict()
+            data["name"] = name
+            if obj:
+                success = instance.update(obj, data)
+                if success:
+                    message = "更新成功！"
+                else:
+                    message = "更新失败！"
             else:
-                return self.redirect(BASE_INTEREST_BACKSTAGE_LIST_URL)
-        return self.redirect(BASE_INTEREST_BACKSTAGE_DETAIL_HTML + "?id=" + str(interest_id))
+                message = "本数据已经被删除！"
+        return self.render(BASE_INTEREST_BACKSTAGE_DETAIL_HTML,
+                           name=name,
+                           key=key,
+                           parent_id=parent_id,
+                           parent_name=parent_name,
+                           parent_key=parent_key,
+                           detail_url=BASE_INTEREST_BACKSTAGE_DETAIL_URL,
+                           list_url=BASE_INTEREST_BACKSTAGE_LIST_URL,
+                           message=message,
+                           )
+
 
     @permission
     @backstage_authenticate
     def get(self):
         the_get = Get()
-        interest_id = the_get.get_id(self)
-        parent_id = the_get.get_parent_id(self)
-        name = ""
+        the_id = the_get.get_id(self)
         instance = InterestBackstage()
-        if interest_id:
-            interest_obj = instance.get(interest_id)
-            children_query = instance.get_by_parent_id(interest_id)
-            state = True
-            has_state = True
-            children_query = instance.get_by_state(children_query,state,has_state)
-            name = interest_obj.name
+        obj = instance.get_by_id(the_id)
+        name = obj.name if obj else ""
+        key = obj.key if obj else ""
+        parent = instance.get_by_id(obj.parent_id) if obj else None
+        parent_id = parent.id if parent else 0
+        parent_name = parent.name if parent else ""
+        parent_key = parent.key if parent else ""
+        message = ""
 
         return self.render(BASE_INTEREST_BACKSTAGE_DETAIL_HTML,
                            name=name,
+                           key=key,
                            parent_id=parent_id,
-                           interest_id=interest_id,
+                           parent_name=parent_name,
+                           parent_key=parent_key,
                            detail_url=BASE_INTEREST_BACKSTAGE_DETAIL_URL,
                            list_url=BASE_INTEREST_BACKSTAGE_LIST_URL,
-                           interest_obj =interest_obj,
-                           children_query = children_query,
-                           add_url=BASE_INTEREST_BACKSTAGE_ADD_URL,
-
+                           message=message
                            )

@@ -29,6 +29,13 @@ class DBOHHORecordMatchAgree(DBBase):
         query = self.get_query()
         return Operation.in_(query, self.model.apply_id, apply_id_list)
 
+    def get_by_apply_and_user(self, apply_id, user_id):
+        query = self.get_query()
+        query = Operation.filter(query, self.model.apply_id, apply_id)
+        query = Operation.filter(query, self.model.user_id, user_id)
+        query = self.order_by_id_desc(query)
+        return Operation.first(query)
+
     def is_valid_instance(self, instance):
         if instance:
             timestamp = OHHODatetime.get_current_timestamp()

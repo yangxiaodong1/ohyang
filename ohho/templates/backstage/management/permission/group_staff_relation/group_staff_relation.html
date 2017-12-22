@@ -1,0 +1,112 @@
+{% extends '../../manage_base.html' %}
+{% block title %}
+组和用户关系页面
+{% end %}
+{% block cssnew %}
+<style type="text/css">
+    .filter-select-box {
+        height: 250px !important;
+        width: 100%;
+        border-radius: 3px;
+    }
+</style>
+{% end %}
+{% block body_content %}
+<form class="form-horizontal" role="form" method="post" onsubmit="return SelectAllChosenData()" action="{{ add_url }}">
+    <input type="hidden" value="{{ group_id }}" name="id">
+    <div class="form-group">
+        <label class="col-sm-3 control-label">用户：</label>
+        <div class="col-sm-4">
+            <select id="name" name="name" style="height: 10px;overflow:scroll;"
+                    class="selectpicker show-tick form-control" multiple data-live-search="true">
+                {% for staff in staff_list %}
+                {% if staff and staff.country_code %}
+                <option value="{{ staff.username}}">{{ staff.country_code.country_code}}{{ staff.cellphone}}</option>
+                {% end %}
+                {% end %}
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-3 control-label">组中用户：</label>
+        <div class="col-sm-4">
+            <span style="padding-right: 100px">↓↓↓↓<button type="button" id="dj">点我到组中</button></span>
+            <span>↑↑↑↑<button type="button" id="dj2">点我离开组</button></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-3 control-label">组中的用户：</label>
+        <div class="col-sm-4">
+            <select id="group_user" name="group_user" style="height: 10px;overflow:scroll;"
+                    class="selectpicker show-tick form-control" multiple data-live-search="true">
+                {% for group_staff in group_staff_list %}
+                <option value="{{ group_staff.username }}">{{ group_staff.country_code.country_code}}{{
+                    group_staff.cellphone}}
+                </option>
+                {% end %}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label"></label>
+        <div class="col-sm-4">
+            <button type="submit" value="">确认</button>
+        </div>
+    </div>
+
+</form>    　
+
+<script>
+    $(window).on('load', function () {
+        $('.selectpicker').selectpicker({
+            style: 'btn-info',
+            size: 10,
+            dropupAuto: true
+        });
+        $('#group_user').selectpicker({
+            style: 'btn-info',
+            size: 10
+        });
+    })
+</script>
+<script>
+    $(document).ready(function () {
+        $("#dj").click(function () {
+            var aa = $("#name").val();
+            if (aa == null || aa === undefined || aa.length == null) {
+                alert("不能为空")
+            } else {
+                aa.forEach(function (e) {
+                    var option = "<option value='" + e + "' selected>'" + $("#name").find("[value='" + e + "']").text() + "'</option>";
+                    $("#group_user").append(option);
+                    $('#group_user').selectpicker('refresh');
+                    $("#name").find("[value='" + e + "']").remove();
+                    $("#name").selectpicker('refresh');
+                })
+            }
+        })
+
+        $("#dj2").click(function () {
+            var aa = $("#group_user").val();
+            if (aa == null || aa === undefined || aa.length == null) {
+                alert("不能为空")
+            } else {
+                aa.forEach(function (e) {
+                    var option = "<option value='" + e + "' selected>'" + e + "'</option>";
+                    $("#name").append(option);
+                    $('#name').selectpicker('refresh');
+                    $("#group_user").find("[value='" + e + "']").remove();
+                    $("#group_user").selectpicker('refresh');
+                })
+
+            }
+
+        })
+
+    })
+</script>
+
+
+{% end %}

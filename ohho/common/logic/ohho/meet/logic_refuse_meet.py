@@ -25,31 +25,40 @@ class LogicRefuseMeet(object):
         :return:
         """
         # 向对方发送拒绝的推送
-        type = PUSH_STATE_TYPE_REFUSE_MEET
-        if not self.meet.is_meet_end(apply_id, friend_user_id):
-            result = self.push_information(friend_user_id, user_id, apply_id, type, base_url)
-            OHHOLog.print_log(result)
-        # information = self.user.get_push_user_information(user_id, apply_id, base_url)
-        # information["function"] = "refuse meet"
-        # self.user.push_user_information(friend_user_id, PUSH_STATE_TYPE_REFUSE_MEET, information)
-        self.meet.add_exclude(user_id, friend_user_id)
-        self.meet.add_refuse(apply_id, user_id)
-        return Result.result_success()
+        try:
+            if user_id and friend_user_id and apply_id:
+                type = PUSH_STATE_TYPE_REFUSE_MEET
+                if not self.meet.is_meet_end(apply_id, friend_user_id):
+                    result = self.push_information(friend_user_id, user_id, apply_id, type, base_url)
+                    OHHOLog.print_log(result)
+                # information = self.user.get_push_user_information(user_id, apply_id, base_url)
+                # information["function"] = "refuse meet"
+                # self.user.push_user_information(friend_user_id, PUSH_STATE_TYPE_REFUSE_MEET, information)
+                self.meet.add_exclude(user_id, friend_user_id)
+                self.meet.add_refuse(apply_id, user_id)
+                return Result.result_success()
+            else:
+                OHHOLog.print_log(
+                    "user_id:%s, friend_user_id:%s, apply_id:%s" % (str(user_id), str(friend_user_id), str(apply_id)))
+                return Result.result_failed("there is some id is 0")
+        except Exception as ex:
+            OHHOLog.print_log(ex)
+            return Result.result_failed(ex)
 
 
-        # has_valid_apply = self.meet.has_valid_apply(friend_user_id, user_id)
-        # if has_valid_apply:
-        #     apply = self.meet.get_apply_by_user_and_friend(friend_user_id, user_id)
-        #     success = self.meet.add_refuse(apply.id, user_id)
-        #     if success:
-        #
-        #         log_string = "%d refuse %d to meet" % (user_id, friend_user_id)
-        #         OHHOLog.print_log(log_string)
-        #
-        #         message = self.user.get_user_basic_information(user_id, base_url)
-        #         self.user.push(log_string, friend_user_id, DEFAULT_IM_USER_ID)
-        #         return Result.result_success()
-        #     else:
-        #         return Result.result_failed()
-        # else:
-        #     return Result.result_failed("no valid apply!")
+            # has_valid_apply = self.meet.has_valid_apply(friend_user_id, user_id)
+            # if has_valid_apply:
+            #     apply = self.meet.get_apply_by_user_and_friend(friend_user_id, user_id)
+            #     success = self.meet.add_refuse(apply.id, user_id)
+            #     if success:
+            #
+            #         log_string = "%d refuse %d to meet" % (user_id, friend_user_id)
+            #         OHHOLog.print_log(log_string)
+            #
+            #         message = self.user.get_user_basic_information(user_id, base_url)
+            #         self.user.push(log_string, friend_user_id, DEFAULT_IM_USER_ID)
+            #         return Result.result_success()
+            #     else:
+            #         return Result.result_failed()
+            # else:
+            #     return Result.result_failed("no valid apply!")

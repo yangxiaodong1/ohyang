@@ -1,3 +1,12 @@
+BASE_HINT_BACKSTAGE_ADD_HTML = "backstage/management/base/hint/hint_add.html"
+BASE_HINT_BACKSTAGE_LIST_HTML = "backstage/management/base/hint/hint_list.html"
+BASE_HINT_BACKSTAGE_DETAIL_HTML = "backstage/management/base/hint/hint_detail.html"
+BASE_HINT_BACKSTAGE_DELETE_HTML = "backstage/management/base/hint/hint_delete.html"
+BASE_HINT_BACKSTAGE_ADD_URL = "/backstage/management/base/hint/add/"
+BASE_HINT_BACKSTAGE_LIST_URL = "/backstage/management/base/hint/list/"
+BASE_HINT_BACKSTAGE_DETAIL_URL = "/backstage/management/base/hint/detail/"
+BASE_HINT_BACKSTAGE_DELETE_URL = "/backstage/management/base/hint/delete/"
+
 BASE_COUNTRY_CODE_BACKSTAGE_ADD_HTML = "backstage/management/base/country_code/country_code_add.html"
 BASE_COUNTRY_CODE_BACKSTAGE_LIST_HTML = "backstage/management/base/country_code/country_code_list.html"
 BASE_COUNTRY_CODE_BACKSTAGE_DETAIL_HTML = "backstage/management/base/country_code/country_code_detail.html"
@@ -6,7 +15,6 @@ BASE_COUNTRY_CODE_BACKSTAGE_ADD_URL = "/backstage/management/base/country_code/a
 BASE_COUNTRY_CODE_BACKSTAGE_LIST_URL = "/backstage/management/base/country_code/list/"
 BASE_COUNTRY_CODE_BACKSTAGE_DETAIL_URL = "/backstage/management/base/country_code/detail/"
 BASE_COUNTRY_CODE_BACKSTAGE_DELETE_URL = "/backstage/management/base/country_code/delete/"
-
 
 BASE_INTEREST_BACKSTAGE_ADD_HTML = "backstage/management/base/interest_backstage/interest_add.html"
 BASE_INTEREST_BACKSTAGE_LIST_HTML = "backstage/management/base/interest_backstage/interest_list.html"
@@ -25,7 +33,6 @@ BASE_SENSITIVE_BACKSTAGE_ADD_URL = "/backstage/management/base/sensitive/add/"
 BASE_SENSITIVE_BACKSTAGE_LIST_URL = "/backstage/management/base/sensitive/list/"
 BASE_SENSITIVE_BACKSTAGE_DETAIL_URL = "/backstage/management/base/sensitive/detail/"
 BASE_SENSITIVE_BACKSTAGE_DELETE_URL = "/backstage/management/base/sensitive/delete/"
-
 
 BASE_USER_DISPLAY_CONFIG_ADD_HTML = "backstage/management/base/user_display_configuration/user_display_config_add.html"
 BASE_USER_DISPLAY_CONFIG_LIST_HTML = "backstage/management/base/user_display_configuration/user_display_config_list.html"

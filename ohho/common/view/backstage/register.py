@@ -9,6 +9,7 @@ from ohho.common.view.backstage.constant import *
 from ohho.common.logic.ohho.register.logic_backstage_register import LogicBackstageRegister
 from ohho.common.logic.ohho.register.logic_register import LogicRegister
 from ohho.common.logic.common.code import Code
+from Tools.ohho_log import OHHOLog
 
 
 class BackstageRegisterHandler(BaseHandler):
@@ -25,8 +26,10 @@ class BackstageRegisterHandler(BaseHandler):
         country_code_object = user.get_country_code(country_code)
         if country_code_object and not user.get_by_country_code_and_cellphone(country_code_object.id, cellphone):
             register_result = register_instance.add_new_user(password, cellphone, country_code)
+            OHHOLog.print_log(register_result)
             if Result.is_success(register_result):
-                user_id  = register_result.get("user_id", 0)
+                user_id = register_result.get("user_id", 0)
+
                 user_object = user.get_by_id(user_id)
                 if user_object:
                     self.set_secure_cookie("username", user_object.username)

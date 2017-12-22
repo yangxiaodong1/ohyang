@@ -1,3 +1,9 @@
+PERMISSION_GROUP_STAFF_RELATION_ADD_URL = "/backstage/management/permission/group/staff/relation/add/"
+PERMISSION_GROUP_STAFF_RELATION_DELETE_URL = "/backstage/management/permission/group/staff/relation/delete/"
+PERMISSION_GROUP_STAFF_RELATION_HTML = "backstage/management/permission/group_staff_relation/group_staff_relation.html"
+PERMISSION_GROUP_STAFF_RELATION_DELETE_HTML = "backstage/management/permission/group_staff_relation/group_staff_relation_delete.html"
+
+
 PERMISSION_GROUP_USER_RELATION_ADD_URL = "/backstage/management/permission/group/user/relation/add/"
 PERMISSION_GROUP_USER_RELATION_DELETE_URL = "/backstage/management/permission/group/user/relation/delete/"
 PERMISSION_GROUP_USER_RELATION_HTML = "backstage/management/permission/group_user_relation/group_user_relation.html"

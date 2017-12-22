@@ -21,7 +21,7 @@ class LogicListBlacks(object):
             # OHHOLog.print_log(relation.id)
             # user = self.user.get_by_id(relation.friend_account_id)
             # if user:
-            temp = self.user.get_user_information(relation.friend_account_id, base_url)
+            temp = self.user.get_user_information4friend(relation.friend_account_id, base_url)
             if temp:
                 data.append(temp)
 

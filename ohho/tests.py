@@ -84,11 +84,14 @@ from ohho.common.test.meet.test_refuse_meet import TestRefuseMeetHandler
 from ohho.common.test.meet.test_cancel_meet import TestCancelMeetHandler
 from ohho.common.test.meet.test_add_meet import TestAddMeetHandler
 from ohho.common.test.meet.test_meet import TestMeetHandler
+from ohho.common.test.meet.test_meet_send_message import TestMeetSendMessageHandler
 from ohho.common.test.meet.test_get_meet_state import TestGetMeetStateHandler
 from ohho.common.test.meet.test_get_meet_topic import TestGetMeetTopicHandler
 from ohho.common.test.meet.test_meet_by_device import TestMeetByDeviceHandler
 from ohho.common.test.meet.test_meet_end import TestMeetEndHandler
 from ohho.common.test.meet.test_meet_by_hand import TestMeetByHandHandler
+from ohho.common.test.meet.test_not_meet_by_hand import TestNotMeetByHandHandler
+from ohho.common.test.meet.test_rematch import TestRematchHandler
 
 # map
 from ohho.common.test.map.test_upload_map_position import TestUploadMapPositionHandler
@@ -123,7 +126,7 @@ from ohho.common.view.test.view_test_update_device_information import *
 from ohho.common.view.test.view_test_get_user_by_device import *
 from ohho.common.view.test.view_test_delete_apply import *
 from ohho.common.view.test.view_test_delete_test import *
-# from ohho.common.view.test.view_test_test import *
+from ohho.common.view.test.view_test_test import *
 from ohho.common.view.test.view_test_distance import *
 from ohho.common.view.test.view_test_phone_position import *
 
@@ -137,3 +140,9 @@ from ohho.common.view.test.view_test_add_map_information import *
 
 # test user push information
 from ohho.common.view.test.view_show_user_basic_information import *
+
+# test add user
+from ohho.common.view.test.view_test_add_new_users import *
+
+# test met
+from ohho.common.view.test.view_test_met import *

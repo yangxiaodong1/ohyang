@@ -12,7 +12,7 @@ class DBOHHOMatchCondition(DBBase):
         return Operation.filter(query, self.model.user_id, user_id)
 
     def get_by_name(self, query, name):
-        return Operation.filtr(query, self.model.name, name)
+        return Operation.filter(query, self.model.name, name)
 
 
 if __name__ == "__main__":

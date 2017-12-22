@@ -8,6 +8,12 @@ class DBOHHOInterest(DBBase):
     def __init__(self, index=0):
         super(DBOHHOInterest, self).__init__(OHHOInterest, index)
 
+    def get_by_key(self, key):
+        query = self.get_query()
+        query = Operation.filter(query, self.model.key, key)
+        query = self.order_by_id_desc(query)
+        return self.first(query)
+
     def find_by_name(self, query, name):
         return Operation.ilike(query, self.model.name, name)
 

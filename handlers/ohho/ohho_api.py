@@ -35,6 +35,7 @@ handlers = [
 
     (r"/rest/api/ohho/match/", MatchHandler),
     (r"/rest/api/ohho/version2/match/", Version2MatchHandler),
+    (r"/rest/api/ohho/version2/match2/", Version2Match2Handler),
     (r"/rest/api/ohho/version3/match/", Version3MatchHandler),
     (r"/rest/api/ohho/meet/", MeetHandler),
 
@@ -49,9 +50,12 @@ handlers = [
 
     (r"/rest/api/ohho/end/meet/", MeetEndHandler),
     (r"/rest/api/ohho/met/by/hand/", MetByHandHandler),
+    (r"/rest/api/ohho/not/met/by/hand/", NotMetByHandHandler),
     (r"/rest/api/ohho/met/by/device/", MetByDeviceHandler),
 
     (r"/rest/api/ohho/add/meet/", AddMeetHandler),
+    (r"/rest/api/ohho/send/meet/message/", MeetSendMessageHandler),
+    (r"/rest/api/ohho/meet/rematch/", RematchHandler),
     # 交友接口
     (r"/rest/api/ohho/apply/friend/", ApplyFriendHandler),
     (r"/rest/api/ohho/agree/friend/", AgreeFriendHandler),

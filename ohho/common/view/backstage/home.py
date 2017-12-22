@@ -35,6 +35,7 @@ class BackstageHomeHandler(BaseHandler):
                            phone=phone,
                            last_login=last_login,
                            user_url=MANAGEMENT_USER_LIST_URL,
+                           staff_url=MANAGEMENT_STAFF_LIST_URL,
                            device_url=MANAGEMENT_DEVICE_LIST_URL,
                            cellphone_url=MANAGEMENT_CELLPHONE_LIST_URL,
                            relation_url=MANAGEMENT_RELATION_HOME_URL,

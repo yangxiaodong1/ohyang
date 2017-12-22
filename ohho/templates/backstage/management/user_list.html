@@ -38,7 +38,7 @@
 
                 </h4>
                 <br>
-                <span class="label label-info">显示用户信息</span>
+                <span class="label label-info">{{ user.id }}</span>
                 <span class="badge">
                     {% if user.state %}
                     有效
@@ -65,21 +65,27 @@
     <li class="disabled"><a href="#">&laquo;</a></li>
 
     {% else %}
-    <li><a href="/backstage/management/user/list/?page={{previous}}&state={{state}}&cellphone_number={{cellphone_number}}">&laquo;</a></li>
+    <li>
+        <a href="/backstage/management/user/list/?page={{previous}}&state={{state}}&cellphone_number={{cellphone_number}}">&laquo;</a>
+    </li>
     {% end %}
 
     {% for p in pages %}
     {% if p == page %}
-    <li class="active"><a href="/backstage/management/user/list/?page={{p}}&state={{state}}&cellphone_number={{cellphone_number}}">{{p}}</a></li>
+    <li class="active"><a
+            href="/backstage/management/user/list/?page={{p}}&state={{state}}&cellphone_number={{cellphone_number}}">{{p}}</a>
+    </li>
     {% else %}
-    <li><a href="/backstage/management/user/list/?page={{p}}&state={{state}}&cellphone_number={{cellphone_number}}">{{p}}</a></li>
+    <li><a href="/backstage/management/user/list/?page={{p}}&state={{state}}&cellphone_number={{cellphone_number}}">{{p}}</a>
+    </li>
     {% end %}
     {% end %}
 
     {% if next==0 %}
     <li class="disabled"><a href="#">&raquo;</a></li>
     {% else %}
-    <li><a href="/backstage/management/user/list/?page={{next}}&state={{state}}&cellphone_number={{cellphone_number}}">&raquo;</a></li>
+    <li><a href="/backstage/management/user/list/?page={{next}}&state={{state}}&cellphone_number={{cellphone_number}}">&raquo;</a>
+    </li>
     {% end %}
 </ul>
 <br/>

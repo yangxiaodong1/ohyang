@@ -279,6 +279,7 @@ class User(object):
                     result = Result.result_failed(UPDATE_USER_FAILED)
             else:
                 user_extension_dict["user_id"] = user_id
+                OHHOLog.print_log(user_extension_dict)
                 success = self.user_extension.add(user_extension_dict)
                 if success:
                     result = Result.result_success()
@@ -519,8 +520,10 @@ class User(object):
         if user and user.state:
             user_accuracy_extension = self.user_extension.get_by_user(friend_user_id)
             result["user_id"] = friend_user_id
+            user_icon = self.user_icon.get_user_head_sculpture(friend_user_id)
+            result["icon"] = base_url + user_icon.icon if user_icon else ""
             if user_accuracy_extension:
-                result["icon"] = self.get_default_icon(user_accuracy_extension, base_url)
+                # result["icon"] = self.get_default_icon(user_accuracy_extension, base_url)
                 result["nickname"] = self.get_default_nickname(user_accuracy_extension)
 
             # user_icon = self.user_icon.get_user_head_sculpture(friend_user_id)
@@ -628,6 +631,11 @@ class User(object):
 
             user_extension = self.user_extension.get_by_user(user_id)
             if user_extension:
+                if user_extension.sex:
+                    result["sex"] = user_extension.sex
+                else:
+                    result["sex"] = 0
+
                 if user_extension.nickname:
                     result["nickname"] = user_extension.nickname
                 else:
@@ -673,7 +681,7 @@ class User(object):
             result["I_unlike"] = I_unlike.first + I_unlike.second + I_unlike.third
 
             impression_list = self.get_user_impression_by_user_id(user_id)
-            result["impression"] = [im["name"] + "+" + str(im["count"]) for im in impression_list]
+            result["impression"] = impression_list
 
         return result
         # result = dict()
@@ -885,7 +893,8 @@ class User(object):
 
     def get_user_impression_by_user_id(self, user_id, base_url=""):
         """通过user_id 获取到用户印象"""
-        user_impression_list = self.user_impression.get_user_impression(user_id)
+        type = 0
+        user_impression_list = self.user_impression.get_user_impression(user_id, type)
         data = list()
         if user_impression_list:
             for impression in user_impression_list:
@@ -995,87 +1004,90 @@ class User(object):
                 OHHOLog.print_log(result)
         return result
 
-    # def get_user_information(self, user_id, base_url=None):
-    #     user = self.user.get_by_id(user_id)
-    #     result = dict()
-    #     device = self.get_primary_device_by_user(user_id)
-    #     map = self.map.get_by_user(user_id)
-    #
-    #     if user and user.state:
-    #         result["state"] = 0
-    #         user_accuracy_extension = self.user_extension.get_by_user(user_id)
-    #         if user_accuracy_extension:
-    #             result = self.user_extension.get_information(user_accuracy_extension, base_url)
-    #             result["state"] = user.state
-    #             if user_accuracy_extension.birthday:
-    #                 result["zodiac"] = self.get_zodiac(user_accuracy_extension.birthday)
-    #             interest_dict = self.user_extension.parse_interest(user_accuracy_extension)
-    #             # interest_dict = self.parse_interest(interest_dict)
-    #
-    #             result = OHHOOperation.dict_add_dict(result, interest_dict)
-    #
-    #         match_condition_relation = self.record_user_and_match_condition.get_nearest_by_user(user.id)
-    #         if match_condition_relation and match_condition_relation.match_condition_id:
-    #             match_condition = self.match_condition.get_by_id(match_condition_relation.match_condition_id)
-    #             if match_condition and match_condition.interest:
-    #                 result["primary"] = OHHOOperation.json2dict(match_condition.interest)
-    #             else:
-    #                 result["primary"] = list()
-    #         else:
-    #             result["primary"] = list()
-    #
-    #         country_code_id = user.country_code_id
-    #         if country_code_id:
-    #             country_code_object = self.country_code.get_by_id(country_code_id)
-    #             result["country_code"] = country_code_object.country_code if country_code_object else 0
-    #         else:
-    #             result["country_code"] = "+86"
-    #
-    #         result["username"] = user.cellphone
-    #         result["unique_username"] = user.username
-    #         token = self.token.get(user_id)
-    #         # OHHOLog.print_log(user_id)
-    #         if token:
-    #             result["token"] = token.token
-    #         else:
-    #             result["token"] = ""
-    #         query = self.im_user.get_query()
-    #         query = self.im_user.get_by_account(query, user_id)
-    #         im_user = self.im_user.first(query)
-    #         if im_user:
-    #             result["im_token"] = im_user.token
-    #         else:
-    #             # OHHOLog.print_log("add im token")
-    #             RefreshToken.create_or_update(user_id)
-    #             query = self.im_user.get_query()
-    #             query = self.im_user.get_by_account(query, user_id)
-    #             im_user = self.im_user.first(query)
-    #             if im_user:
-    #                 result["im_token"] = im_user.token
-    #             else:
-    #                 result["im_token"] = ""
-    #
-    #         if device:
-    #             result["device_identity_id"] = device.identity_id
-    #             result["device_mac_address"] = device.mac_address
-    #
-    #             imei = self.imei.get_by_device(device.id)
-    #             # imei = self.imei.first(imeis)
-    #             if imei:
-    #                 result["imei"] = imei.imei
-    #
-    #         configuration = self.user_configuration.get_by_user(user_id)
-    #         if configuration:
-    #             result["is_online"] = configuration.is_online
-    #             result["is_match"] = configuration.is_match
-    #         if map:
-    #             result["longitude"] = float(map.longitude)
-    #             result["latitude"] = float(map.latitude)
-    #         else:
-    #             result["longitude"] = 0
-    #             result["latitude"] = 0
-    #
-    #     return result
+    def get_user_information4friend(self, user_id, base_url=None):
+        user = self.user.get_by_id(user_id)
+        result = dict()
+        device = self.get_primary_device_by_user(user_id)
+        map = self.map.get_by_user(user_id)
+
+        if user and user.state:
+            result["state"] = 0
+            user_accuracy_extension = self.user_extension.get_by_user(user_id)
+            if user_accuracy_extension:
+                result = self.user_extension.get_information(user_accuracy_extension, base_url)
+                result["state"] = user.state
+                if user_accuracy_extension.birthday:
+                    result["zodiac"] = self.get_zodiac(user_accuracy_extension.birthday)
+                interest_dict = self.user_extension.parse_interest(user_accuracy_extension)
+                # interest_dict = self.parse_interest(interest_dict)
+
+                result = OHHOOperation.dict_add_dict(result, interest_dict)
+
+            match_condition_relation = self.record_user_and_match_condition.get_nearest_by_user(user.id)
+            if match_condition_relation and match_condition_relation.match_condition_id:
+                match_condition = self.match_condition.get_by_id(match_condition_relation.match_condition_id)
+                if match_condition and match_condition.interest:
+                    result["primary"] = OHHOOperation.json2dict(match_condition.interest)
+                else:
+                    result["primary"] = list()
+            else:
+                result["primary"] = list()
+
+            country_code_id = user.country_code_id
+            if country_code_id:
+                country_code_object = self.country_code.get_by_id(country_code_id)
+                result["country_code"] = country_code_object.country_code if country_code_object else 0
+            else:
+                result["country_code"] = "+86"
+
+            result["username"] = user.cellphone
+            result["unique_username"] = user.username
+            token = self.token.get(user_id)
+            # OHHOLog.print_log(user_id)
+            if token:
+                result["token"] = token.token
+            else:
+                result["token"] = ""
+            query = self.im_user.get_query()
+            query = self.im_user.get_by_account(query, user_id)
+            im_user = self.im_user.first(query)
+            if im_user:
+                result["im_token"] = im_user.token
+            else:
+                # OHHOLog.print_log("add im token")
+                RefreshToken.create_or_update(user_id)
+                query = self.im_user.get_query()
+                query = self.im_user.get_by_account(query, user_id)
+                im_user = self.im_user.first(query)
+                if im_user:
+                    result["im_token"] = im_user.token
+                else:
+                    result["im_token"] = ""
+
+            if device:
+                result["device_identity_id"] = device.identity_id
+                result["device_mac_address"] = device.mac_address
+
+                imei = self.imei.get_by_device(device.id)
+                # imei = self.imei.first(imeis)
+                if imei:
+                    result["imei"] = imei.imei
+
+            configuration = self.user_configuration.get_by_user(user_id)
+            if configuration:
+                result["is_online"] = configuration.is_online
+                result["is_match"] = configuration.is_match
+            if map:
+                result["longitude"] = float(map.longitude)
+                result["latitude"] = float(map.latitude)
+            else:
+                result["longitude"] = 0
+                result["latitude"] = 0
+
+        user_icon = self.user_icon.get_user_head_sculpture(user_id)
+        result["icon"] = base_url + user_icon.thumbnail if user_icon else ""
+
+        return result
 
     def get_primary_device_by_user(self, user_id):
         query = self.user_and_device_relation.get_query()
@@ -1108,10 +1120,10 @@ class User(object):
             return None
 
     def push(self, message, to_user_id, from_user_id="ohho"):
-        # OHHOLog.print_log(to_user_id)
-        # OHHOLog.print_log(from_user_id)
-        # OHHOLog.print_log(message)
-        # OHHOLog.print_log("from user %s to user %d" % (str(from_user_id), int(to_user_id)))
+        OHHOLog.print_log(to_user_id)
+        OHHOLog.print_log(from_user_id)
+        OHHOLog.print_log(message)
+        OHHOLog.print_log("from user %s to user %d" % (str(from_user_id), int(to_user_id)))
         body = message
         # body["current_time"] = OHHODatetime.get_now_string()
         # body["msg"] = message

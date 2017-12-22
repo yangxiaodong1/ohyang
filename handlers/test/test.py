@@ -35,6 +35,12 @@ handlers = [
 
     # show push user information
     (r"/rest/api/test/show/user/information/", TestShowUserBasicInformation),
+
+    # test add new user
+    (r"/rest/api/test/add/new/user/", TestAddNewUserHandler),
     # (r"/rest/api/test/map/information/add/", TestAddMapInformationHandler),
+
+    # test met
+    (r"/rest/api/test/met/", TestMetHandler),
 
 ]

@@ -25,7 +25,7 @@ class DBOHHORecordFriendApply(DBBase):
     def is_valid_instance(self, instance):
         if instance:
             timestamp = OHHODatetime.get_current_timestamp()
-            if instance.timestamp + VALID_INTERVAL_MILLISECOND < timestamp:
+            if instance.timestamp + VALID_FRIEND_INTERVAL_MILLISECOND < timestamp:
                 return False
             return True
         else:

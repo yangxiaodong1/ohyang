@@ -43,8 +43,8 @@ class LogicAddUserIcon(object):
                     instance.add({"fourth": path_name, "user_id": user_id})
 
             result["url"] = base_url + path_name
-
-            UpdateUserInfo.update_user_info(user_id, icon=base_url + path_name)
+            if image_sequence == 0:
+                UpdateUserInfo.update_user_info(user_id, icon=base_url + path_name)
         else:
             result = Result.result_failed("no image file")
             result["url"] = ""

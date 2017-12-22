@@ -1,3 +1,4 @@
+from ohho.common.db.ohho.match.db_ohho_match_published import DBOHHOMatchPublished
 from ohho.common.db.ohho.record.db_ohho_record_match_apply import DBOHHORecordMatchApply
 from ohho.common.db.ohho.record.db_ohho_record_match_agree import DBOHHORecordMatchAgree
 from ohho.common.db.ohho.record.db_ohho_record_match_duplex_agree import DBOHHORecordMatchDuplexAgree
@@ -14,6 +15,8 @@ from Tools.ohho_datetime import OHHODatetime
 from Tools.ohho_log import OHHOLog
 from DB.redis.operation import RedisDB
 
+TOTAL_TIME = 24 * 60 * 60 * 1000
+
 
 class Meet(object):
     def __init__(self):
@@ -26,6 +29,7 @@ class Meet(object):
         self.meeting = DBOHHORecordMatchMeeting()
         self.meet_end = DBOHHORecordMatchMeetEnd()
         self.exclude = DBOHHORecordExclude()
+        self.published = DBOHHOMatchPublished()
 
     def get_applies_by_time_delta(self, time_delta=-24):
         now = OHHODatetime.get_utc_now()
@@ -94,40 +98,27 @@ class Meet(object):
             # OHHOLog.print_log("no apply!")
             return APPLY_NOT_EXIST
 
-    def has_valid_apply(self, user_id, friend_user_id):
-        """
-        获取最新的有效申请
-        如果拒绝，申请无效；如果见面了，申请无效；否则， 有效。
-        :param user_id:
-        :param friend_user_id:
-        :return:
-        """
-        apply = self.get_apply_by_user_and_friend(user_id, friend_user_id)
-        if apply:
-            # meet_end = self.meet_end.get_by_apply(apply.id)
-            # if meet_end:
-            #     return False
-
-            # OHHOLog.print_log(apply.id)
-            nearest_refuse = self.refuse.get_nearest_refuse(apply.id)
+    def is_the_apply_valid(self, the_apply):
+        if the_apply:
+            nearest_refuse = self.refuse.get_nearest_refuse(the_apply.id)
             if nearest_refuse:
                 # 拒绝了
                 # OHHOLog.print_log("refuse")
                 return False
             else:
-                is_meet = self.is_meet(user_id, friend_user_id)
+                is_meet = self.is_meet_by_apply(the_apply.id)
                 if is_meet:
                     # 没有拒绝， 见过面了
                     # OHHOLog.print_log("has meet")
                     return False
                 else:
-                    nearest_agree = self.agree.get_nearest_agree(apply.id)
+                    nearest_agree = self.agree.get_nearest_agree(the_apply.id)
                     if nearest_agree:
                         # OHHOLog.print_log("agree and not meet OK")
                         # 同意啦，没见过面，有效
                         return True
                     else:
-                        is_valid_apply = self.apply.is_valid_instance(apply)
+                        is_valid_apply = self.apply.is_valid_instance(the_apply)
                         if is_valid_apply:
                             # OHHOLog.print_log("OK")
                             # 没有见面，没有同意，没有超时， 有效
@@ -137,9 +128,18 @@ class Meet(object):
                             # OHHOLog.print_log("timeout")
                             return False
         else:
-            # OHHOLog.print_log("no apply!")
-            pass
-        return False
+            return False
+
+    def has_valid_apply(self, user_id, friend_user_id):
+        """
+        获取最新的有效申请
+        如果拒绝，申请无效；如果见面了，申请无效；否则， 有效。
+        :param user_id:
+        :param friend_user_id:
+        :return:
+        """
+        apply = self.get_apply_by_user_and_friend(user_id, friend_user_id)
+        return self.is_the_apply_valid(apply)
 
     def has_agree(self, apply_id):
         if self.agree.get_nearest_agree(apply_id):
@@ -490,11 +490,16 @@ class Meet(object):
             query_meet = self.meet.get_by_apply_and_user(apply_id, user_id)
             friend_meet = self.meet.get_by_apply_and_user(apply_id, friend_user_id)
             query_meet_end = self.meet_end.get_by_apply_and_user(apply_id, user_id)
+            # self_agree_meet = self.agree.get_by_apply_and_user(apply_id, user_id)
+            # friend_agree_meet = self.agree.get_by_apply_and_user(apply_id, friend_user_id)
             if not query_meet_end:
                 if query_meet and friend_meet:
                     state = PUSH_STATE_TYPE_MET
                 elif query_meet:
                     state = PUSH_STATE_TYPE_SINGLE_MEET
+                    # elif self_agree_meet and friend_agree_meet:
+                    #     state = PUSH_STATE_TYPE_AGREE_MEET
+                    # elif
             else:
                 state = PUSH_STATE_TYPE_END_MEET
 
@@ -506,3 +511,30 @@ class Meet(object):
         else:
             state, apply_id = self.get_user_state_by_user(user_id)
         return state, apply_id
+
+    def get_countdown(self, apply_id, total=TOTAL_TIME):
+        result = dict()
+        result["current_stamp"] = OHHODatetime.get_current_timestamp()
+        duplex_agree = self.duplex_agree.get_by_apply(apply_id)
+        current_timestamp = OHHODatetime.get_current_timestamp()
+
+        if duplex_agree and duplex_agree.timestamp:
+            end_timestamp = total + duplex_agree.timestamp
+            passed = current_timestamp - duplex_agree.timestamp
+            result["start_timestamp"] = duplex_agree.timestamp
+            result["end_timestamp"] = end_timestamp
+            result["countdown"] = TOTAL_TIME - passed
+            result["is_both_agree"] = True
+        else:
+            result["start_timestamp"] = 0
+            result["end_timestamp"] = 0
+            result["countdown"] = 0
+            result["is_both_agree"] = False
+        return result
+
+    def delete_published_by_user(self, user_id):
+        query = self.published.get_by_user(user_id)
+        self.published.delete_some(query)
+
+    def add_published(self, data):
+        return self.published.add(data)

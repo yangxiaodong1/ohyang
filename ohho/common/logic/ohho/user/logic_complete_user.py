@@ -10,6 +10,7 @@ from ohho.common.logic.ohho.constant import DESCRIPTION_TYPE_I_AM
 from ohho.common.logic.ohho.constant import DESCRIPTION_TYPE_I_LIKE
 from ohho.common.logic.ohho.constant import DESCRIPTION_TYPE_I_UNLIKE
 from ohho.common.logic.ohho.constant import DESCRIPTION_TYPE_I_HOPE
+from ohho.common.logic.common.im.netease.update_user_info import UpdateUserInfo
 
 
 class LogicCompleteUser(object):
@@ -80,14 +81,18 @@ class LogicCompleteUser(object):
     def complete(self, user_id, data, icon0, icon1, icon2, icon3, base_url):
         extension, description, favourite, icons = self.parse_parameter(data)
         try:
+            nickname = None
             if icons:
+                OHHOLog.print_log("icons")
                 self.add_icon(user_id, icons["icon0_id"], icon0, icons["icon0_is_head_sculpture"], base_url)
                 self.add_icon(user_id, icons["icon1_id"], icon1, icons["icon1_is_head_sculpture"], base_url)
                 self.add_icon(user_id, icons["icon2_id"], icon2, icons["icon2_is_head_sculpture"], base_url)
                 self.add_icon(user_id, icons["icon3_id"], icon3, icons["icon3_is_head_sculpture"], base_url)
 
             if extension:
+                OHHOLog.print_log("extension")
                 extension["user_id"] = user_id
+                nickname = extension.get("nickname", None)
                 user_extension = self.user.user_accuracy_extension.get_by_user(user_id)
                 if not user_extension:
                     self.user.user_accuracy_extension.add_without_commit(extension)
@@ -95,6 +100,7 @@ class LogicCompleteUser(object):
                     self.user.user_accuracy_extension.update_without_commit(user_extension, extension)
 
             if description:
+                OHHOLog.print_log("description")
                 I_am = description["I_am"]
                 self.add_description(I_am, user_id, DESCRIPTION_TYPE_I_AM)
 
@@ -108,34 +114,45 @@ class LogicCompleteUser(object):
                 self.add_description(I_hope, user_id, DESCRIPTION_TYPE_I_HOPE)
 
             if favourite:
+
                 books = favourite['books']
                 if books:
+                    OHHOLog.print_log("books")
                     self.delete_favourite(user_id, self.user.user_favourite_book)
                     self.add_favourite(books, self.user.user_favourite_book, user_id)
 
                 movies = favourite['movies']
                 if movies:
+                    OHHOLog.print_log("movies")
+                    OHHOLog.print_log(movies)
                     self.delete_favourite(user_id, self.user.user_favourite_movie)
+                    OHHOLog.print_log("movies delete")
                     self.add_favourite(movies, self.user.user_favourite_movie, user_id)
+                    OHHOLog.print_log("movies add")
 
                 musics = favourite['musics']
                 if musics:
+                    OHHOLog.print_log("musics")
                     self.delete_favourite(user_id, self.user.user_favourite_music)
                     self.add_favourite(musics, self.user.user_favourite_music, user_id)
 
                 sports = favourite["sports"]
                 if sports:
+                    OHHOLog.print_log("sports")
                     self.delete_favourite(user_id, self.user.user_favourite_sport)
                     self.add_favourite(sports, self.user.user_favourite_sport, user_id)
             self.user.user.commit()
 
             user_extension = self.user.user_accuracy_extension.get_by_user(user_id)
             if user_extension:
+                OHHOLog.print_log("user_extension")
                 if self.is_primary_OK(user_id):
                     self.user.user_accuracy_extension.update(user_extension, {"able2match": 1})
                 else:
                     self.user.user_accuracy_extension.update(user_extension, {"able2match": 0})
 
+            if nickname is not None:
+                UpdateUserInfo.update_user_info(user_id, name=nickname)
             return Result.result_success()
         except Exception as ex:
             OHHOLog.print_log(ex)
@@ -166,7 +183,10 @@ class LogicCompleteUser(object):
         if objs:
             for obj in objs:
                 id = obj.get("id", 0)
-                del obj["id"]
+                if obj.get("id", None) is None:
+                    pass
+                else:
+                    del obj["id"]
                 obj["user_id"] = user_id
                 the_object = instance.get_by_id(id)
                 if the_object:

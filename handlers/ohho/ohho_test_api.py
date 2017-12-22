@@ -1,8 +1,10 @@
 from ohho.tests import *
 
 handlers = [
-    # (r"/rest/api/ohho/test/test/", TestTestHandler),
+    (r"/rest/api/ohho/test/test/", TestTestHandler),
     (r"/rest/api/ohho/test/meet/", TestMeetHandler),
+    (r"/rest/api/ohho/test/meet/rematch/", TestRematchHandler),
+    (r"/rest/api/ohho/test/send/meet/message/", TestMeetSendMessageHandler),
     (r"/rest/api/ohho/test/apply/meet/", TestApplyMeetHandler),
     (r"/rest/api/ohho/test/agree/meet/", TestAgreeMeetHandler),
     (r"/rest/api/ohho/test/refuse/meet/", TestRefuseMeetHandler),
@@ -102,6 +104,7 @@ handlers = [
 
     (r"/rest/api/ohho/test/meet/end/", TestMeetEndHandler),
     (r"/rest/api/ohho/test/meet/by/hand/", TestMeetByHandHandler),
+    (r"/rest/api/ohho/test/meet/not/by/hand/", TestNotMeetByHandHandler),
     (r"/rest/api/ohho/test/meet/by/device/", TestMeetByDeviceHandler),
     (r"/rest/api/ohho/test/get/basic/data/", TestGetBasicDataHandler),
     (r"/rest/api/ohho/test/get/meet/topic/", TestGetMeetTopicHandler),
@@ -111,7 +114,7 @@ handlers = [
     (r"/rest/api/ohho/get/user/by/device/", GetUserByDeviceHandler),
     (r"/rest/api/ohho/delete/apply/", DeleteApplyHandler),
     (r"/rest/api/ohho/delete/test/", DeleteTestHandler),
-    # (r"/rest/api/ohho/test/test/", TestTestHandler),
+    (r"/rest/api/ohho/test/test/", TestTestHandler),
     (r"/rest/api/ohho/test/distance/", TestDistanceHandler),
 
     # 获取个人信息yangxd

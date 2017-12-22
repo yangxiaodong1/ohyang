@@ -2,6 +2,7 @@ from ohho.common.logic.common.user import User
 # from ohho.common.logic.common.im.friend import Friend
 from ohho.common.logic.common.record.friend import Friend
 from ohho.common.logic.common.result import Result
+from Tools.ohho_log import OHHOLog
 
 
 class LogicListFriends(object):
@@ -17,7 +18,9 @@ class LogicListFriends(object):
             # user = self.user.get_by_id(relation.friend_account_id)
             # if user:
             if relation.apply_id:
-                temp = self.user.get_user_information(relation.friend_account_id, base_url)
+                OHHOLog.print_log(relation.friend_account_id)
+                temp = self.user.get_user_information4friend(relation.friend_account_id, base_url)
+                OHHOLog.print_log(temp)
                 if temp:
                     temp = self.user.set_map_by_exclude(temp, relation.friend_account_id, user_id)
                     temp = self.user.set_map_by_is_online(temp, relation.friend_account_id, user_id)

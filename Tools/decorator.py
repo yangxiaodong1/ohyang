@@ -1,5 +1,7 @@
 from DB.redis.operation import RedisDB
-from ohho.common.db.ohho.user.db_ohho_user import DBOHHOUser
+# from ohho.common.db.ohho.user.db_ohho_user import DBOHHOUser
+from ohho.common.db.ohho.user.db_ohho_staff import DBOHHOStaff
+from ohho.common.db.ohho.user.db_ohho_staff_token import DBOHHOStaffToken
 from ohho.common.view.common.parameters import Post, Headers, Get
 from ohho.common.logic.common.result import Result
 from ohho.common.logic.common.permission.permission import OHHOPermission
@@ -34,13 +36,13 @@ def backstage_authenticate(func):
         OHHOLog.print_log("backstage authentication start")
         if self.current_user:
             OHHOLog.print_log("backstage authentication current user:" + str(self.current_user))
-            user_instance = DBOHHOUser()
+            user_instance = DBOHHOStaff()
             user = user_instance.get_by_username(self.current_user)
-            token_instance = Token()
+            token_instance = DBOHHOStaffToken()
             if user:
                 OHHOLog.print_log("backstage authentication user")
                 user_id = user.id
-                token_from_db = token_instance.get(user_id)
+                token_from_db = token_instance.get_by_user_id(user_id)
                 if token_from_db:
                     current_timestamp = OHHODatetime.get_current_timestamp()
                     if token_from_db.timestamp and current_timestamp - token_from_db.timestamp > 20 * 60 * 1000:

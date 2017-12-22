@@ -22,6 +22,10 @@ class DBOHHORecordMatchApply(DBBase):
     def get_by_timestamp_less_than(self, query, timestamp):
         return Operation.less_than(query, self.model.timestamp, timestamp)
 
+    def get_valid_timestamp(self):
+        timestamp = OHHODatetime.get_current_timestamp()
+        return timestamp - VALID_INTERVAL_MILLISECOND
+
     def is_valid_instance(self, instance):
         # OHHOLog.print_log("start")
         if instance:
@@ -37,6 +41,7 @@ class DBOHHORecordMatchApply(DBBase):
     def find_by_ids(self, id_list):
         query = self.get_query()
         return Operation.in_(query, self.model.id, id_list)
+
 
 if __name__ == "__main__":
     apply = DBOHHORecordMatchApply()

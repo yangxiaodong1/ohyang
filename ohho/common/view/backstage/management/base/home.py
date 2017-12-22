@@ -14,6 +14,7 @@ class BackstageBaseHomeHandler(BaseHandler):
                            base_country_code_backstage_list_url=BASE_COUNTRY_CODE_BACKSTAGE_LIST_URL,
                            base_interest_backstage_list_url=BASE_INTEREST_BACKSTAGE_LIST_URL,
                            base_sensitive_backstage_list_url=BASE_SENSITIVE_BACKSTAGE_LIST_URL,
+                           base_hint_backstage_list_url=BASE_HINT_BACKSTAGE_LIST_URL,
                            base_userdisplayconfig_list_url=BASE_USER_DISPLAY_CONFIG_LIST_URL,
                            base_watchword_list_url=BASE_WATCHWORD_LIST_URL,
                            base_drink_list_url=BASE_DRINK_LIST_URL,

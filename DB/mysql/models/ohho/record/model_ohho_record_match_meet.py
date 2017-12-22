@@ -4,7 +4,7 @@ from sqlalchemy import Column, String, Integer, DateTime, BigInteger, Numeric, F
 from DB.mysql.base_model import BaseModel
 
 
-# 记录申请匹配
+# 单方面见面
 class OHHORecordMatchMeet(BaseModel):
     __tablename__ = "ohho_record_match_meet"
     id = Column(Integer, primary_key=True, autoincrement=True)

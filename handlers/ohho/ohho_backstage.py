@@ -22,6 +22,11 @@ handlers = [
     (r"/backstage/management/device/delete/", BackstageDeviceDeleteHandler),
     (r"/backstage/management/device/batch_add/", BackstageDeviceBatchAddHandler),
 
+    (r"/backstage/management/staff/list/", BackstageStaffListHandler),
+    (r"/backstage/management/staff/add/", BackstageStaffAddHandler),
+    (r"/backstage/management/staff/detail/", BackstageStaffDetailHandler),
+    (r"/backstage/management/staff/delete/", BackstageStaffDeleteHandler),
+
     (r"/backstage/management/relations/home/", BackstageRelationHomeHandler),
     (r"/backstage/management/relations/device/add/", BackstageUserAndDeviceRelationAddHandler),
     (r"/backstage/management/relations/device/detail/", BackstageUserAndDeviceRelationDetailHandler),
@@ -86,6 +91,11 @@ handlers = [
     (r"/backstage/management/base/country_code/detail/", BackstageCountryCodeDetailHandler),
     (r"/backstage/management/base/country_code/delete/", BackstageCountryCodeDeleteHandler),
 
+    (r"/backstage/management/base/hint/list/", BackstageHintListHandler),
+    (r"/backstage/management/base/hint/add/", BackstageHintAddHandler),
+    (r"/backstage/management/base/hint/detail/", BackstageHintDetailHandler),
+    (r"/backstage/management/base/hint/delete/", BackstageHintDeleteHandler),
+
     # 权限
     (r"/backstage/management/permission/home/", BackstagePermissionHomeHandler),
     (r"/backstage/management/permission/group/list/", BackstageGroupListHandler),
@@ -105,6 +115,9 @@ handlers = [
 
     (r"/backstage/management/permission/group/user/relation/add/", BackstageGroupUserRelationAddHandler),
     (r"/backstage/management/permission/group/user/relation/delete/", BackstageGroupUserRelationDeleteHandler),
+
+    (r"/backstage/management/permission/group/staff/relation/add/", BackstageGroupStaffRelationAddHandler),
+    (r"/backstage/management/permission/group/staff/relation/delete/", BackstageGroupStaffRelationDeleteHandler),
 
     (r"/backstage/statistics/user/", BackstageStatisticsUserHandler),
     (r"/backstage/statistics/device/", BackstageStatisticsDeviceHandler),

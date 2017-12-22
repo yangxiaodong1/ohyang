@@ -15,7 +15,7 @@ from Tools.ohho_uuid import OHHOUUID
 
 
 class LogicRegister(object):
-    def __init__(self, register_dict, cellphone_dict):
+    def __init__(self, register_dict=dict(), cellphone_dict=dict()):
         self.register_dict = register_dict
         self.cellphone_dict = cellphone_dict
         self.im_user = DBOHHOIMUser()
@@ -28,7 +28,7 @@ class LogicRegister(object):
     def add_new_user(self, password, cellphone, country_code="+86"):
         username = OHHOUUID.get_uuid1_string()
         self.user.set_username(username)
-        self.user.add_user(password, cellphone, country_code)
+        OHHOLog.print_log(self.user.add_user(password, cellphone, country_code))
         user = self.user.get_by_username(username)
         if user:
             result = Result.result_success()
@@ -67,11 +67,11 @@ class LogicRegister(object):
         OHHOLog.print_log(result)
         return result
 
-    def add_user_extension(self, username):
+    def add_user_extension(self, user, username):
         OHHOLog.print_log("add user extension")
-        user = self.user.get_user()
+        # user = self.user.get_user()
         if user:
-            result = self.user.add_user_extension(user.id, {"nickname": username})
+            result = self.user.add_user_extension(user.id, dict())
         else:
             result = Result.result_failed("user does not exist!")
         OHHOLog.print_log(result)
@@ -184,6 +184,8 @@ class LogicRegister(object):
                     # add_user_result = self.add_user(username, password)
                     add_user_result = self.add_new_user(password, cellphone, country_code)
 
+                    new_user_id = add_user_result.get("user_id")
+
                     if Result.does_user_exist(add_user_result):
                         return Result.result_exist()
 
@@ -191,8 +193,10 @@ class LogicRegister(object):
                         # 登录用户
                         add_token_result = self.add_token()
 
-                        # 添加用户扩展
-                        self.add_user_extension(cellphone)
+                        the_user = self.user.get_by_id(new_user_id)
+                        if the_user:
+                            # 添加用户扩展
+                            self.add_user_extension(the_user, cellphone)
 
                         # 添加配对条件
                         self.add_match_condition()
@@ -218,6 +222,7 @@ class LogicRegister(object):
         except Exception as ex:
             OHHOLog.print_log(ex)
 
+        OHHOLog.print_log(add_user_result)
         if Result.is_user_added(add_user_result):
 
             if Result.is_success(add_token_result):
@@ -227,7 +232,8 @@ class LogicRegister(object):
         else:
             result = Result.result_failed()
 
-        user = self.user.get_user()
+        OHHOLog.print_log(new_user_id)
+        user = self.user.get_by_id(new_user_id)
 
         if user and Result.is_success(result):
             result["data"] = self.user.get_user_information(user.id, base_url)

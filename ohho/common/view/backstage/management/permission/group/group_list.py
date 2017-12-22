@@ -48,7 +48,7 @@ class BackstageGroupListHandler(BaseHandler):
                            detail_url=PERMISSION_GROUP_BACKSTAGE_DETAIL_URL,
                            add_url=PERMISSION_GROUP_BACKSTAGE_ADD_URL,
                            delete_url=PERMISSION_GROUP_BACKSTAGE_DELETE_URL,
-                           add_group_user_relation_url=PERMISSION_GROUP_USER_RELATION_ADD_URL,
+                           add_group_staff_relation_url=PERMISSION_GROUP_STAFF_RELATION_ADD_URL,
                            group_page_relation_list_url=PERMISSION_GROUP_PAGE_RELATION_BACKSTAGE_LIST_URL,
                            name=name,
                            )

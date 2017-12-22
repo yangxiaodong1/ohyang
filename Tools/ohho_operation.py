@@ -1,6 +1,6 @@
 import os
 import json
-from math import radians, atan, tan, acos, cos, sin
+from math import radians, atan, tan, acos, cos, sin, degrees, atan2
 from Tools.ohho_log import OHHOLog
 
 
@@ -41,6 +41,14 @@ class OHHOOperation(object):
         return result
 
     @staticmethod
+    def dict_sort_by_value(the_dict, reverse=True):
+        return sorted(the_dict.items(), key=lambda d: d[1], reverse=reverse)
+
+    @staticmethod
+    def dict_sort_by_key(the_dict, reverse=True):
+        return sorted(the_dict.items(), key=lambda d: d[0], reverse=reverse)
+
+    @staticmethod
     def list_minus_list(list1, list2):
         if list1:
             if list2:
@@ -78,7 +86,30 @@ class OHHOOperation(object):
             OHHOLog.print_log(ex)
             return -1
 
-    # python3默认使用的是str类型对字符串编码，默认使用bytes操作二进制数据流，两者不能混淆！！
+    @staticmethod
+    def get_degree(latA, lonA, latB, lonB):
+        """
+        Args:
+            point p1(latA, lonA)
+            point p2(latB, lonB)
+        Returns:
+            bearing between the two GPS points,
+            default: the basis of heading direction is north
+        """
+        radLatA = radians(latA)
+        radLonA = radians(lonA)
+        radLatB = radians(latB)
+        radLonB = radians(lonB)
+        dLon = radLonB - radLonA
+        y = sin(dLon) * cos(radLatB)
+        x = cos(radLatA) * sin(radLatB) - sin(radLatA) * cos(radLatB) * cos(dLon)
+        brng = degrees(atan2(y, x))
+        brng = (brng + 360) % 360
+        return brng
+
+
+        # python3默认使用的是str类型对字符串编码，默认使用bytes操作二进制数据流，两者不能混淆！！
+
     # Python3有两种表示字符序列的类型：bytes和str。前者的实例包含原始的8位值，后者的实例包含Unicode字符。
     # str(unicode)类型是基准！要将str类型转化为bytes类型，使用encode()内置函数；反过来，使用decode()函数。
 

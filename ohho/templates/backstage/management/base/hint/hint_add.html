@@ -1,0 +1,55 @@
+{% extends '../../manage_base.html' %}
+{% block title %}
+添加提示
+{% end %}
+
+{% block body_message %}
+{% if message %}
+<div id="myAlert" class="alert alert-info">
+    <strong>{{ message }}</strong>
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+</div>
+{% end %}
+{% end %}
+
+
+{% block body_content %}
+<form method="POST" action="{{ add_url }}" role="form">
+    <table class="table table-striped table-border">
+
+        <tr>
+            <td><label class="form-control" for="parent_id">上级[名称（键值）]</label></td>
+            <td><select class="form-control" name="parent_id" id="parent_id">
+                <option value="{{ parent_id }}">{{ parent_name }}({{ parent_key }})</option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <td><label class="form-control" for="key">键值</label></td>
+            <td><input class="form-control" type="text" name="key" id="key" placeholder="键值（唯一）" value="{{ key }}"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td><label class="form-control" for="name">名称</label></td>
+            <td><input class="form-control" type="text" name="name" id="name" placeholder="名称" value=" {{ name }}"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td><label class="form-control" for="description">描述</label></td>
+            <td><textarea class="form-control" type="text" name="description" id="description"
+                          placeholder="对于本条数据的描述信息">{{ description }}
+            </textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="1"><input class="btn btn-primary pull-right" type="submit" name="submit" value="添加"/></td>
+            <td colspan="1"><a class="btn btn-primary" href="{{ list_url }}">取消</a></td>
+        </tr>
+
+    </table>
+</form>
+
+{% end %}

@@ -1,9 +1,13 @@
 from DB.mysql.models.model_cellphone import *
 
+from DB.mysql.models.ohho.base.model_ohho_hint import *
 from DB.mysql.models.ohho.base.model_ohho_interest import *
 from DB.mysql.models.ohho.base.model_ohho_sensitive import *
 
 from DB.mysql.models.ohho.cellphone.model_ohho_country_code import *
+from DB.mysql.models.ohho.user.model_ohho_staff import *
+from DB.mysql.models.ohho.user.model_ohho_staff_token import *
+from DB.mysql.models.ohho.user.model_ohho_staff_accuracy_extension import *
 from DB.mysql.models.ohho.user.model_ohho_user import *
 from DB.mysql.models.ohho.user.model_ohho_user_token import *
 from DB.mysql.models.ohho.user.model_ohho_user_accuracy_extension import *
@@ -34,6 +38,7 @@ from DB.mysql.models.ohho.report.model_ohho_report import *
 from DB.mysql.models.ohho.map.model_ohho_map_information import *
 from DB.mysql.models.ohho.relation.model_ohho_user_and_device_imei import *
 
+from DB.mysql.models.ohho.im.ohho_im_temporary_message import *
 from DB.mysql.models.ohho.im.ohho_im_user import *
 from DB.mysql.models.ohho.im.ohho_im_user_relation import *
 
@@ -58,6 +63,7 @@ from DB.mysql.models.ohho.permission.page import *
 from DB.mysql.models.ohho.permission.page_permission import *
 from DB.mysql.models.ohho.permission.group import *
 from DB.mysql.models.ohho.permission.group_and_user_relation import *
+from DB.mysql.models.ohho.permission.group_and_staff_relation import *
 from DB.mysql.models.ohho.permission.group_and_page_relation import *
 
 from DB.mysql.models.ohho.meet.model_ohho_temp_meet_address import *
@@ -74,6 +80,10 @@ from DB.mysql.models.ohho.test.model_test_rssi_distance import *
 from DB.mysql.models.ohho.test.model_test_interest_point import *
 from DB.mysql.models.ohho.test.model_test_map_information import *
 from DB.mysql.models.model_test_phone_position import *
+
+# 配对在线表
+from DB.mysql.models.ohho.match.model_ohho_match_online import *
+from DB.mysql.models.ohho.match.model_ohho_match_published import *
 
 # 废弃的表
 # from DB.mysql.models.model_province import *

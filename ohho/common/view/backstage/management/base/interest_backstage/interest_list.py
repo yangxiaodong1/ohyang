@@ -20,27 +20,27 @@ class BackstageInterestListHandler(BaseHandler):
     def get(self):
         the_get = Get()
         instance = InterestBackstage()
-        name = the_get.get_name(self)
-        parent_id = the_get.get_parent_id(self)
-        if parent_id is None:
-            parent_id = 1
-        if name is None:
-            name = ""
-        # print("name", end=":")
-
         page = the_get.get_page(self)
+        submit = the_get.get_submit(self)
         data_count_per_page = the_get.get_data_count_per_page(self)
         page_count_per_page = the_get.get_page_count_per_page(self)
+        parent_id = the_get.get_id(self)
+        if not parent_id:
+            parent_id = 1
+        name = the_get.get_name(self)
+        # OHHOLog.print_log(submit)
+        if submit:
+            query = instance.get_all()
+        else:
+            query = instance.get_by_parent_id(parent_id)
+
         offset = (page - 1) * data_count_per_page
         limit = data_count_per_page
 
-        # query = instance.get_all()
-        query = instance.get_by_parent_id(parent_id)
-        state = True
-        has_state = True
-        query = instance.get_by_state(query, state, has_state)
-        if name:
+        if name is not None:
             query = instance.find_by_name(query, name)
+        else:
+            name = ""
 
         query, count = instance.get_some(query, offset, limit)
         total_page = int(ceil(count / data_count_per_page))
@@ -58,5 +58,6 @@ class BackstageInterestListHandler(BaseHandler):
                            detail_url=BASE_INTEREST_BACKSTAGE_DETAIL_URL,
                            add_url=BASE_INTEREST_BACKSTAGE_ADD_URL,
                            delete_url=BASE_INTEREST_BACKSTAGE_DELETE_URL,
+                           name=name,
                            parent_id=parent_id,
                            )

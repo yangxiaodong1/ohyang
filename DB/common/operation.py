@@ -63,10 +63,10 @@ class Operation(object):
             for key, value in obj_dict.items():
                 Operation.set_attribute(instance, key, value)
             session.add(instance)
-            return True
+            return instance
         except Exception as ex:
             OHHOLog.print_log(ex)
-            return False
+            return None
 
     @staticmethod
     def bulk_add(model, dict_list):
@@ -81,16 +81,16 @@ class Operation(object):
     @staticmethod
     def add(model, obj_dict):
         try:
-            success = Operation.add_without_commit(model, obj_dict)
-            if success:
+            instance = Operation.add_without_commit(model, obj_dict)
+            if instance:
                 Operation.commit()
-                return True
+                return instance.id
             else:
                 Operation.rollback()
-                return False
+                return None
         except Exception as ex:
             print(ex)
-            return False
+            return None
 
     @staticmethod
     def delete_without_commit(instances):
@@ -183,6 +183,11 @@ class Operation(object):
                         result[key] = 0
                     else:
                         result[key] = int(value)
+                elif key in ('building_id'):
+                    if not value:
+                        result[key] = ""
+                    else:
+                        result[key] = value
                 elif (key.endswith("_id")) or (key in ('sex', 'height', 'weight', 'angle', 'location_type')):
                     if not value:
                         result[key] = 0
@@ -206,6 +211,11 @@ class Operation(object):
                         pass
                     else:
                         result[key] = json.loads(value)
+                elif key in ('birthday', 'favourite_live_city'):
+                    if not value:
+                        result[key] = ""
+                    else:
+                        result[key] = value
                 elif not value:
                     if type(value) == str:
                         result[key] = ""
@@ -273,12 +283,12 @@ class Operation(object):
             return query
         return query.order_by(model.id.desc())
 
-
     @staticmethod
     def order_by_index_asc(model, query):
         if not query:
             return query
         return query.order_by(model.index.asc())
+
     @staticmethod
     def order_by_id_asc(model, query):
         if not query:

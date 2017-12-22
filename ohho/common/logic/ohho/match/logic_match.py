@@ -1,4 +1,5 @@
 from ohho.common.db.ohho.user.db_ohho_user_accuracy_extension import DBOHHOUserAccuracyExtension
+from ohho.common.db.ohho.record.db_ohho_record_match_apply import DBOHHORecordMatchApply
 from ohho.common.db.ohho.map.db_ohho_map_information import DBOHHOMapInformation
 from ohho.common.db.ohho.relation.db_ohho_user_and_device_relation import DBOHHOUserAndDeviceRelation
 from ohho.common.db.ohho.user.db_ohho_user_configuration import DBOHHOUserConfiguration
@@ -37,6 +38,7 @@ class LogicMatch(object):
         self.user_extension = DBOHHOUserAccuracyExtension()
         self.exclude = DBOHHORecordExclude()
         self.configuration = DBOHHOUserConfiguration()
+        self.match_apply = DBOHHORecordMatchApply()
 
     def get_exclude_user_list(self, user_id):
         created_at = OHHODatetime.get_today_start()
@@ -739,6 +741,178 @@ class LogicMatch(object):
         user_id_list = self.clear_user_without_primary_device(user_id_list)
 
         exclude_user_id_list = self.get_exclude_user_list(user_id)
+        if user_id_list:
+            user_id_list = OHHOOperation.list_minus_list(user_id_list, exclude_user_id_list)
+            OHHOLog.print_log("clear exclude user")
+            OHHOLog.print_log(user_id_list)
+
+            user_id_list = self.clear_by_is_match(user_id_list)
+            OHHOLog.print_log("clear match switch close user")
+            OHHOLog.print_log(user_id_list)
+
+            OHHOLog.print_log("clear self user")
+            if user_id in user_id_list:
+                user_id_list.remove(user_id)
+            OHHOLog.print_log(user_id_list)
+        else:
+            return Result.result_success()
+
+        if user_id_list:
+            meeting_user_id_list = self.meet.get_meeting_user_ids()
+            OHHOLog.print_log("meeting user id list")
+            OHHOLog.print_log(meeting_user_id_list)
+            user_id_list = OHHOOperation.list_minus_list(user_id_list, meeting_user_id_list)
+            OHHOLog.print_log("clear meeting user")
+            OHHOLog.print_log(user_id_list)
+        else:
+            return Result.result_success()
+
+        if user_id_list:
+            user_id_list = self.clear_by_met_not_end(user_id_list)
+            OHHOLog.print_log("clear met but not end")
+            OHHOLog.print_log(user_id_list)
+        else:
+            return Result.result_success()
+
+        if user_id_list:
+            user_id_list = self.clear_by_meet_in24hour(user_id, user_id_list)
+            OHHOLog.print_log("clear meet in 24 hours")
+            OHHOLog.print_log(user_id_list)
+        else:
+            return Result.result_success()
+
+        if user_id_list:
+            user_id_list = self.clear_by_friend(user_id, user_id_list)
+            OHHOLog.print_log("clear friend")
+            OHHOLog.print_log(user_id_list)
+        else:
+            return Result.result_success()
+
+        if user_id_list:
+            has_duplex_agree = self.has_duplex_agree(user_id, user_id_list, base_url)
+            if has_duplex_agree:
+                return Result.result_success()
+            else:
+                user_id_list = self.duplex_match(user_id, user_id_list)
+                OHHOLog.print_log(user_id_list)
+
+                if user_id_list:
+                    matched_user_list = self.compute_main(user_id, user_id_list)
+                    OHHOLog.print_log("matched user list:")
+                    OHHOLog.print_log(matched_user_list)
+
+                    matched_user_list = self.sorted_by_rules(user_id, matched_user_list)
+                    for user_tuple in matched_user_list:
+                        match_user_id = user_tuple[2]
+                        primary = user_tuple[3]
+                        secondary = user_tuple[4]
+                        the_apply = self.add_apply(user_id, match_user_id)
+                        if the_apply:
+                            self.push(user_id, match_user_id, the_apply.id, base_url, primary,
+                                      secondary)
+                        else:
+                            OHHOLog.print_log("has valid apply!")
+            return Result.result_success()
+
+    def has_valid_apply(self, user_id):
+        valid_timestamp = self.match_apply.get_valid_timestamp()
+        query = self.match_apply.get_query()
+        query = self.match_apply.get_great_than_equal_timestamp(query, valid_timestamp)
+        apply1 = self.match_apply.get_by_one_user(query, user_id)
+        apply1 = self.match_apply.order_by_id_desc(apply1)
+        apply1_first = self.match_apply.first(apply1)
+        apply2 = self.match_apply.get_by_another_user(query, user_id)
+        apply2 = self.match_apply.order_by_id_desc(apply2)
+        apply2_first = self.match_apply.first(apply2)
+
+        if apply1_first and apply2_first:
+            the_apply = apply1_first if apply1_first.timestamp > apply2_first.timestamp else apply2_first
+        elif apply1_first:
+            the_apply = apply1_first
+        else:
+            the_apply = apply2_first
+
+        return self.meet.is_the_apply_valid(the_apply), the_apply.id if the_apply else 0
+
+    def match_version22(self, user_id, device_list_string, base_url, identity_id=None):
+        # 查看本人是否打开了配对开关
+        # 查看本人状态是否在见面中
+        # 查看本人状态是否是有有效的配对
+        # 清除不是交友设备的设备（type=1是交友设备）
+        # 根据device_list得到用户id_list
+        # 过滤掉今天匹配并不中意的人
+        # 过滤掉未打开匹配开关的人
+        # 过滤掉正在见面的人
+        # 过滤掉已经见面但还没有结束的人
+        # 过滤掉24小时内见过面的人
+        # 过滤掉是好友的人
+        # 根据性别和年龄区间筛选用户列表，根据条件找出符合条件的用户列表
+        # 从符合条件的用户列表中依次根据用户ID获取配对条件， 根据配对条件看当前用户是否符合条件
+        # 将第一个符合条件的用户添加到申请表中，并向两个人发送推送（推送对方的个人信息和推送的类型，这里是申请见面）
+        user_id = int(user_id)
+        if user_id and identity_id:
+            OHHOLog.print_log(user_id)
+            OHHOLog.print_log(identity_id)
+            self.device.set_identity(identity_id)
+            device = self.device.get_by_identity()
+            if device:
+                relations = self.device_relation.get_valid_by_device(device.id)
+                the_relation = self.device_relation.first(relations)
+                if the_relation and the_relation.user_id == user_id:
+                    pass
+                else:
+                    information = "no device and user relation, you have no right to match!"
+                    OHHOLog.print_log(information)
+                    # return Result.result_failed(information)
+            else:
+                information = "no such device, you have no right to match!"
+                OHHOLog.print_log(information)
+                # return Result.result_failed(information)
+        else:
+            if user_id:
+                information = "user %d is invalid, you have no right to match!" % user_id
+                OHHOLog.print_log(information)
+                # return Result.result_failed(information)
+            else:
+                information = "user or device is invalid, you have no right to match!"
+                OHHOLog.print_log(information)
+                # return Result.result_failed(information)
+
+        is_match = self.is_match_open(user_id)
+        if not is_match:
+            OHHOLog.print_log("%d match switch closed!" % user_id)
+            return Result.result_failed("please open match switch!")
+
+        if self.is_in_meeting(user_id):
+            OHHOLog.print_log("%d is in meeting" % user_id)
+            return Result.result_failed("you are still in meeting!")
+        OHHOLog.print_log("%d is not in meeting" % user_id)
+
+        has_valid_apply, the_apply_id = self.has_valid_apply(user_id)
+        if has_valid_apply:
+            return Result.result_failed("you have matched with somebody: %d" % the_apply_id)
+        OHHOLog.print_log("%d has no valid apply" % user_id)
+
+        exclude_user_id_list = self.get_exclude_user_list(user_id)
+
+        device_list = device_list_string.split(",")
+        if "" in device_list:
+            device_list.remove("")
+        OHHOLog.print_log("source:")
+        OHHOLog.print_log(device_list)
+        device_list = self.clear_secondary_device(device_list)
+        OHHOLog.print_log("clear secondary device:")
+        OHHOLog.print_log(device_list)
+        user_id_list = list()
+        for identity in device_list:
+            self.device.set_identity(identity)
+            relation = self.device.get_relation_by_device()
+            if relation:
+                user_id_list.append(relation.user_id)
+        OHHOLog.print_log("get user list")
+        OHHOLog.print_log(user_id_list)
+        OHHOLog.print_log("exclude user id list")
+        OHHOLog.print_log(exclude_user_id_list)
         if user_id_list:
             user_id_list = OHHOOperation.list_minus_list(user_id_list, exclude_user_id_list)
             OHHOLog.print_log("clear exclude user")

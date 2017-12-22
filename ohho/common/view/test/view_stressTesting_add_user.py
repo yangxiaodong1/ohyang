@@ -14,7 +14,9 @@ class StressTestingAddUserHandler(ViewOHHOBase):
             pass
         else:
             number = 10
-        instance.add_user(int(number))
+
+        # instance.add_user1(int(number))
+        instance.add_user_commit_all(int(number))
 
         return self.write(str(number))
 

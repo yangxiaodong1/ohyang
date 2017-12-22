@@ -14,6 +14,7 @@ class DBOHHOUserAndCellphoneRelation(DBBase):
         query = self.get_query()
         query = Operation.filter(query, self.model.cellphone_id, cellphone_id)
         query = Operation.filter(query, self.model.user_id, user_id)
+        query = self.order_by_id_desc(query)
         return Operation.first(query)
 
     def get_by_cellphone(self, cellphone_id):
@@ -29,7 +30,7 @@ class DBOHHOUserAndCellphoneRelation(DBBase):
 
     def get_valid(self, query):
         return super(DBOHHOUserAndCellphoneRelation, self).get_valid(query, True)
-    
+
     def get_invalid(self, query):
         return super(DBOHHOUserAndCellphoneRelation, self).get_invalid(query, True)
 

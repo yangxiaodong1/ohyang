@@ -2,6 +2,7 @@ import datetime
 import time
 from sqlalchemy import Column, String, Integer, DateTime, BigInteger, ForeignKey
 from DB.mysql.base_model import BaseModel
+from sqlalchemy.orm import relationship
 
 
 class OHHOInterest(BaseModel):
@@ -14,3 +15,5 @@ class OHHOInterest(BaseModel):
     name = Column(String(64), default=None)
     parent_id = Column(Integer, ForeignKey("ohho_interest.id", ondelete='CASCADE', onupdate='CASCADE'), default=None)
     state = Column(Integer, default=1)
+    key = Column(String(64), primary_key=True, default=None)
+    children = relationship("OHHOInterest")

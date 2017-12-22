@@ -30,7 +30,7 @@ class OHHOUserAccuracyExtension(BaseModel):
     nickname = Column(String(64), default="")
     birthday = Column(Date, default=None)
     height = Column(Integer, default=0)
-    sex = Column(Integer, default=1)
+    sex = Column(Integer, default=0)
     occupation_id = Column(Integer, ForeignKey("ohho_interest.id", ondelete='CASCADE', onupdate='CASCADE'))
     occupation = relationship("OHHOInterest", primaryjoin="OHHOInterest.id==OHHOUserAccuracyExtension.occupation_id")
     position_id = Column(Integer, ForeignKey("ohho_interest.id", ondelete='CASCADE', onupdate='CASCADE'))

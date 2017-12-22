@@ -50,6 +50,7 @@ from ohho.common.view.ohho.match.view_get_match_condition import *
 from ohho.common.view.ohho.match.view_match import *
 from ohho.common.view.ohho.match.view_match3 import *
 from ohho.common.view.ohho.match.version2.view_match import *
+from ohho.common.view.ohho.match.version2.view_match2 import *
 from ohho.common.view.ohho.match.view_polling_get_match_apply import *
 from ohho.common.view.ohho.match.view_polling_get_match_state import *
 from ohho.common.view.ohho.match.view_open_match_switch import *
@@ -61,11 +62,14 @@ from ohho.common.view.ohho.meet.view_agree_meet import *
 from ohho.common.view.ohho.meet.view_apply_meet import *
 from ohho.common.view.ohho.meet.view_cancel_meet import *
 from ohho.common.view.ohho.meet.view_meet import *
+from ohho.common.view.ohho.meet.view_meet_send_message import *
 from ohho.common.view.ohho.meet.view_meet_state import *
 from ohho.common.view.ohho.meet.view_refuse_meet import *
 from ohho.common.view.ohho.meet.view_meet_end import *
 from ohho.common.view.ohho.meet.view_met_by_device import *
 from ohho.common.view.ohho.meet.view_met_by_hand import *
+from ohho.common.view.ohho.meet.view_not_met_by_hand import *
+from ohho.common.view.ohho.meet.view_rematch import *
 
 from ohho.common.view.ohho.feedback.view_add_feedback import *
 from ohho.common.view.ohho.feedback.view_get_feedback_type import *

@@ -11,6 +11,7 @@ if english:
     CODE_PARAMETERS_ARE_INVALID = 400
     CODE_INVALID_CODE = 600
     CODE_EXCEPTION = 500
+    CODE_PUBLISHED = 700
 
     CODE_UNSAFE = 89
     CODE_LOGIN_FAILED = 1000
@@ -26,6 +27,7 @@ if english:
 
     UPDATE_BEYOND_THREE_MONTH = "update beyond three month"
     SUCCESS = "OK!"
+    PUBLISHED = "you are published!"
     DEFAULT = "The data is default!"
     FAILED = "Failed!"
     EXCEPTION_DETAIL = "exception!"

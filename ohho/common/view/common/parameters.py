@@ -94,6 +94,9 @@ class RequestMethod(object):
     def get_password(self, obj):
         return self.get_the_argument(obj, PASSWORD, DEFAULT)
 
+    def get_key(self, obj):
+        return self.get_the_argument(obj, KEY, DEFAULT)
+
     def get_name(self, obj):
         return self.get_the_argument(obj, NAME, DEFAULT)
 
@@ -201,6 +204,10 @@ class RequestMethod(object):
 
     def get_password_again(self, obj):
         return self.get_the_argument(obj, PASSWORD_AGAIN, DEFAULT)
+
+    def get_staff_id(self, obj):
+        staff_id = self.get_the_argument(obj, STAFF_ID, DEFAULT_ZERO)
+        return staff_id
 
     def get_user_id(self, obj):
         user_id = self.get_the_argument(obj, USER_ID, DEFAULT_ZERO)

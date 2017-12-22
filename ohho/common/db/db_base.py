@@ -155,8 +155,8 @@ class DBBase(object):
     def get_great_than_equal_created_at(self, query, created_at):
         return Operation.great_than_equal(query, self.model.created_at, created_at)
 
-    def get_less_than_equal_timestamp(self, query, timestamp):
-        return Operation.great_than_equal(query, self.model.timestamp, timestamp)
+    def get_less_than_timestamp(self, query, timestamp):
+        return Operation.less_than(query, self.model.timestamp, timestamp)
 
     def get_great_than_equal_timestamp(self, query, timestamp):
         return Operation.great_than_equal(query, self.model.timestamp, timestamp)

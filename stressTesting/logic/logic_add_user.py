@@ -44,7 +44,8 @@ from Tools.ohho_random import OHHORandom
 from stressTesting.tools.ohho_random import OhhoRandom
 
 from DB.common.operation import Operation
-
+import time
+import gevent
 
 
 class LogicAddUser(object):
@@ -69,7 +70,91 @@ class LogicAddUser(object):
         self.country_code = DBOHHOCountryCode()
         self.user_and_cellphone_relation = DBOHHOUserAndCellphoneRelation()
 
+    # def gevent_add_user_test(self, cellphone):
     def add_user(self, number=10):
+        gevent_list = [gevent.spawn(self.gevent_add_user_test, number) for i in range(2)]
+        gevent.joinall(gevent_list)
+
+    cellphone = 10000000000
+
+    def gevent_add_user_test(self, number):
+        global cellphone
+        # identity_card = 100000000000000000
+        user_query = self.user.get_query()
+        user_query = self.user.order_by_id_desc(user_query)
+        user_obj = Operation.first(user_query)
+        if user_obj:
+            if user_obj.cellphone:
+                cellphone = int(user_obj.cellphone)
+        i = 0
+        while i <= number:
+            # OHHOLog.print_log(i)
+            i += 1
+            cellphone += 1
+            while self.user.get_by_cellphone(str(cellphone)):
+                cellphone = cellphone + 1
+            user_id = self.add_user_table(str(cellphone))
+            self.add_user_token_table(user_id)
+            self.add_user_extension(user_id)
+
+        print("for end")
+        print("end")
+    # def add_user(self, number=10):
+    def gevent_add_user_test(self, number):
+        global cellphone
+        # identity_card = 100000000000000000
+        user_query = self.user.get_query()
+        user_query = self.user.order_by_id_desc(user_query)
+        user_obj = Operation.first(user_query)
+        if user_obj:
+            if user_obj.cellphone:
+                cellphone = int(user_obj.cellphone)
+        i = 0
+        while i <= number:
+            # OHHOLog.print_log(i)
+            i += 1
+            cellphone += 1
+            while self.user.get_by_cellphone(str(cellphone)):
+                cellphone = cellphone + 1
+            user_id = self.add_user_table(str(cellphone))
+            self.add_user_token_table(user_id)
+            self.add_user_extension(user_id)
+
+        print("for end")
+        print("end")
+
+    def add_user_commit_all(self, number=10):
+        cellphone = 10000000000
+        # identity_card = 100000000000000000
+        user_query = self.user.get_query()
+        user_query = self.user.order_by_id_desc(user_query)
+        user_obj = Operation.first(user_query)
+        if user_obj:
+            if user_obj.cellphone:
+                cellphone = int(user_obj.cellphone)
+        i = 1
+        dic_list_token = list()
+        dic_list_extension = list()
+        while i <= number:
+            # OHHOLog.print_log(i)
+            print(i)
+            i += 1
+            cellphone += 1
+            data = dict()
+            while self.user.get_by_cellphone(str(cellphone)):
+                cellphone = cellphone + 1
+            user_id = self.add_user_table(str(cellphone))
+            token_dic = self.add_user_token_table_dic(user_id)
+            extension_dic = self.add_user_extension_dic(user_id)
+            dic_list_token.append(token_dic)
+            dic_list_extension.append(extension_dic)
+
+        self.token.token.bulk_add(dic_list_token)
+        self.user_extension.bulk_add(dic_list_extension)
+        print("for end")
+        print("end")
+
+    def add_user1(self, number=10):
         cellphone = 10000000000
         # identity_card = 100000000000000000
         user_query = self.user.get_query()
@@ -80,6 +165,7 @@ class LogicAddUser(object):
                 cellphone = int(user_obj.cellphone)
         i = 0
         while i <= number:
+            # OHHOLog.print_log(i)
             i += 1
             cellphone += 1
             while self.user.get_by_cellphone(str(cellphone)):
@@ -221,6 +307,22 @@ class LogicAddUser(object):
 
         self.user_extension.add(data)
 
+    def add_user_extension_dic(self, user_id):
+        data = dict()
+        data["user_id"] = user_id
+        data["sex"] = OhhoRandom.get_sex()
+        data["nickname"] = "宝宝"
+        data["birthday"] = OhhoRandom.get_birthday()
+        return data
+
+    def add_user_token_table_dic(self, user_id):
+        token = OHHORandom.get_nonce()
+        token_dict = dict()
+        token_dict["user_id"] = user_id
+        token_dict["token"] = token
+        # self.token.token.add(token_dict)
+        return token_dict
+
     def add_user_token_table(self, user_id):
         token = OHHORandom.get_nonce()
         token_dict = dict()
@@ -240,6 +342,36 @@ class LogicAddUser(object):
         data["password"] = encryption_password
         data["cellphone"] = cellphone
         data["country_code_id"] = country_code_id
+        # time1 = time.time()
         self.user.add(data)
+        # print("user_id")
+        # print(self.user.model.id[0])
         user = self.user.get_by_username(username)
+        # time2 = time.time()
+        # time3 = time2 - time1
+        # print("user insert")
+        # print(time3)
         return user.id
+
+    def insert_table(self):
+        data = dict()
+        password = "666666"
+        country_code_id = 159
+        username = OHHOUUID.get_uuid1_string()
+        self.password.set_password(password)
+        encryption_password = self.password.encryption()
+        data["username"] = username
+        data["password"] = encryption_password
+        data["cellphone"] = "13828838383"
+        data["country_code_id"] = country_code_id
+        time1 = time.time()
+        self.user.add(data)
+        time2 = time.time()
+        time3 = time2 - time1
+        print("user insert")
+        print(time3)
+
+
+if __name__ == '__main__':
+    instance = LogicAddUser()
+    instance.insert_table()

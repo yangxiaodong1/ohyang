@@ -1,9 +1,11 @@
 from ohho.common.db.ohho.base.db_ohho_interest import *
+from ohho.common.db.ohho.base.db_ohho_hint import *
 
 
 class LogicGetBasicData(object):
     def __init__(self):
         self.interest = DBOHHOInterest()
+        self.hint = DBOHHOHint()
 
     def get_interest(self):
         result = dict()
@@ -36,7 +38,18 @@ class LogicGetBasicData(object):
                 result["other"].append(item)
         return result
 
+    def get_hints(self):
+        result = dict()
+        root = self.hint.get_root()
+        for item in root:
+            temp = self.hint.get_by_parent_id(item.id)
+            for t in temp:
+                result[t.key] = t.name
+        return result
+
     def get(self):
         result = self.get_interest()
         result = self.parse_interest(result)
+        result["hints"] = self.get_hints()
+
         return result

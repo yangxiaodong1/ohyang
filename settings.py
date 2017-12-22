@@ -1,26 +1,26 @@
 import os
 
 DBMysql = [
-    # {
-    #     "user": "root",
-    #     "password": "111111",
-    #     "host": "localhost",
-    #     # "host": "192.168.253.253",
-    #     "db": "ohho"
-    # },
+    {
+        "user": "root",
+        "password": "111111",
+        "host": "localhost",
+        # "host": "192.168.253.253",
+        "db": "ohho"
+    },
     # {
     #     "user": "root",
     #     "password": "111111",
     #     "host": "localhost",
     #     "db": "test001"
     # },
-    {
-        "user": "test",
-        "password": "123456",
-        "host": "192.168.253.16",
-        # "host": "192.168.253.253",
-        "db": "ohho"
-    },
+    # {
+    #     "user": "test",
+    #     "password": "123456",
+    #     "host": "192.168.253.16",
+    #     # "host": "192.168.253.253",
+    #     "db": "ohho"
+    # },
 
 ]
 
@@ -40,8 +40,8 @@ LOGIN_URL = "/backstage/login/"
 
 IPV4_ONLY = False
 # PORT = 8878
-# PORT = 1346
-PORT = 1345
+PORT = 1346
+# PORT = 1345
 DEBUG = True
 COOKIE_SECRET = "QMlAIhXKQBSrLm9NNzpN6LoygSDhh0BCp6Rxz3GvEyc="
 TEMPLATE_PATH = os.path.join(os.path.dirname(__file__), "ohho/templates")

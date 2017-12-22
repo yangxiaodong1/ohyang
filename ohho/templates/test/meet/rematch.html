@@ -1,0 +1,35 @@
+{% extends '../base.html' %}
+{% block title %}
+重新匹配
+{% end %}
+
+{% block body_title %}
+重新匹配
+{% end %}
+
+{% block form_body %}
+<label class="col-md-2">friend_user_id</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+    <input class="form-control" name="friend_user_id" type="text"
+           placeholder="朋友的ID（int, 必填）"/>
+</div>
+<br/>
+
+<label class="col-md-2">apply_id</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+    <input class="form-control" name="apply_id" type="text"
+           placeholder="请示ID（int, 必填）"/>
+</div>
+<br/>
+
+<label class="col-md-2">type</label>
+<div class="input-group col-md-6">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+    <input class="form-control" name="type" type="text"
+           placeholder="是否会被惩罚（int, 必填， [0-不惩罚，1-惩罚]）"/>
+</div>
+<br/>
+
+{% end %}

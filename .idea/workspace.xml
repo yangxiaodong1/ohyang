@@ -2,44 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="736a2708-e476-486b-a781-936fdd62a4d5" name="Default" comment="个人主页">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ohho/common/test/stressTesting" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ohho/templates/test/stressTesting" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stressTesting" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stressTesting/logic" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stressTesting/stress_testing_backstage" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stressTesting/tools" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/bifa" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/poi" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/random" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/redis" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/str" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ohho/common/test/stressTesting/TestAddUser.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ohho/common/test/stressTesting/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ohho/common/view/test/view_stressTesting_add_user.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ohho/templates/test/stressTesting/add_user.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stressTesting/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stressTesting/logic/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stressTesting/logic/logic_add_use.bakr.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stressTesting/logic/logic_add_user.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stressTesting/logic/logic_add_user_new.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stressTesting/main_add_user.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stressTesting/tools/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stressTesting/tools/ohho_random.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/__init__.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/aa.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/bifa/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/bifa/b.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/bifa/dd.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/bifa/genvent4.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/bifa/gevent2.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/bifa/gevent3.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/bifa/gevent5.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/bifa/gevent_new.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/bifa/js.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/bifa/threadtest.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/poi/__init__.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/poi/ohho_poi.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/random/__init__.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/random/a.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/redis/__init__.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/redis/redis_cluster.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/str/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yangTest/str/a.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/OHHO.iml" afterPath="$PROJECT_DIR$/.idea/OHHO.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/ohho/ohho_test_api.py" afterPath="$PROJECT_DIR$/handlers/ohho/ohho_test_api.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ohho/common/test/constant.py" afterPath="$PROJECT_DIR$/ohho/common/test/constant.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ohho/templates/test/home/home_test.html" afterPath="$PROJECT_DIR$/ohho/templates/test/home/home_test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ohho/tests.py" afterPath="$PROJECT_DIR$/ohho/tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.py" afterPath="$PROJECT_DIR$/settings.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,13 +40,24 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/SDevelop$js.coverage" NAME="js Coverage Results" MODIFIED="1513845337546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/yangTest/bifa" />
+    <SUITE FILE_PATH="coverage/SDevelop$genvent4.coverage" NAME="genvent4 Coverage Results" MODIFIED="1513569030699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/yangTest/bifa" />
+    <SUITE FILE_PATH="coverage/SDevelop$logic_add_user.coverage" NAME="logic_add_user Coverage Results" MODIFIED="1513593300197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stressTesting/logic" />
+    <SUITE FILE_PATH="coverage/SDevelop$threadtest.coverage" NAME="threadtest Coverage Results" MODIFIED="1513565969680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/yangTest/bifa" />
+    <SUITE FILE_PATH="coverage/SDevelop$gevent2.coverage" NAME="gevent2 Coverage Results" MODIFIED="1513568281681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/yangTest/bifa" />
+    <SUITE FILE_PATH="coverage/SDevelop$gevent5.coverage" NAME="gevent5 Coverage Results" MODIFIED="1513575542955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/yangTest/bifa" />
+    <SUITE FILE_PATH="coverage/SDevelop$a.coverage" NAME="a Coverage Results" MODIFIED="1513932720882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/yangTest/str" />
+    <SUITE FILE_PATH="coverage/SDevelop$aa.coverage" NAME="aa Coverage Results" MODIFIED="1513331910591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/yangTest" />
+    <SUITE FILE_PATH="coverage/SDevelop$gevent3.coverage" NAME="gevent3 Coverage Results" MODIFIED="1513568886723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/yangTest/bifa" />
     <SUITE FILE_PATH="coverage/SDevelop$ohho_poi.coverage" NAME="ohho_poi Coverage Results" MODIFIED="1513158652307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/yangTest/poi" />
+    <SUITE FILE_PATH="coverage/SDevelop$dd.coverage" NAME="dd Coverage Results" MODIFIED="1513337908395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/yangTest/bifa" />
+    <SUITE FILE_PATH="coverage/SDevelop$gevent_new.coverage" NAME="gevent_new Coverage Results" MODIFIED="1513566263843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/yangTest/bifa" />
+    <SUITE FILE_PATH="coverage/SDevelop$b.coverage" NAME="b Coverage Results" MODIFIED="1513566377899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/yangTest/bifa" />
     <SUITE FILE_PATH="coverage/SDevelop$main_add_user.coverage" NAME="main_add_user Coverage Results" MODIFIED="1513309296388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stressTesting" />
     <SUITE FILE_PATH="coverage/SDevelop$ohho_random.coverage" NAME="ohho_random Coverage Results" MODIFIED="1513255011813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stressTesting/tools" />
+    <SUITE FILE_PATH="coverage/SDevelop$gevent.coverage" NAME="gevent Coverage Results" MODIFIED="1513333712284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/yangTest/bifa" />
     <SUITE FILE_PATH="coverage/SDevelop$logic_add_user_new.coverage" NAME="logic_add_user_new Coverage Results" MODIFIED="1513247418338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stressTesting/logic" />
-    <SUITE FILE_PATH="coverage/SDevelop$main.coverage" NAME="main Coverage Results" MODIFIED="1513327097942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/SDevelop$a.coverage" NAME="a Coverage Results" MODIFIED="1513253350572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/yangTest/random" />
-    <SUITE FILE_PATH="coverage/SDevelop$aa.coverage" NAME="aa Coverage Results" MODIFIED="1513327060545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/yangTest" />
+    <SUITE FILE_PATH="coverage/SDevelop$main.coverage" NAME="main Coverage Results" MODIFIED="1513928956434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -68,108 +70,82 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ohho_random.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stressTesting/tools/ohho_random.py">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ohho_api.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/handlers/ohho/ohho_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="180">
+              <caret line="5" column="47" lean-forward="true" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ohho.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logs/ohho.log">
+      <file leaf-file-name="view_complete_user.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ohho/common/view/ohho/user/view_complete_user.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="365">
+              <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logic_complete_user.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ohho/common/logic/ohho/user/logic_complete_user.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="228" column="36" lean-forward="false" selection-start-line="228" selection-start-column="31" selection-end-line="228" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="a.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yangTest/str/a.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
-              <caret line="4" column="124" lean-forward="true" selection-start-line="4" selection-start-column="124" selection-end-line="4" selection-end-column="131" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view_stressTesting_add_user.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ohho/common/view/test/view_stressTesting_add_user.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-216">
-              <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-              <folding>
-                <element signature="e#0#56#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-682">
-              <caret line="36" column="32" lean-forward="false" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1620">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logic_add_user.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stressTesting/logic/logic_add_user.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="211" column="44" lean-forward="false" selection-start-line="211" selection-start-column="44" selection-end-line="211" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logic_get_user_personal_page.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ohho/common/logic/ohho/user/logic_get_user_personal_page.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="13" column="55" lean-forward="false" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+              <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="user.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ohho/common/logic/common/user.py">
+        <entry file="file://$PROJECT_DIR$/ohho/common/db/ohho/user/user.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2348">
-              <caret line="885" column="8" lean-forward="false" selection-start-line="885" selection-start-column="8" selection-end-line="885" selection-end-column="8" />
+            <state relative-caret-position="290">
+              <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="aa.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yangTest/aa.py">
+      <file leaf-file-name="db_ohho_user_icon.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ohho/common/db/ohho/user/db_ohho_user_icon.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+            <state relative-caret-position="144">
+              <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="decorator.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tools/decorator.py">
+      <file leaf-file-name="db_base.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ohho/common/db/db_base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="126" column="4" lean-forward="false" selection-start-line="126" selection-start-column="4" selection-end-line="126" selection-end-column="4" />
+            <state relative-caret-position="301">
+              <caret line="60" column="39" lean-forward="true" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="operation.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DB/common/operation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="265">
+              <caret line="142" column="8" lean-forward="false" selection-start-line="142" selection-start-column="8" selection-end-line="142" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -186,36 +162,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>order_by</find>
-      <find>get_query</find>
-      <find>bet</find>
-      <find>self.configuration</find>
-      <find>get_user_information</find>
-      <find>User</find>
-      <find>DBOHHOUserIcon</find>
-      <find>DBOHHOUserFavouriteBook</find>
-      <find>get_user_description_by_user_id</find>
-      <find>DBOHHOUserAccuracyExtension</find>
-      <find>online</find>
-      <find>is_online</find>
-      <find>get_favourite_sport_list_by_user_id</find>
-      <find>new</find>
-      <find>get_user_inf</find>
-      <find>i</find>
-      <find>imp</find>
-      <find>impre</find>
-      <find>impres</find>
-      <find>impress'iom</find>
-      <find>impressi</find>
-      <find>impressio</find>
-      <find>impressiom</find>
-      <find>add</find>
-      <find>regis</find>
-      <find>self.key</find>
-      <find>get_dev</find>
-      <find>/rest/api/ohho/test/home/test/</find>
-      <find>/rest/api/ohho/test/get/map/positions/</find>
-      <find>/rest/api/ohho/get/map/positions/</find>
+      <find>见面</find>
+      <find>chil</find>
+      <find>chi</find>
+      <find>sign</find>
+      <find>key</find>
+      <find>message</find>
+      <find>descr</find>
+      <find>pers</find>
+      <find>type</find>
+      <find>management.us</find>
+      <find>staff</find>
+      <find>find_by_username</find>
+      <find>encounter_strategy.</find>
+      <find>encounter_strategy</find>
+      <find>encounter_strateg</find>
+      <find>encounter_strate</find>
+      <find>encounter_strat</find>
+      <find>encounter_stra</find>
+      <find>encounter_str</find>
+      <find>encounter_st</find>
+      <find>encounter_s</find>
+      <find>encounter_</find>
+      <find>encounter</find>
+      <find>encounte</find>
+      <find>encount</find>
+      <find>/rest/api/ohho/register/</find>
+      <find>/rest/api/ohho/reset/password/</find>
+      <find>/backstage/management/permission/group/staff/relation/add/</find>
+      <find>backstage/management/permission/group/user/relation/add/</find>
+      <find>/rest/api/ohho/complete/user/</find>
     </findStrings>
     <dirStrings>
       <dir>D:\develop\ServerTest\SDevelop</dir>
@@ -224,57 +200,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ohho/common/view/backstage/management/base/country_code/country_code_detail.py" />
-        <option value="$PROJECT_DIR$/ohho/common/view/backstage/management/base/country_code/country_code_list.py" />
-        <option value="$PROJECT_DIR$/ohho/common/view/backstage/management/base/interest_backstage/interest_add.py" />
-        <option value="$PROJECT_DIR$/ohho/common/view/backstage/management/base/interest_backstage/interest_delete.py" />
-        <option value="$PROJECT_DIR$/ohho/common/view/backstage/management/base/interest_backstage/interest_detail.py" />
-        <option value="$PROJECT_DIR$/ohho/common/view/backstage/management/base/interest_backstage/interest_list.py" />
-        <option value="$PROJECT_DIR$/ohho/common/test/test_home_app_quick_find.py" />
-        <option value="$PROJECT_DIR$/ohho/templates/test/home_app_quick_find.html" />
-        <option value="$PROJECT_DIR$/ohho/templates/index.html" />
-        <option value="$PROJECT_DIR$/handlers/ohho/ohho_api.py" />
-        <option value="$PROJECT_DIR$/ohho/views.py" />
-        <option value="$PROJECT_DIR$/ohho/common/view/ohho/user/view_get_user_personal_page.py" />
-        <option value="$PROJECT_DIR$/ohho/common/test/user/test_get_user_personal_page.py" />
-        <option value="$PROJECT_DIR$/ohho/templates/test/home/home_app_quick_find.html" />
-        <option value="$PROJECT_DIR$/ohho/templates/test/user/get_user_personal_page.html" />
-        <option value="$PROJECT_DIR$/ohho/common/db/ohho/user/db_ohho_user_impression.py" />
-        <option value="$PROJECT_DIR$/yangTest/redis/redis_cluster.py" />
-        <option value="$PROJECT_DIR$/ohho/templates/backstage/management/base/interest_backstage/interest_delete.html" />
-        <option value="$PROJECT_DIR$/ohho/templates/backstage/management/base/interest_backstage/interest_add.html" />
-        <option value="$PROJECT_DIR$/ohho/templates/backstage/management/base/interest_backstage/interest_detail.html" />
-        <option value="$PROJECT_DIR$/ohho/common/db/ohho/user/db_ohho_user_icon.py" />
-        <option value="$PROJECT_DIR$/ohho/common/db/ohho/user/db_ohho_user_accuracy_extension.py" />
-        <option value="$PROJECT_DIR$/yangTest/poi/ohho_poi.py" />
-        <option value="$PROJECT_DIR$/ohho/common/logic/ohho/user/logic_get_user_configuration.py" />
-        <option value="$PROJECT_DIR$/ohho/common/logic/ohho/user/logic_get_user_personal_information.py" />
-        <option value="$PROJECT_DIR$/ohho/common/logic/ohho/user/logic_user_and_friend_relation.py" />
-        <option value="$PROJECT_DIR$/ohho/common/logic/ohho/user/logic_get_user_accuracy_extension.py" />
-        <option value="$PROJECT_DIR$/ohho/common/logic/ohho/user/logic_get_user_personal_page.py" />
-        <option value="$PROJECT_DIR$/stressTesting/logic/logic_add_user251.py" />
-        <option value="$PROJECT_DIR$/DB/common/operation.py" />
-        <option value="$PROJECT_DIR$/ohho/common/db/ohho/user/db_ohho_user_favourite_book.py" />
-        <option value="$PROJECT_DIR$/ohho/common/db/ohho/user/db_ohho_user_favourite_movie.py" />
-        <option value="$PROJECT_DIR$/ohho/common/db/db_base.py" />
-        <option value="$PROJECT_DIR$/ohho/common/db/ohho/user/db_ohho_user_favourite_music.py" />
-        <option value="$PROJECT_DIR$/ohho/common/logic/common/user.py" />
-        <option value="$PROJECT_DIR$/ohho/common/logic/common/imei.py" />
-        <option value="$PROJECT_DIR$/stressTesting/logic/logic_add_user_new.py" />
-        <option value="$PROJECT_DIR$/yangTest/random/a.py" />
-        <option value="$PROJECT_DIR$/stressTesting/tools/ohho_random.py" />
-        <option value="$PROJECT_DIR$/stressTesting/main_add_user.py" />
-        <option value="$PROJECT_DIR$/settings.py" />
-        <option value="$PROJECT_DIR$/handlers/ohho/ohho_test_api.py" />
         <option value="$PROJECT_DIR$/ohho/common/test/constant.py" />
-        <option value="$PROJECT_DIR$/ohho/common/test/stressTesting/TestAddUser.py" />
+        <option value="$PROJECT_DIR$/ohho/common/test/meet/test_not_meet_by_hand.py" />
+        <option value="$PROJECT_DIR$/ohho/templates/test/home/home_app_quick_find.html" />
+        <option value="$PROJECT_DIR$/handlers/ohho/ohho_test_api.py" />
         <option value="$PROJECT_DIR$/ohho/tests.py" />
-        <option value="$PROJECT_DIR$/ohho/templates/test/home/home_test.html" />
-        <option value="$PROJECT_DIR$/ohho/templates/test/stressTesting/add_user.html" />
-        <option value="$PROJECT_DIR$/ohho/common/view/test/view_stressTesting_add_user.py" />
-        <option value="$PROJECT_DIR$/stressTesting/logic/logic_add_user.py" />
-        <option value="$PROJECT_DIR$/logs/ohho.log" />
-        <option value="$PROJECT_DIR$/yangTest/aa.py" />
+        <option value="$PROJECT_DIR$/ohho/templates/test/meet/not_meet_by_hand.html" />
+        <option value="$PROJECT_DIR$/ohho/common/view/ohho/meet/view_not_met_by_hand.py" />
+        <option value="$PROJECT_DIR$/ohho/common/logic/ohho/meet/logic_not_met_by_hand.py" />
+        <option value="$PROJECT_DIR$/ohho/common/view/backstage/management/base/interest_backstage/interest_list.py" />
+        <option value="$PROJECT_DIR$/DB/mysql/models/ohho/base/model_ohho_interest.py" />
+        <option value="$PROJECT_DIR$/ohho/templates/backstage/management/base/interest_backstage/interest_list.html" />
+        <option value="$PROJECT_DIR$/ohho/templates/backstage/management/base/interest_backstage/interest_add.html" />
+        <option value="$PROJECT_DIR$/ohho/common/logic/common/base/interest_backstage.py" />
+        <option value="$PROJECT_DIR$/ohho/common/db/ohho/base/db_ohho_interest.py" />
+        <option value="$PROJECT_DIR$/ohho/common/view/backstage/management/base/interest_backstage/interest_add.py" />
+        <option value="$PROJECT_DIR$/ohho/common/view/backstage/management/base/interest_backstage/interest_detail.py" />
+        <option value="$PROJECT_DIR$/ohho/templates/backstage/management/base/interest_backstage/interest_detail.html" />
+        <option value="$PROJECT_DIR$/ohho/common/view/backstage/management/base/interest_backstage/interest_delete.py" />
+        <option value="$PROJECT_DIR$/ohho/templates/backstage/management/base/interest_backstage/interest_delete.html" />
+        <option value="$PROJECT_DIR$/ohho/common/logic/common/user.py" />
+        <option value="$PROJECT_DIR$/ohho/common/db/ohho/user/db_ohho_user_impression.py" />
+        <option value="$PROJECT_DIR$/yangTest/bifa/js.py" />
+        <option value="$PROJECT_DIR$/ohho/templates/backstage/management/permission/group_user_relation/group_user_relation.html" />
+        <option value="$PROJECT_DIR$/ohho/common/db/ohho/user/db_ohho_staff.py" />
+        <option value="$PROJECT_DIR$/ohho/common/db/ohho/user/db_ohho_staff_accuracy_extension.py" />
+        <option value="$PROJECT_DIR$/ohho/common/view/backstage/constant.py" />
+        <option value="$PROJECT_DIR$/ohho/common/view/backstage/home.py" />
+        <option value="$PROJECT_DIR$/ohho/templates/backstage/home.html" />
+        <option value="$PROJECT_DIR$/ohho/common/view/backstage/management/staff_list.py" />
+        <option value="$PROJECT_DIR$/ohho/templates/backstage/management/staff_list.html" />
+        <option value="$PROJECT_DIR$/ohho/common/view/common/constant.py" />
+        <option value="$PROJECT_DIR$/ohho/common/view/common/parameters.py" />
+        <option value="$PROJECT_DIR$/ohho/common/view/backstage/management/staff_detail.py" />
+        <option value="$PROJECT_DIR$/ohho/common/logic/common/staff.py" />
+        <option value="$PROJECT_DIR$/ohho/common/view/backstage/management/staff_delete.py" />
+        <option value="$PROJECT_DIR$/ohho/templates/backstage/management/staff_detail.html" />
+        <option value="$PROJECT_DIR$/ohho/templates/backstage/management/staff_delete.html" />
+        <option value="$PROJECT_DIR$/ohho/templates/backstage/management/staff_add.html" />
+        <option value="$PROJECT_DIR$/ohho/common/view/backstage/management/staff_add.py" />
+        <option value="$PROJECT_DIR$/ohho/common/logic/common/permission/permission.py" />
+        <option value="$PROJECT_DIR$/ohho/templates/backstage/management/permission/group_staff_relation/group_staff_relation.html" />
+        <option value="$PROJECT_DIR$/ohho/common/view/backstage/management/permission/group/group_list.py" />
+        <option value="$PROJECT_DIR$/ohho/templates/backstage/management/permission/group/group_list.html" />
+        <option value="$PROJECT_DIR$/handlers/ohho/ohho_api.py" />
+        <option value="$PROJECT_DIR$/handlers/ohho/ohho_backstage.py" />
+        <option value="$PROJECT_DIR$/ohho/common/view/backstage/management/permission/constant.py" />
+        <option value="$PROJECT_DIR$/ohho/backstage_views.py" />
+        <option value="$PROJECT_DIR$/ohho/common/db/ohho/permission/db_ohho_group_and_staff_relation.py" />
+        <option value="$PROJECT_DIR$/ohho/common/view/backstage/management/permission/group_staff_relation/group_staff_relation_delete.py" />
+        <option value="$PROJECT_DIR$/ohho/common/view/backstage/management/permission/group_staff_relation/group_staff_relation_add.py" />
+        <option value="$PROJECT_DIR$/yangTest/str/a.py" />
       </list>
     </option>
   </component>
@@ -287,7 +263,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1924" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -308,8 +284,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -346,25 +320,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="stressTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SDevelop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SDevelop" />
+              <option name="myItemId" value="yangTest" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="stressTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="logic" />
+              <option name="myItemId" value="str" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -379,72 +339,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ohho" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SDevelop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SDevelop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ohho" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SDevelop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SDevelop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ohho" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SDevelop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SDevelop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ohho" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stressTesting" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -484,7 +378,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -506,11 +400,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="stressTesting" />
+              <option name="myItemId" value="backstage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -524,12 +418,364 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="logs" />
+              <option name="myItemId" value="ohho" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backstage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ohho" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backstage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="permission" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ohho" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backstage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="permission" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ohho" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backstage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="permission" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="group_user_relation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ohho" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backstage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="permission" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="group_staff_relation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ohho" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backstage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="permission" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="group_page_relation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ohho" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backstage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="permission" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="group" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ohho" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ohho" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ohho" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ohho" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ohho" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="permission" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="handlers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SDevelop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="handlers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ohho" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -540,11 +786,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\develop\ServerTest\SDevelop\ohho\templates\test\stressTesting" />
-      <recent name="D:\develop\ServerTest\SDevelop\stressTesting\logic" />
-      <recent name="D:\develop\ServerTest\SDevelop\ohho\templates\test\user" />
-      <recent name="D:\develop\ServerTest\SDevelop\ohho\common\test\user" />
-      <recent name="D:\develop\ServerTest\SDevelop\ohho\common\logic\ohho\user" />
+      <recent name="D:\develop\ServerTest\SDevelop\ohho\common\db\ohho\permission" />
+      <recent name="D:\develop\ServerTest\SDevelop\ohho\common\view\backstage\management\permission\group_staff_relation" />
+      <recent name="D:\develop\ServerTest\SDevelop\ohho\common\view\backstage\management\permission" />
+      <recent name="D:\develop\ServerTest\SDevelop\ohho\templates\backstage\management\permission\group_staff_relation" />
+      <recent name="D:\develop\ServerTest\SDevelop\ohho\templates\backstage\management\permission" />
     </key>
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -561,9 +807,9 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="svn" revision="2144">D:\develop\ServerTest\SDevelop\ohho\common\logic\common\user.py</PATH>
-          <PATH vcs="svn" revision="2144">D:\develop\ServerTest\SDevelop\ohho\tests.py</PATH>
-          <PATH vcs="svn" revision="2144">D:\develop\ServerTest\SDevelop\handlers\test\test.py</PATH>
+          <PATH vcs="svn" revision="2356">D:\develop\ServerTest\SDevelop\Tools\decorator.py</PATH>
+          <PATH vcs="svn" revision="2356">D:\develop\ServerTest\SDevelop\ohho\common\logic\ohho\base\logic_get_basic_data.py</PATH>
+          <PATH vcs="svn" revision="2356">D:\develop\ServerTest\SDevelop\ohho\models.py</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -571,7 +817,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="svn" revision="2144">D:\develop\ServerTest\SDevelop\ohho\common\view\test\view_show_user_basic_information.py</PATH>
+          <PATH vcs="svn" revision="2356">D:\develop\ServerTest\SDevelop\DB\mysql\models\ohho\user\model_ohho_staff_token.py</PATH>
+          <PATH vcs="svn" revision="2356">D:\develop\ServerTest\SDevelop\ohho\common\db\ohho\user\db_ohho_staff_token.py</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -672,59 +919,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration default="false" name="ohho_random" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.a">
+    <configuration default="false" name="gevent5" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/stressTesting/tools" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/yangTest/bifa" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="OHHO" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stressTesting/tools/ohho_random.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="main_add_user" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/stressTesting" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="OHHO" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stressTesting/main_add_user.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="a" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/yangTest/random" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="OHHO" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/yangTest/random/a.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/yangTest/bifa/gevent5.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -749,20 +958,58 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="aa" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="js" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/yangTest" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/yangTest/bifa" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="OHHO" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/yangTest/aa.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/yangTest/bifa/js.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="logic_add_user" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/stressTesting/logic" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="OHHO" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stressTesting/logic/logic_add_user.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="a" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/yangTest/str" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="OHHO" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/yangTest/str/a.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -917,19 +1164,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.ohho_random" />
-      <item index="1" class="java.lang.String" itemvalue="Python.main_add_user" />
-      <item index="2" class="java.lang.String" itemvalue="Python.a" />
-      <item index="3" class="java.lang.String" itemvalue="Python.main" />
-      <item index="4" class="java.lang.String" itemvalue="Python.aa" />
+      <item index="0" class="java.lang.String" itemvalue="Python.gevent5" />
+      <item index="1" class="java.lang.String" itemvalue="Python.main" />
+      <item index="2" class="java.lang.String" itemvalue="Python.js" />
+      <item index="3" class="java.lang.String" itemvalue="Python.logic_add_user" />
+      <item index="4" class="java.lang.String" itemvalue="Python.a" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.main" />
-        <item index="1" class="java.lang.String" itemvalue="Python.aa" />
-        <item index="2" class="java.lang.String" itemvalue="Python.main_add_user" />
-        <item index="3" class="java.lang.String" itemvalue="Python.ohho_random" />
-        <item index="4" class="java.lang.String" itemvalue="Python.a" />
+        <item index="0" class="java.lang.String" itemvalue="Python.a" />
+        <item index="1" class="java.lang.String" itemvalue="Python.main" />
+        <item index="2" class="java.lang.String" itemvalue="Python.js" />
+        <item index="3" class="java.lang.String" itemvalue="Python.logic_add_user" />
+        <item index="4" class="java.lang.String" itemvalue="Python.gevent5" />
       </list>
     </recent_temporary>
   </component>
@@ -1141,31 +1388,88 @@
       <option name="project" value="LOCAL" />
       <updated>1513241657660</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="压力测试">
+      <created>1513756337027</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1513756337027</updated>
+    </task>
+    <task id="LOCAL-00027" summary="不要见面">
+      <created>1513760680243</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1513760680243</updated>
+    </task>
+    <task id="LOCAL-00028" summary="个人主页">
+      <created>1513760721641</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1513760721641</updated>
+    </task>
+    <task id="LOCAL-00029" summary="兴趣">
+      <created>1513844484430</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1513844484430</updated>
+    </task>
+    <task id="LOCAL-00030" summary="印象">
+      <created>1513845198817</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1513845198817</updated>
+    </task>
+    <task id="LOCAL-00031" summary="后台用户">
+      <created>1513913087054</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1513913087054</updated>
+    </task>
+    <task id="LOCAL-00032" summary="后台用户">
+      <created>1513914838351</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1513914838351</updated>
+    </task>
+    <task id="LOCAL-00033" summary="后台用户关系">
+      <created>1513930663192</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1513930663192</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1924" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17489271" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24888393" sideWeight="0.5075107" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23712446" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37276787" sideWeight="0.49570817" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32589287" sideWeight="0.49248928" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3560268" sideWeight="0.49248928" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32700893" sideWeight="0.49570817" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18191965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21002132" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23712446" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30245537" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1202,8 +1506,14 @@
     <MESSAGE value="快速查找" />
     <MESSAGE value="基础兴趣" />
     <MESSAGE value="个人信息" />
+    <MESSAGE value="压力测试" />
+    <MESSAGE value="不要见面" />
     <MESSAGE value="个人主页" />
-    <option name="LAST_COMMIT_MESSAGE" value="个人主页" />
+    <MESSAGE value="兴趣" />
+    <MESSAGE value="印象" />
+    <MESSAGE value="后台用户" />
+    <MESSAGE value="后台用户关系" />
+    <option name="LAST_COMMIT_MESSAGE" value="后台用户关系" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1213,151 +1523,210 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ohho/common/view/ohho/user/view_add_user_favourite_book.py">
+    <entry file="file://$PROJECT_DIR$/ohho/common/view/backstage/management/staff_detail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/db/ohho/user/db_ohho_user_favourite_book.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="13" column="46" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="46" />
+        <state relative-caret-position="520">
+          <caret line="46" column="57" lean-forward="false" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/db/ohho/user/db_ohho_user_favourite_movie.py">
+    <entry file="file://$PROJECT_DIR$/ohho/templates/backstage/management/staff_add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        <state relative-caret-position="416">
+          <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/db/ohho/user/db_ohho_user_favourite_music.py">
+    <entry file="file://$PROJECT_DIR$/ohho/common/view/backstage/management/staff_add.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="13" column="46" lean-forward="false" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+        <state relative-caret-position="468">
+          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/db/ohho/record/db_ohho_record_match_condition.py">
+    <entry file="file://$PROJECT_DIR$/ohho/common/logic/common/staff.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="37" />
+        <state relative-caret-position="117">
+          <caret line="88" column="8" lean-forward="false" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
           <folding>
-            <element signature="e#0#98#0" expanded="false" />
+            <element signature="e#1403#1650#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tools/ohho_encryption.py">
+    <entry file="file://$PROJECT_DIR$/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/logic/common/imei.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="40" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/logic/ohho/register/logic_register.py">
+    <entry file="file://$PROJECT_DIR$/ohho/common/logic/common/record/constant.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="108">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/view/ohho/register/view_register.py">
+    <entry file="file://$PROJECT_DIR$/ohho/common/view/ohho/user/view_reset_password.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="38" column="31" lean-forward="false" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+        <state relative-caret-position="324">
+          <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/db/ohho/db_cellphone.py">
+    <entry file="file://$PROJECT_DIR$/ohho/common/logic/common/token.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/db/ohho/base/db_ohho_interest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/db/ohho/device/db_ohho_device.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yangTest/random/a.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="28" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/b03eed8c/ee5a5444-ac96-4015-a64d-0c291e7a4f33/ohho.ohho_country_code">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/b03eed8c/ee5a5444-ac96-4015-a64d-0c291e7a4f33/ohho.ohho_user_accuracy_extension">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tools/ohho_random.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
           <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DB/common/operation.py">
+    <entry file="file://$PROJECT_DIR$/ohho/common/logic/common/user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="81" column="8" lean-forward="false" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
+        <state relative-caret-position="265">
+          <caret line="247" column="8" lean-forward="false" selection-start-line="247" selection-start-column="8" selection-end-line="247" selection-end-column="8" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/logic/ohho/register/logic_reset_password.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="30" column="67" lean-forward="true" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/logic/ohho/user/logic_rebind_cellphone.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/view/ohho/other/view_rebind_cellphone.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/view/common/constant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tools/ohho_operation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/logic/common/sensitive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/view/common/parameters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="831" column="53" lean-forward="false" selection-start-line="831" selection-start-column="46" selection-end-line="831" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/python_stubs/-40612567/_datetime.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="165" column="6" lean-forward="false" selection-start-line="165" selection-start-column="6" selection-end-line="165" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/view/backstage/management/permission/group/group_add.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-916">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/templates/backstage/management/permission/group_staff_relation/group_user_relation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/templates/backstage/management/permission/group_staff_relation/group_staff_relation_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/view/backstage/management/permission/group_staff_relation/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/view/backstage/management/permission/group_staff_relation/group_user_relation_delete.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/view/backstage/management/permission/group_user_relation/group_user_relation_add.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="67" column="58" lean-forward="true" selection-start-line="67" selection-start-column="58" selection-end-line="67" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/db/ohho/user/db_ohho_staff.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#64#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1369,291 +1738,243 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/logic/common/token.py">
+    <entry file="file://$PROJECT_DIR$/DB/mysql/models/ohho/permission/group_and_user_relation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="108">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stressTesting/logic/logic_add_user_new.py">
+    <entry file="file://$PROJECT_DIR$/ohho/templates/backstage/management/permission/group/group_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="154" column="2" lean-forward="false" selection-start-line="154" selection-start-column="2" selection-end-line="159" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#36#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/db/db_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="43" column="8" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/b03eed8c/ee5a5444-ac96-4015-a64d-0c291e7a4f33/ohho.ohho_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stressTesting/logic/logic_add_user_new.bak.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stressTesting/main_add_user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#66#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tools/ohho_datetime.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/test_main/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#21#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="54" column="13" lean-forward="true" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/view/test/view_show_user_basic_information.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#56#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/test/test_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/view/test/view_test_add_interest_point.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="13" column="35" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#56#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/test/home/test_home_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/test/map/test_get_map_positions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handlers/ohho/ohho_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-116">
-          <caret line="121" column="40" lean-forward="false" selection-start-line="121" selection-start-column="7" selection-end-line="121" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="89" lean-forward="false" selection-start-line="0" selection-start-column="89" selection-end-line="0" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/test/constant.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="211" column="75" lean-forward="false" selection-start-line="211" selection-start-column="75" selection-end-line="211" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/templates/test/home/home_test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="1088" column="49" lean-forward="false" selection-start-line="1088" selection-start-column="49" selection-end-line="1088" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/templates/test/stressTesting/add_user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="29" column="48" lean-forward="false" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
+        <state relative-caret-position="504">
+          <caret line="41" column="80" lean-forward="false" selection-start-line="41" selection-start-column="80" selection-end-line="41" selection-end-column="80" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/handlers/ohho/ohho_test_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="119" column="7" lean-forward="false" selection-start-line="119" selection-start-column="7" selection-end-line="119" selection-end-column="43" />
+        <state relative-caret-position="-30">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/test/stressTesting/TestAddUser.py">
+    <entry file="file://$PROJECT_DIR$/ohho/backstage_views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="30" />
+        <state relative-caret-position="144">
+          <caret line="4" column="44" lean-forward="false" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/view/ohho/user/view_get_user_personal_page.py">
+    <entry file="file://$PROJECT_DIR$/handlers/ohho/ohho_backstage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        <state relative-caret-position="-3963">
+          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/view/backstage/management/permission/group/group_list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="531">
+          <caret line="50" column="78" lean-forward="false" selection-start-line="50" selection-start-column="78" selection-end-line="50" selection-end-column="78" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/logic/ohho/user/logic_get_user_personal_page.py">
+    <entry file="file://$PROJECT_DIR$/ohho/common/logic/common/permission/permission.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="13" column="55" lean-forward="false" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+        <state relative-caret-position="265">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#76#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/db/ohho/permission/db_ohho_group_and_user_relation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="102" />
+          <folding>
+            <element signature="e#0#102#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/db/ohho/permission/db_ohho_group_and_staff_relation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="3" column="69" lean-forward="true" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/view/backstage/management/permission/group_staff_relation/group_staff_relation_delete.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/view/backstage/management/permission/constant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/view/backstage/management/permission/group_staff_relation/group_user_relation_add.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/view/backstage/management/permission/page/page_add.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tools/ohho_datetime.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tools/decorator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="126" column="4" lean-forward="false" selection-start-line="126" selection-start-column="4" selection-end-line="126" selection-end-column="4" />
+        <state relative-caret-position="396">
+          <caret line="46" column="60" lean-forward="true" selection-start-line="46" selection-start-column="60" selection-end-line="46" selection-end-column="60" />
+          <folding>
+            <marker date="1513929002033" expanded="true" signature="1675:2646" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="1675:2768" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="1675:2928" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="1675:3656" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="1718:2512" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="1908:2295" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="2321:2512" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="2534:2646" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="2664:2768" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="2782:2906" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="2969:3656" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="3682:5070" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="3728:5044" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="3827:4388" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="4418:4976" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="5096:5438" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="5125:5412" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="6736:6873" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="6921:7058" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="7108:7245" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="7295:7432" ph="..." />
+            <marker date="1513929002033" expanded="true" signature="7516:7777" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/templates/backstage/management/permission/group_staff_relation/group_staff_relation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-720">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/logic/common/user.py">
+    <entry file="file://$PROJECT_DIR$/ohho/common/view/backstage/management/permission/group_staff_relation/group_staff_relation_add.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2348">
-          <caret line="885" column="8" lean-forward="false" selection-start-line="885" selection-start-column="8" selection-end-line="885" selection-end-column="8" />
+        <state relative-caret-position="2232">
+          <caret line="62" column="61" lean-forward="true" selection-start-line="62" selection-start-column="61" selection-end-line="62" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handlers/ohho/ohho_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="5" column="47" lean-forward="true" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stressTesting/logic/logic_add_use.bakr.py">
+    <entry file="file://$PROJECT_DIR$/ohho/common/db/ohho/user/db_ohho_user_icon.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-972">
+        <state relative-caret-position="144">
+          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ohho/common/db/ohho/user/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Programs/Python36/Lib/site-packages/PIL/Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1296">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stressTesting/logic/logic_add_user.py">
+    <entry file="file://$PROJECT_DIR$/DB/common/operation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="211" column="44" lean-forward="false" selection-start-line="211" selection-start-column="44" selection-end-line="211" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="265">
+          <caret line="142" column="8" lean-forward="false" selection-start-line="142" selection-start-column="8" selection-end-line="142" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stressTesting/tools/ohho_random.py">
+    <entry file="file://$PROJECT_DIR$/ohho/common/db/db_base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="301">
+          <caret line="60" column="39" lean-forward="true" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logs/ohho.log">
+    <entry file="file://$PROJECT_DIR$/ohho/common/view/ohho/user/view_complete_user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yangTest/str/a.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="4" column="124" lean-forward="true" selection-start-line="4" selection-start-column="124" selection-end-line="4" selection-end-column="131" />
+          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yangTest/aa.py">
+    <entry file="file://$PROJECT_DIR$/ohho/common/logic/ohho/user/logic_complete_user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ohho/common/view/test/view_stressTesting_add_user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-682">
-          <caret line="36" column="32" lean-forward="false" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1620">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="396">
+          <caret line="228" column="36" lean-forward="false" selection-start-line="228" selection-start-column="31" selection-end-line="228" selection-end-column="36" />
           <folding />
         </state>
       </provider>

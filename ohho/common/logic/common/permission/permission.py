@@ -2,6 +2,7 @@ from ohho.common.db.ohho.permission.db_ohho_page import DBOHHOPermissionPage
 from ohho.common.db.ohho.permission.db_ohho_page_permission import DBOHHOPermissionPagePermission
 from ohho.common.db.ohho.permission.db_ohho_group import DBOHHOPermissionGroup
 from ohho.common.db.ohho.permission.db_ohho_group_and_user_relation import DBOHHOPermissionGroupAndUserRelation
+from ohho.common.db.ohho.permission.db_ohho_group_and_staff_relation import DBOHHOPermissionGroupAndStaffRelation
 from ohho.common.db.ohho.permission.db_ohho_group_and_page_relation import DBOHHOPermissionGroupAndPageRelation
 from functools import reduce
 from Tools.ohho_log import OHHOLog
@@ -15,6 +16,7 @@ class OHHOPermission(object):
         self.group = DBOHHOPermissionGroup()
         self.group_and_page = DBOHHOPermissionGroupAndPageRelation()
         self.group_and_user = DBOHHOPermissionGroupAndUserRelation()
+        self.group_and_staff = DBOHHOPermissionGroupAndStaffRelation()
 
     def get_group_and_page(self, group_id, page_permission_id):
         query = self.group_and_page.get_query()

@@ -27,6 +27,9 @@ class LogicApplyFriend(object):
             else:
                 if self.friend.has_valid_apply(user_id, friend_user_id):
                     return Result.result_failed("you have a valid apply!")
+                elif self.friend.has_valid_apply(friend_user_id, user_id):
+                    apply = self.friend.get_apply_by_user_and_friend(friend_user_id, user_id)
+                    return self.friend.add_friend(friend_user_id, user_id, apply.id)
                 else:
                     friend = self.friend.get_friend_by_user_and_friend(friend_user_id, user_id)
                     if not friend:
